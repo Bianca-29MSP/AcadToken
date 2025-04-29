@@ -1,0 +1,15 @@
+syntax = "proto3";
+package academictoken.curriculum;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "academictoken/x/curriculum/Params";
+  option (gogoproto.equal) = true;
+
+  
+}

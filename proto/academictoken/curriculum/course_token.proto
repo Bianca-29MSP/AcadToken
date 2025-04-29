@@ -1,0 +1,17 @@
+syntax = "proto3";
+package academictoken.curriculum;
+
+option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
+
+message CourseToken {
+  
+  string tokenId = 1; 
+  string name = 2; 
+  string code = 3; 
+  string contentHash = 4; 
+  string institution = 5; 
+  string completionDate = 6; 
+  uint64 grade = 7; 
+  repeated string prerequisites = 8; 
+  string owner = 9; 
+}

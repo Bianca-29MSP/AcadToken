@@ -1,0 +1,12 @@
+syntax = "proto3";
+package academictoken.curriculum;
+
+option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
+
+message AcademicTree {
+  
+  string student = 1; 
+  string institution = 2; 
+  repeated string completedTokens = 3; 
+  repeated string availableTokens = 4; 
+}

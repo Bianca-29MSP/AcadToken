@@ -76,6 +76,8 @@ import (
 	ibckeeper "github.com/cosmos/ibc-go/v8/modules/core/keeper"
 
 	academictokenmodulekeeper "github.com/Bianca-29MSP/AcademicToken/x/academictoken/keeper"
+	curriculummodulekeeper "github.com/Bianca-29MSP/AcademicToken/x/curriculum/keeper"
+
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 
 	"github.com/Bianca-29MSP/AcademicToken/docs"
@@ -146,6 +148,7 @@ type App struct {
 	ScopedKeepers             map[string]capabilitykeeper.ScopedKeeper
 
 	AcademictokenKeeper academictokenmodulekeeper.Keeper
+	CurriculumKeeper    curriculummodulekeeper.Keeper
 	// this line is used by starport scaffolding # stargate/app/keeperDeclaration
 
 	// simulation manager
@@ -250,6 +253,7 @@ func New(
 		&app.GroupKeeper,
 		&app.CircuitBreakerKeeper,
 		&app.AcademictokenKeeper,
+		&app.CurriculumKeeper,
 		// this line is used by starport scaffolding # stargate/app/keeperDefinition
 	); err != nil {
 		panic(err)

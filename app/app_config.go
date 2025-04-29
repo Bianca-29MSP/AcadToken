@@ -54,8 +54,11 @@ import (
 	"google.golang.org/protobuf/types/known/durationpb"
 
 	academictokenmodulev1 "github.com/Bianca-29MSP/AcademicToken/api/academictoken/academictoken/module"
+	curriculummodulev1 "github.com/Bianca-29MSP/AcademicToken/api/academictoken/curriculum/module"
 	_ "github.com/Bianca-29MSP/AcademicToken/x/academictoken/module" // import for side-effects
 	academictokenmoduletypes "github.com/Bianca-29MSP/AcademicToken/x/academictoken/types"
+	_ "github.com/Bianca-29MSP/AcademicToken/x/curriculum/module" // import for side-effects
+	curriculummoduletypes "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 )
 
@@ -94,6 +97,7 @@ var (
 		circuittypes.ModuleName,
 		// chain modules
 		academictokenmoduletypes.ModuleName,
+		curriculummoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
 	}
 
@@ -119,6 +123,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		academictokenmoduletypes.ModuleName,
+		curriculummoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/beginBlockers
 	}
 
@@ -138,6 +143,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		academictokenmoduletypes.ModuleName,
+		curriculummoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/endBlockers
 	}
 
@@ -158,6 +164,7 @@ var (
 		{Account: ibctransfertypes.ModuleName, Permissions: []string{authtypes.Minter, authtypes.Burner}},
 		{Account: ibcfeetypes.ModuleName},
 		{Account: icatypes.ModuleName},
+		{Account: curriculummoduletypes.ModuleName, Permissions: []string{authtypes.Minter, authtypes.Burner, authtypes.Staking}},
 		// this line is used by starport scaffolding # stargate/app/maccPerms
 	}
 
@@ -296,6 +303,10 @@ var (
 			{
 				Name:   academictokenmoduletypes.ModuleName,
 				Config: appconfig.WrapAny(&academictokenmodulev1.Module{}),
+			},
+			{
+				Name:   curriculummoduletypes.ModuleName,
+				Config: appconfig.WrapAny(&curriculummodulev1.Module{}),
 			},
 			// this line is used by starport scaffolding # stargate/app/moduleConfig
 		},

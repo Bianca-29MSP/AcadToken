@@ -1,0 +1,11 @@
+syntax = "proto3";
+package academictoken.curriculum;
+
+option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
+
+message Institution {
+  
+  string address = 1; 
+  string name = 2; 
+  bool isAuthorized = 3; 
+}
