@@ -221,46 +221,424 @@ func (m *MsgRegisterInstitutionResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgRegisterInstitutionResponse proto.InternalMessageInfo
 
+type MsgIssueCourseToken struct {
+	Creator        string   `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	TokenId        string   `protobuf:"bytes,2,opt,name=tokenId,proto3" json:"tokenId,omitempty"`
+	Name           string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Code           string   `protobuf:"bytes,4,opt,name=code,proto3" json:"code,omitempty"`
+	ContentHash    string   `protobuf:"bytes,5,opt,name=contentHash,proto3" json:"contentHash,omitempty"`
+	Institution    string   `protobuf:"bytes,6,opt,name=institution,proto3" json:"institution,omitempty"`
+	CompletionDate string   `protobuf:"bytes,7,opt,name=completionDate,proto3" json:"completionDate,omitempty"`
+	Grade          uint64   `protobuf:"varint,8,opt,name=grade,proto3" json:"grade,omitempty"`
+	Prerequisites  []string `protobuf:"bytes,9,rep,name=prerequisites,proto3" json:"prerequisites,omitempty"`
+	Recipient      string   `protobuf:"bytes,10,opt,name=recipient,proto3" json:"recipient,omitempty"`
+}
+
+func (m *MsgIssueCourseToken) Reset()         { *m = MsgIssueCourseToken{} }
+func (m *MsgIssueCourseToken) String() string { return proto.CompactTextString(m) }
+func (*MsgIssueCourseToken) ProtoMessage()    {}
+func (*MsgIssueCourseToken) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9a05da18e86456bf, []int{4}
+}
+func (m *MsgIssueCourseToken) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgIssueCourseToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgIssueCourseToken.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgIssueCourseToken) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgIssueCourseToken.Merge(m, src)
+}
+func (m *MsgIssueCourseToken) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgIssueCourseToken) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgIssueCourseToken.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgIssueCourseToken proto.InternalMessageInfo
+
+func (m *MsgIssueCourseToken) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgIssueCourseToken) GetTokenId() string {
+	if m != nil {
+		return m.TokenId
+	}
+	return ""
+}
+
+func (m *MsgIssueCourseToken) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *MsgIssueCourseToken) GetCode() string {
+	if m != nil {
+		return m.Code
+	}
+	return ""
+}
+
+func (m *MsgIssueCourseToken) GetContentHash() string {
+	if m != nil {
+		return m.ContentHash
+	}
+	return ""
+}
+
+func (m *MsgIssueCourseToken) GetInstitution() string {
+	if m != nil {
+		return m.Institution
+	}
+	return ""
+}
+
+func (m *MsgIssueCourseToken) GetCompletionDate() string {
+	if m != nil {
+		return m.CompletionDate
+	}
+	return ""
+}
+
+func (m *MsgIssueCourseToken) GetGrade() uint64 {
+	if m != nil {
+		return m.Grade
+	}
+	return 0
+}
+
+func (m *MsgIssueCourseToken) GetPrerequisites() []string {
+	if m != nil {
+		return m.Prerequisites
+	}
+	return nil
+}
+
+func (m *MsgIssueCourseToken) GetRecipient() string {
+	if m != nil {
+		return m.Recipient
+	}
+	return ""
+}
+
+type MsgIssueCourseTokenResponse struct {
+}
+
+func (m *MsgIssueCourseTokenResponse) Reset()         { *m = MsgIssueCourseTokenResponse{} }
+func (m *MsgIssueCourseTokenResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgIssueCourseTokenResponse) ProtoMessage()    {}
+func (*MsgIssueCourseTokenResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9a05da18e86456bf, []int{5}
+}
+func (m *MsgIssueCourseTokenResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgIssueCourseTokenResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgIssueCourseTokenResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgIssueCourseTokenResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgIssueCourseTokenResponse.Merge(m, src)
+}
+func (m *MsgIssueCourseTokenResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgIssueCourseTokenResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgIssueCourseTokenResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgIssueCourseTokenResponse proto.InternalMessageInfo
+
+type MsgVerifyPrerequisites struct {
+	Creator    string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Student    string `protobuf:"bytes,2,opt,name=student,proto3" json:"student,omitempty"`
+	CourseCode string `protobuf:"bytes,3,opt,name=courseCode,proto3" json:"courseCode,omitempty"`
+}
+
+func (m *MsgVerifyPrerequisites) Reset()         { *m = MsgVerifyPrerequisites{} }
+func (m *MsgVerifyPrerequisites) String() string { return proto.CompactTextString(m) }
+func (*MsgVerifyPrerequisites) ProtoMessage()    {}
+func (*MsgVerifyPrerequisites) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9a05da18e86456bf, []int{6}
+}
+func (m *MsgVerifyPrerequisites) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgVerifyPrerequisites) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgVerifyPrerequisites.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgVerifyPrerequisites) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgVerifyPrerequisites.Merge(m, src)
+}
+func (m *MsgVerifyPrerequisites) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgVerifyPrerequisites) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgVerifyPrerequisites.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgVerifyPrerequisites proto.InternalMessageInfo
+
+func (m *MsgVerifyPrerequisites) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgVerifyPrerequisites) GetStudent() string {
+	if m != nil {
+		return m.Student
+	}
+	return ""
+}
+
+func (m *MsgVerifyPrerequisites) GetCourseCode() string {
+	if m != nil {
+		return m.CourseCode
+	}
+	return ""
+}
+
+type MsgVerifyPrerequisitesResponse struct {
+}
+
+func (m *MsgVerifyPrerequisitesResponse) Reset()         { *m = MsgVerifyPrerequisitesResponse{} }
+func (m *MsgVerifyPrerequisitesResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgVerifyPrerequisitesResponse) ProtoMessage()    {}
+func (*MsgVerifyPrerequisitesResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9a05da18e86456bf, []int{7}
+}
+func (m *MsgVerifyPrerequisitesResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgVerifyPrerequisitesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgVerifyPrerequisitesResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgVerifyPrerequisitesResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgVerifyPrerequisitesResponse.Merge(m, src)
+}
+func (m *MsgVerifyPrerequisitesResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgVerifyPrerequisitesResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgVerifyPrerequisitesResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgVerifyPrerequisitesResponse proto.InternalMessageInfo
+
+type MsgProposeEquivalence struct {
+	Creator           string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	SourceTokenId     string `protobuf:"bytes,2,opt,name=sourceTokenId,proto3" json:"sourceTokenId,omitempty"`
+	TargetInstitution string `protobuf:"bytes,3,opt,name=targetInstitution,proto3" json:"targetInstitution,omitempty"`
+	TargetCourseCode  string `protobuf:"bytes,4,opt,name=targetCourseCode,proto3" json:"targetCourseCode,omitempty"`
+}
+
+func (m *MsgProposeEquivalence) Reset()         { *m = MsgProposeEquivalence{} }
+func (m *MsgProposeEquivalence) String() string { return proto.CompactTextString(m) }
+func (*MsgProposeEquivalence) ProtoMessage()    {}
+func (*MsgProposeEquivalence) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9a05da18e86456bf, []int{8}
+}
+func (m *MsgProposeEquivalence) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgProposeEquivalence) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgProposeEquivalence.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgProposeEquivalence) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgProposeEquivalence.Merge(m, src)
+}
+func (m *MsgProposeEquivalence) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgProposeEquivalence) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgProposeEquivalence.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgProposeEquivalence proto.InternalMessageInfo
+
+func (m *MsgProposeEquivalence) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgProposeEquivalence) GetSourceTokenId() string {
+	if m != nil {
+		return m.SourceTokenId
+	}
+	return ""
+}
+
+func (m *MsgProposeEquivalence) GetTargetInstitution() string {
+	if m != nil {
+		return m.TargetInstitution
+	}
+	return ""
+}
+
+func (m *MsgProposeEquivalence) GetTargetCourseCode() string {
+	if m != nil {
+		return m.TargetCourseCode
+	}
+	return ""
+}
+
+type MsgProposeEquivalenceResponse struct {
+}
+
+func (m *MsgProposeEquivalenceResponse) Reset()         { *m = MsgProposeEquivalenceResponse{} }
+func (m *MsgProposeEquivalenceResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgProposeEquivalenceResponse) ProtoMessage()    {}
+func (*MsgProposeEquivalenceResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9a05da18e86456bf, []int{9}
+}
+func (m *MsgProposeEquivalenceResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgProposeEquivalenceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgProposeEquivalenceResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgProposeEquivalenceResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgProposeEquivalenceResponse.Merge(m, src)
+}
+func (m *MsgProposeEquivalenceResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgProposeEquivalenceResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgProposeEquivalenceResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgProposeEquivalenceResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*MsgUpdateParams)(nil), "academictoken.curriculum.MsgUpdateParams")
 	proto.RegisterType((*MsgUpdateParamsResponse)(nil), "academictoken.curriculum.MsgUpdateParamsResponse")
 	proto.RegisterType((*MsgRegisterInstitution)(nil), "academictoken.curriculum.MsgRegisterInstitution")
 	proto.RegisterType((*MsgRegisterInstitutionResponse)(nil), "academictoken.curriculum.MsgRegisterInstitutionResponse")
+	proto.RegisterType((*MsgIssueCourseToken)(nil), "academictoken.curriculum.MsgIssueCourseToken")
+	proto.RegisterType((*MsgIssueCourseTokenResponse)(nil), "academictoken.curriculum.MsgIssueCourseTokenResponse")
+	proto.RegisterType((*MsgVerifyPrerequisites)(nil), "academictoken.curriculum.MsgVerifyPrerequisites")
+	proto.RegisterType((*MsgVerifyPrerequisitesResponse)(nil), "academictoken.curriculum.MsgVerifyPrerequisitesResponse")
+	proto.RegisterType((*MsgProposeEquivalence)(nil), "academictoken.curriculum.MsgProposeEquivalence")
+	proto.RegisterType((*MsgProposeEquivalenceResponse)(nil), "academictoken.curriculum.MsgProposeEquivalenceResponse")
 }
 
 func init() { proto.RegisterFile("academictoken/curriculum/tx.proto", fileDescriptor_9a05da18e86456bf) }
 
 var fileDescriptor_9a05da18e86456bf = []byte{
-	// 461 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x52, 0x41, 0x6b, 0x14, 0x31,
-	0x18, 0xdd, 0x58, 0xad, 0x6c, 0x2c, 0x88, 0xb1, 0xd8, 0xe9, 0x1c, 0xc6, 0x75, 0x41, 0xa8, 0x0b,
-	0x9d, 0xd8, 0x15, 0xa4, 0x16, 0x3c, 0x74, 0x3d, 0x79, 0x18, 0x28, 0x53, 0xbd, 0x78, 0x91, 0x34,
-	0x13, 0xd2, 0x60, 0x93, 0x0c, 0x49, 0x46, 0xda, 0x9b, 0x7a, 0xf4, 0xe4, 0xcf, 0xf0, 0xb8, 0x07,
-	0x7f, 0x44, 0x2f, 0x42, 0xf1, 0xe4, 0x49, 0x64, 0xf7, 0xb0, 0xff, 0x42, 0x64, 0x26, 0x33, 0xac,
-	0xbb, 0xee, 0x8a, 0xbd, 0xcc, 0xe4, 0xfb, 0xbe, 0xf7, 0xf2, 0xde, 0x4b, 0x02, 0xef, 0x11, 0x4a,
-	0x32, 0x26, 0x05, 0x75, 0xfa, 0x0d, 0x53, 0x98, 0x16, 0xc6, 0x08, 0x5a, 0x9c, 0x14, 0x12, 0xbb,
-	0xd3, 0x38, 0x37, 0xda, 0x69, 0x14, 0xcc, 0x40, 0xe2, 0x29, 0x24, 0xbc, 0x45, 0xa4, 0x50, 0x1a,
-	0x57, 0x5f, 0x0f, 0x0e, 0x37, 0xa8, 0xb6, 0x52, 0x5b, 0x2c, 0x2d, 0xc7, 0x6f, 0x77, 0xca, 0x5f,
-	0x3d, 0xd8, 0xf4, 0x83, 0xd7, 0x55, 0x85, 0x7d, 0x51, 0x8f, 0xd6, 0xb9, 0xe6, 0xda, 0xf7, 0xcb,
-	0x55, 0xdd, 0xbd, 0xbf, 0xd4, 0x59, 0x4e, 0x0c, 0x91, 0x35, 0xb9, 0xfb, 0x15, 0xc0, 0x9b, 0x89,
-	0xe5, 0x2f, 0xf3, 0x8c, 0x38, 0x76, 0x50, 0x4d, 0xd0, 0x63, 0xd8, 0x26, 0x85, 0x3b, 0xd6, 0x46,
-	0xb8, 0xb3, 0x00, 0x74, 0xc0, 0x56, 0x7b, 0x10, 0x7c, 0xfb, 0xb2, 0xbd, 0x5e, 0xab, 0xee, 0x67,
-	0x99, 0x61, 0xd6, 0x1e, 0x3a, 0x23, 0x14, 0x4f, 0xa7, 0x50, 0xf4, 0x0c, 0xae, 0xfa, 0xbd, 0x83,
-	0x2b, 0x1d, 0xb0, 0x75, 0xa3, 0xdf, 0x89, 0x97, 0x45, 0x8f, 0xbd, 0xd2, 0xa0, 0x7d, 0xfe, 0xe3,
-	0x6e, 0xeb, 0xf3, 0x64, 0xd8, 0x03, 0x69, 0x4d, 0xdd, 0x7b, 0xfa, 0x61, 0x32, 0xec, 0x4d, 0x37,
-	0xfd, 0x38, 0x19, 0xf6, 0x7a, 0xb3, 0x51, 0x4e, 0xff, 0x0c, 0x33, 0xe7, 0xbd, 0xbb, 0x09, 0x37,
-	0xe6, 0x5a, 0x29, 0xb3, 0xb9, 0x56, 0x96, 0x75, 0x15, 0xbc, 0x93, 0x58, 0x9e, 0x32, 0x2e, 0xac,
-	0x63, 0xe6, 0xb9, 0xb2, 0x4e, 0xb8, 0xc2, 0x09, 0xad, 0x50, 0x00, 0xaf, 0x53, 0xc3, 0x88, 0xd3,
-	0xc6, 0xc7, 0x4d, 0x9b, 0xb2, 0x9c, 0x10, 0x1f, 0xb7, 0xca, 0xd4, 0x4e, 0x9b, 0x12, 0x21, 0x78,
-	0x55, 0x11, 0xc9, 0x82, 0x95, 0xaa, 0x5d, 0xad, 0xf7, 0xd6, 0x4a, 0xef, 0x0d, 0xb7, 0xdb, 0x81,
-	0xd1, 0x62, 0xbd, 0xc6, 0x51, 0xff, 0x17, 0x80, 0x2b, 0x89, 0xe5, 0xe8, 0x04, 0xae, 0xcd, 0x5c,
-	0xc0, 0x83, 0xe5, 0x07, 0x37, 0x17, 0x2e, 0xdc, 0xf9, 0x6f, 0x68, 0xa3, 0x8a, 0xde, 0x03, 0x78,
-	0x7b, 0xd1, 0x29, 0x3c, 0xfc, 0xe7, 0x56, 0x0b, 0x18, 0xe1, 0xee, 0x65, 0x19, 0x8d, 0x87, 0xf0,
-	0xda, 0xbb, 0xf2, 0xd2, 0x07, 0xe9, 0xf9, 0x28, 0x02, 0x17, 0xa3, 0x08, 0xfc, 0x1c, 0x45, 0xe0,
-	0xd3, 0x38, 0x6a, 0x5d, 0x8c, 0xa3, 0xd6, 0xf7, 0x71, 0xd4, 0x7a, 0xb5, 0xcb, 0x85, 0x3b, 0x2e,
-	0x8e, 0x62, 0xaa, 0x25, 0x1e, 0x08, 0xa2, 0x28, 0xd9, 0xee, 0x3f, 0x49, 0x0e, 0x0f, 0xf0, 0x7e,
-	0xad, 0xf8, 0xe2, 0xef, 0xb7, 0xe0, 0xce, 0x72, 0x66, 0x8f, 0x56, 0xab, 0x87, 0xfd, 0xe8, 0x77,
-	0x00, 0x00, 0x00, 0xff, 0xff, 0x49, 0x7a, 0x51, 0x2a, 0x9b, 0x03, 0x00, 0x00,
+	// 769 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x55, 0xcf, 0x4f, 0x14, 0x49,
+	0x14, 0x9e, 0x86, 0x01, 0x76, 0x0a, 0xd8, 0x85, 0x82, 0x5d, 0x9a, 0xd9, 0xa5, 0x99, 0x9d, 0xa0,
+	0x19, 0x27, 0x32, 0x2d, 0x18, 0x15, 0x49, 0x3c, 0x30, 0xa3, 0x89, 0x1c, 0x26, 0x99, 0x34, 0xe8,
+	0xc1, 0x8b, 0x29, 0xaa, 0xcb, 0xa6, 0xe2, 0x74, 0x57, 0x53, 0x55, 0x4d, 0xc0, 0x83, 0x51, 0x8f,
+	0x9e, 0xfc, 0x33, 0x3c, 0x72, 0xf0, 0xee, 0xc9, 0x84, 0x8b, 0x09, 0xf1, 0xe4, 0xc9, 0x18, 0x38,
+	0xf0, 0x4f, 0x78, 0x30, 0xdd, 0xd5, 0xf3, 0xbb, 0x69, 0xe5, 0x02, 0xf5, 0xbe, 0xf7, 0xeb, 0xfb,
+	0xde, 0xbc, 0xea, 0x02, 0xff, 0x23, 0x8c, 0x6c, 0xe2, 0x52, 0x2c, 0xd9, 0x73, 0xe2, 0x99, 0x38,
+	0xe0, 0x9c, 0xe2, 0xa0, 0x19, 0xb8, 0xa6, 0x3c, 0xa8, 0xf8, 0x9c, 0x49, 0x06, 0xf5, 0x9e, 0x90,
+	0x4a, 0x27, 0x24, 0x3f, 0x8d, 0x5c, 0xea, 0x31, 0x33, 0xfa, 0xab, 0x82, 0xf3, 0x73, 0x98, 0x09,
+	0x97, 0x09, 0xd3, 0x15, 0x8e, 0xb9, 0xbf, 0x12, 0xfe, 0x8b, 0x1d, 0xf3, 0xca, 0xf1, 0x34, 0xb2,
+	0x4c, 0x65, 0xc4, 0xae, 0x59, 0x87, 0x39, 0x4c, 0xe1, 0xe1, 0x29, 0x46, 0xaf, 0x5c, 0xc8, 0xcc,
+	0x47, 0x1c, 0xb9, 0x71, 0x72, 0xf1, 0xb3, 0x06, 0xfe, 0xaa, 0x0b, 0xe7, 0x91, 0x6f, 0x23, 0x49,
+	0x1a, 0x91, 0x07, 0xde, 0x06, 0x39, 0x14, 0xc8, 0x5d, 0xc6, 0xa9, 0x3c, 0xd4, 0xb5, 0x82, 0x56,
+	0xca, 0x55, 0xf5, 0x2f, 0x1f, 0x96, 0x67, 0xe3, 0xae, 0x1b, 0xb6, 0xcd, 0x89, 0x10, 0x5b, 0x92,
+	0x53, 0xcf, 0xb1, 0x3a, 0xa1, 0xb0, 0x06, 0x46, 0x55, 0x6d, 0x7d, 0xa8, 0xa0, 0x95, 0xc6, 0x57,
+	0x0b, 0x95, 0x8b, 0xa4, 0x57, 0x54, 0xa7, 0x6a, 0xee, 0xf8, 0xdb, 0x62, 0xe6, 0xfd, 0xf9, 0x51,
+	0x59, 0xb3, 0xe2, 0xd4, 0xf5, 0x7b, 0x6f, 0xce, 0x8f, 0xca, 0x9d, 0xa2, 0x6f, 0xcf, 0x8f, 0xca,
+	0xe5, 0x5e, 0x29, 0x07, 0xdd, 0x62, 0xfa, 0xb8, 0x17, 0xe7, 0xc1, 0x5c, 0x1f, 0x64, 0x11, 0xe1,
+	0x33, 0x4f, 0x90, 0xa2, 0x07, 0xfe, 0xa9, 0x0b, 0xc7, 0x22, 0x0e, 0x15, 0x92, 0xf0, 0x4d, 0x4f,
+	0x48, 0x2a, 0x03, 0x49, 0x99, 0x07, 0x75, 0x30, 0x86, 0x39, 0x41, 0x92, 0x71, 0x25, 0xd7, 0x6a,
+	0x99, 0xa1, 0x07, 0x29, 0xb9, 0x91, 0xa6, 0x9c, 0xd5, 0x32, 0x21, 0x04, 0x59, 0x0f, 0xb9, 0x44,
+	0x1f, 0x8e, 0xe0, 0xe8, 0xbc, 0x3e, 0x11, 0x72, 0x6f, 0xe5, 0x16, 0x0b, 0xc0, 0x48, 0xee, 0xd7,
+	0x66, 0xf4, 0x69, 0x08, 0xcc, 0xd4, 0x85, 0xb3, 0x29, 0x44, 0x40, 0x6a, 0x2c, 0xe0, 0x82, 0x6c,
+	0x87, 0x0a, 0xd3, 0xf9, 0x44, 0x43, 0xd8, 0xb4, 0x5b, 0x7c, 0x62, 0x33, 0x89, 0x4f, 0x88, 0x61,
+	0x66, 0x13, 0x3d, 0xab, 0xb0, 0xf0, 0x0c, 0x0b, 0x60, 0x1c, 0x33, 0x4f, 0x12, 0x4f, 0x3e, 0x44,
+	0x62, 0x57, 0x1f, 0x89, 0x5c, 0xdd, 0x50, 0x18, 0x41, 0x3b, 0x64, 0xf5, 0x51, 0x15, 0xd1, 0x05,
+	0xc1, 0xab, 0xe0, 0x4f, 0xcc, 0x5c, 0xbf, 0x49, 0x42, 0xeb, 0x3e, 0x92, 0x44, 0x1f, 0x8b, 0x82,
+	0xfa, 0x50, 0x38, 0x0b, 0x46, 0x1c, 0x8e, 0x6c, 0xa2, 0xff, 0x51, 0xd0, 0x4a, 0x59, 0x4b, 0x19,
+	0x70, 0x09, 0x4c, 0xfa, 0x9c, 0x70, 0xb2, 0x17, 0x50, 0x41, 0x25, 0x11, 0x7a, 0xae, 0x30, 0x5c,
+	0xca, 0x59, 0xbd, 0x20, 0xfc, 0x0f, 0xe4, 0x38, 0xc1, 0xd4, 0xa7, 0xc4, 0x93, 0x3a, 0x88, 0xca,
+	0x77, 0x80, 0xbe, 0x49, 0x2f, 0x80, 0x7f, 0x13, 0xc6, 0xd8, 0x1e, 0xf3, 0x8b, 0xe8, 0x87, 0x7f,
+	0x4c, 0x38, 0x7d, 0x76, 0xd8, 0xe8, 0x69, 0x92, 0x3a, 0x68, 0x21, 0x03, 0x3b, 0x6c, 0x1e, 0x0f,
+	0x3a, 0x36, 0xa1, 0x01, 0x00, 0x8e, 0x9a, 0xd4, 0xc2, 0xd1, 0xaa, 0x71, 0x77, 0x21, 0x89, 0x4b,
+	0x90, 0xd0, 0xbb, 0xcd, 0xee, 0xa3, 0x06, 0xfe, 0xae, 0x0b, 0xa7, 0xc1, 0x99, 0xcf, 0x04, 0x79,
+	0xb0, 0x17, 0xd0, 0x7d, 0xd4, 0x24, 0x1e, 0x26, 0x29, 0xec, 0x96, 0xc0, 0xa4, 0x60, 0x01, 0xc7,
+	0x4a, 0x68, 0x7b, 0x19, 0x7a, 0x41, 0x78, 0x1d, 0x4c, 0x4b, 0xc4, 0x1d, 0x22, 0xbb, 0x76, 0x2f,
+	0x26, 0x3c, 0xe8, 0x80, 0x65, 0x30, 0xa5, 0xc0, 0x5a, 0x47, 0x9d, 0x5a, 0x9c, 0x01, 0xbc, 0x4f,
+	0xe3, 0x22, 0x58, 0x48, 0x14, 0xd0, 0x92, 0xb8, 0xfa, 0x23, 0x0b, 0x86, 0xeb, 0xc2, 0x81, 0x4d,
+	0x30, 0xd1, 0xf3, 0xa1, 0xb9, 0x76, 0xf1, 0x07, 0xa2, 0xef, 0x12, 0xe7, 0x57, 0x7e, 0x3b, 0xb4,
+	0xd5, 0x15, 0xbe, 0xd6, 0xc0, 0x4c, 0xd2, 0x6d, 0xbf, 0x91, 0x5a, 0x2a, 0x21, 0x23, 0xbf, 0x76,
+	0xd9, 0x8c, 0x36, 0x87, 0x03, 0x30, 0x35, 0x70, 0xbb, 0x97, 0x53, 0xab, 0xf5, 0x87, 0xe7, 0x6f,
+	0x5d, 0x2a, 0xbc, 0x47, 0x7d, 0xd2, 0xca, 0xa7, 0xab, 0x4f, 0xc8, 0xf8, 0x85, 0xfa, 0x94, 0xd5,
+	0x86, 0x2f, 0x01, 0x4c, 0x58, 0x6b, 0x33, 0xb5, 0xde, 0x60, 0x42, 0xfe, 0xce, 0x25, 0x13, 0x5a,
+	0xfd, 0xf3, 0x23, 0xaf, 0xc2, 0xa7, 0xa5, 0x6a, 0x1d, 0x9f, 0x1a, 0xda, 0xc9, 0xa9, 0xa1, 0x7d,
+	0x3f, 0x35, 0xb4, 0x77, 0x67, 0x46, 0xe6, 0xe4, 0xcc, 0xc8, 0x7c, 0x3d, 0x33, 0x32, 0x4f, 0xd6,
+	0x1c, 0x2a, 0x77, 0x83, 0x9d, 0x0a, 0x66, 0xae, 0x59, 0xa5, 0xc8, 0xc3, 0x68, 0x79, 0xf5, 0x6e,
+	0x7d, 0xab, 0x61, 0x6e, 0xc4, 0x0d, 0xb7, 0x07, 0x5f, 0x1c, 0x79, 0xe8, 0x13, 0xb1, 0x33, 0x1a,
+	0x3d, 0x9f, 0x37, 0x7f, 0x06, 0x00, 0x00, 0xff, 0xff, 0xbb, 0x3f, 0x44, 0x9f, 0x01, 0x08, 0x00,
+	0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -279,6 +657,9 @@ type MsgClient interface {
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(ctx context.Context, in *MsgUpdateParams, opts ...grpc.CallOption) (*MsgUpdateParamsResponse, error)
 	RegisterInstitution(ctx context.Context, in *MsgRegisterInstitution, opts ...grpc.CallOption) (*MsgRegisterInstitutionResponse, error)
+	IssueCourseToken(ctx context.Context, in *MsgIssueCourseToken, opts ...grpc.CallOption) (*MsgIssueCourseTokenResponse, error)
+	VerifyPrerequisites(ctx context.Context, in *MsgVerifyPrerequisites, opts ...grpc.CallOption) (*MsgVerifyPrerequisitesResponse, error)
+	ProposeEquivalence(ctx context.Context, in *MsgProposeEquivalence, opts ...grpc.CallOption) (*MsgProposeEquivalenceResponse, error)
 }
 
 type msgClient struct {
@@ -307,12 +688,42 @@ func (c *msgClient) RegisterInstitution(ctx context.Context, in *MsgRegisterInst
 	return out, nil
 }
 
+func (c *msgClient) IssueCourseToken(ctx context.Context, in *MsgIssueCourseToken, opts ...grpc.CallOption) (*MsgIssueCourseTokenResponse, error) {
+	out := new(MsgIssueCourseTokenResponse)
+	err := c.cc.Invoke(ctx, "/academictoken.curriculum.Msg/IssueCourseToken", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) VerifyPrerequisites(ctx context.Context, in *MsgVerifyPrerequisites, opts ...grpc.CallOption) (*MsgVerifyPrerequisitesResponse, error) {
+	out := new(MsgVerifyPrerequisitesResponse)
+	err := c.cc.Invoke(ctx, "/academictoken.curriculum.Msg/VerifyPrerequisites", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) ProposeEquivalence(ctx context.Context, in *MsgProposeEquivalence, opts ...grpc.CallOption) (*MsgProposeEquivalenceResponse, error) {
+	out := new(MsgProposeEquivalenceResponse)
+	err := c.cc.Invoke(ctx, "/academictoken.curriculum.Msg/ProposeEquivalence", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
 	RegisterInstitution(context.Context, *MsgRegisterInstitution) (*MsgRegisterInstitutionResponse, error)
+	IssueCourseToken(context.Context, *MsgIssueCourseToken) (*MsgIssueCourseTokenResponse, error)
+	VerifyPrerequisites(context.Context, *MsgVerifyPrerequisites) (*MsgVerifyPrerequisitesResponse, error)
+	ProposeEquivalence(context.Context, *MsgProposeEquivalence) (*MsgProposeEquivalenceResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
@@ -324,6 +735,15 @@ func (*UnimplementedMsgServer) UpdateParams(ctx context.Context, req *MsgUpdateP
 }
 func (*UnimplementedMsgServer) RegisterInstitution(ctx context.Context, req *MsgRegisterInstitution) (*MsgRegisterInstitutionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterInstitution not implemented")
+}
+func (*UnimplementedMsgServer) IssueCourseToken(ctx context.Context, req *MsgIssueCourseToken) (*MsgIssueCourseTokenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method IssueCourseToken not implemented")
+}
+func (*UnimplementedMsgServer) VerifyPrerequisites(ctx context.Context, req *MsgVerifyPrerequisites) (*MsgVerifyPrerequisitesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method VerifyPrerequisites not implemented")
+}
+func (*UnimplementedMsgServer) ProposeEquivalence(ctx context.Context, req *MsgProposeEquivalence) (*MsgProposeEquivalenceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProposeEquivalence not implemented")
 }
 
 func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
@@ -366,6 +786,60 @@ func _Msg_RegisterInstitution_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_IssueCourseToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgIssueCourseToken)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).IssueCourseToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/academictoken.curriculum.Msg/IssueCourseToken",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).IssueCourseToken(ctx, req.(*MsgIssueCourseToken))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_VerifyPrerequisites_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgVerifyPrerequisites)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).VerifyPrerequisites(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/academictoken.curriculum.Msg/VerifyPrerequisites",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).VerifyPrerequisites(ctx, req.(*MsgVerifyPrerequisites))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_ProposeEquivalence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgProposeEquivalence)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).ProposeEquivalence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/academictoken.curriculum.Msg/ProposeEquivalence",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).ProposeEquivalence(ctx, req.(*MsgProposeEquivalence))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var Msg_serviceDesc = _Msg_serviceDesc
 var _Msg_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "academictoken.curriculum.Msg",
@@ -378,6 +852,18 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RegisterInstitution",
 			Handler:    _Msg_RegisterInstitution_Handler,
+		},
+		{
+			MethodName: "IssueCourseToken",
+			Handler:    _Msg_IssueCourseToken_Handler,
+		},
+		{
+			MethodName: "VerifyPrerequisites",
+			Handler:    _Msg_VerifyPrerequisites_Handler,
+		},
+		{
+			MethodName: "ProposeEquivalence",
+			Handler:    _Msg_ProposeEquivalence_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -514,6 +1000,263 @@ func (m *MsgRegisterInstitutionResponse) MarshalToSizedBuffer(dAtA []byte) (int,
 	return len(dAtA) - i, nil
 }
 
+func (m *MsgIssueCourseToken) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgIssueCourseToken) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgIssueCourseToken) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Recipient) > 0 {
+		i -= len(m.Recipient)
+		copy(dAtA[i:], m.Recipient)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Recipient)))
+		i--
+		dAtA[i] = 0x52
+	}
+	if len(m.Prerequisites) > 0 {
+		for iNdEx := len(m.Prerequisites) - 1; iNdEx >= 0; iNdEx-- {
+			i -= len(m.Prerequisites[iNdEx])
+			copy(dAtA[i:], m.Prerequisites[iNdEx])
+			i = encodeVarintTx(dAtA, i, uint64(len(m.Prerequisites[iNdEx])))
+			i--
+			dAtA[i] = 0x4a
+		}
+	}
+	if m.Grade != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Grade))
+		i--
+		dAtA[i] = 0x40
+	}
+	if len(m.CompletionDate) > 0 {
+		i -= len(m.CompletionDate)
+		copy(dAtA[i:], m.CompletionDate)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.CompletionDate)))
+		i--
+		dAtA[i] = 0x3a
+	}
+	if len(m.Institution) > 0 {
+		i -= len(m.Institution)
+		copy(dAtA[i:], m.Institution)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Institution)))
+		i--
+		dAtA[i] = 0x32
+	}
+	if len(m.ContentHash) > 0 {
+		i -= len(m.ContentHash)
+		copy(dAtA[i:], m.ContentHash)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.ContentHash)))
+		i--
+		dAtA[i] = 0x2a
+	}
+	if len(m.Code) > 0 {
+		i -= len(m.Code)
+		copy(dAtA[i:], m.Code)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Code)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.Name) > 0 {
+		i -= len(m.Name)
+		copy(dAtA[i:], m.Name)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Name)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.TokenId) > 0 {
+		i -= len(m.TokenId)
+		copy(dAtA[i:], m.TokenId)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.TokenId)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgIssueCourseTokenResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgIssueCourseTokenResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgIssueCourseTokenResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgVerifyPrerequisites) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgVerifyPrerequisites) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgVerifyPrerequisites) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.CourseCode) > 0 {
+		i -= len(m.CourseCode)
+		copy(dAtA[i:], m.CourseCode)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.CourseCode)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Student) > 0 {
+		i -= len(m.Student)
+		copy(dAtA[i:], m.Student)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Student)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgVerifyPrerequisitesResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgVerifyPrerequisitesResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgVerifyPrerequisitesResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgProposeEquivalence) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgProposeEquivalence) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgProposeEquivalence) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.TargetCourseCode) > 0 {
+		i -= len(m.TargetCourseCode)
+		copy(dAtA[i:], m.TargetCourseCode)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.TargetCourseCode)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.TargetInstitution) > 0 {
+		i -= len(m.TargetInstitution)
+		copy(dAtA[i:], m.TargetInstitution)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.TargetInstitution)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.SourceTokenId) > 0 {
+		i -= len(m.SourceTokenId)
+		copy(dAtA[i:], m.SourceTokenId)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.SourceTokenId)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgProposeEquivalenceResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgProposeEquivalenceResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgProposeEquivalenceResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintTx(dAtA []byte, offset int, v uint64) int {
 	offset -= sovTx(v)
 	base := offset
@@ -571,6 +1314,129 @@ func (m *MsgRegisterInstitution) Size() (n int) {
 }
 
 func (m *MsgRegisterInstitutionResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgIssueCourseToken) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.TokenId)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Name)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Code)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.ContentHash)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Institution)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.CompletionDate)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	if m.Grade != 0 {
+		n += 1 + sovTx(uint64(m.Grade))
+	}
+	if len(m.Prerequisites) > 0 {
+		for _, s := range m.Prerequisites {
+			l = len(s)
+			n += 1 + l + sovTx(uint64(l))
+		}
+	}
+	l = len(m.Recipient)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgIssueCourseTokenResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgVerifyPrerequisites) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Student)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.CourseCode)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgVerifyPrerequisitesResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgProposeEquivalence) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.SourceTokenId)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.TargetInstitution)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.TargetCourseCode)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgProposeEquivalenceResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -923,6 +1789,837 @@ func (m *MsgRegisterInstitutionResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgRegisterInstitutionResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgIssueCourseToken) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgIssueCourseToken: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgIssueCourseToken: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field TokenId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.TokenId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Name = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Code", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Code = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 5:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ContentHash", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.ContentHash = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 6:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Institution", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Institution = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 7:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CompletionDate", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.CompletionDate = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 8:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Grade", wireType)
+			}
+			m.Grade = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Grade |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 9:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Prerequisites", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Prerequisites = append(m.Prerequisites, string(dAtA[iNdEx:postIndex]))
+			iNdEx = postIndex
+		case 10:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Recipient", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Recipient = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgIssueCourseTokenResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgIssueCourseTokenResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgIssueCourseTokenResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgVerifyPrerequisites) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgVerifyPrerequisites: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgVerifyPrerequisites: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Student", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Student = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CourseCode", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.CourseCode = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgVerifyPrerequisitesResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgVerifyPrerequisitesResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgVerifyPrerequisitesResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgProposeEquivalence) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgProposeEquivalence: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgProposeEquivalence: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field SourceTokenId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.SourceTokenId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field TargetInstitution", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.TargetInstitution = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field TargetCourseCode", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.TargetCourseCode = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgProposeEquivalenceResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgProposeEquivalenceResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgProposeEquivalenceResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:

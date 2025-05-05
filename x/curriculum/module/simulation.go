@@ -27,6 +27,18 @@ const (
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgRegisterInstitution int = 100
 
+	opWeightMsgIssueCourseToken = "op_weight_msg_issue_course_token"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgIssueCourseToken int = 100
+
+	opWeightMsgVerifyPrerequisites = "op_weight_msg_verify_prerequisites"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgVerifyPrerequisites int = 100
+
+	opWeightMsgProposeEquivalence = "op_weight_msg_propose_equivalence"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgProposeEquivalence int = 100
+
 	// this line is used by starport scaffolding # simapp/module/const
 )
 
@@ -61,6 +73,39 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 		curriculumsimulation.SimulateMsgRegisterInstitution(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
 
+	var weightMsgIssueCourseToken int
+	simState.AppParams.GetOrGenerate(opWeightMsgIssueCourseToken, &weightMsgIssueCourseToken, nil,
+		func(_ *rand.Rand) {
+			weightMsgIssueCourseToken = defaultWeightMsgIssueCourseToken
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgIssueCourseToken,
+		curriculumsimulation.SimulateMsgIssueCourseToken(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgVerifyPrerequisites int
+	simState.AppParams.GetOrGenerate(opWeightMsgVerifyPrerequisites, &weightMsgVerifyPrerequisites, nil,
+		func(_ *rand.Rand) {
+			weightMsgVerifyPrerequisites = defaultWeightMsgVerifyPrerequisites
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgVerifyPrerequisites,
+		curriculumsimulation.SimulateMsgVerifyPrerequisites(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgProposeEquivalence int
+	simState.AppParams.GetOrGenerate(opWeightMsgProposeEquivalence, &weightMsgProposeEquivalence, nil,
+		func(_ *rand.Rand) {
+			weightMsgProposeEquivalence = defaultWeightMsgProposeEquivalence
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgProposeEquivalence,
+		curriculumsimulation.SimulateMsgProposeEquivalence(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
 	// this line is used by starport scaffolding # simapp/module/operation
 
 	return operations
@@ -74,6 +119,30 @@ func (am AppModule) ProposalMsgs(simState module.SimulationState) []simtypes.Wei
 			defaultWeightMsgRegisterInstitution,
 			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
 				curriculumsimulation.SimulateMsgRegisterInstitution(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgIssueCourseToken,
+			defaultWeightMsgIssueCourseToken,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				curriculumsimulation.SimulateMsgIssueCourseToken(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgVerifyPrerequisites,
+			defaultWeightMsgVerifyPrerequisites,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				curriculumsimulation.SimulateMsgVerifyPrerequisites(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgProposeEquivalence,
+			defaultWeightMsgProposeEquivalence,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				curriculumsimulation.SimulateMsgProposeEquivalence(am.accountKeeper, am.bankKeeper, am.keeper)
 				return nil
 			},
 		),

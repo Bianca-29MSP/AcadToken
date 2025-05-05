@@ -115,9 +115,353 @@ func (m *QueryParamsResponse) GetParams() Params {
 	return Params{}
 }
 
+type QueryGetAcademicTreeRequest struct {
+	Student string `protobuf:"bytes,1,opt,name=student,proto3" json:"student,omitempty"`
+}
+
+func (m *QueryGetAcademicTreeRequest) Reset()         { *m = QueryGetAcademicTreeRequest{} }
+func (m *QueryGetAcademicTreeRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryGetAcademicTreeRequest) ProtoMessage()    {}
+func (*QueryGetAcademicTreeRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e9e5b1a08015a0dc, []int{2}
+}
+func (m *QueryGetAcademicTreeRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetAcademicTreeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetAcademicTreeRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetAcademicTreeRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetAcademicTreeRequest.Merge(m, src)
+}
+func (m *QueryGetAcademicTreeRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetAcademicTreeRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetAcademicTreeRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetAcademicTreeRequest proto.InternalMessageInfo
+
+func (m *QueryGetAcademicTreeRequest) GetStudent() string {
+	if m != nil {
+		return m.Student
+	}
+	return ""
+}
+
+type QueryGetAcademicTreeResponse struct {
+}
+
+func (m *QueryGetAcademicTreeResponse) Reset()         { *m = QueryGetAcademicTreeResponse{} }
+func (m *QueryGetAcademicTreeResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryGetAcademicTreeResponse) ProtoMessage()    {}
+func (*QueryGetAcademicTreeResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e9e5b1a08015a0dc, []int{3}
+}
+func (m *QueryGetAcademicTreeResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryGetAcademicTreeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryGetAcademicTreeResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryGetAcademicTreeResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryGetAcademicTreeResponse.Merge(m, src)
+}
+func (m *QueryGetAcademicTreeResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryGetAcademicTreeResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryGetAcademicTreeResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryGetAcademicTreeResponse proto.InternalMessageInfo
+
+type QueryAvailableCoursesRequest struct {
+	Student string `protobuf:"bytes,1,opt,name=student,proto3" json:"student,omitempty"`
+}
+
+func (m *QueryAvailableCoursesRequest) Reset()         { *m = QueryAvailableCoursesRequest{} }
+func (m *QueryAvailableCoursesRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryAvailableCoursesRequest) ProtoMessage()    {}
+func (*QueryAvailableCoursesRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e9e5b1a08015a0dc, []int{4}
+}
+func (m *QueryAvailableCoursesRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryAvailableCoursesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryAvailableCoursesRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryAvailableCoursesRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryAvailableCoursesRequest.Merge(m, src)
+}
+func (m *QueryAvailableCoursesRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryAvailableCoursesRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryAvailableCoursesRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryAvailableCoursesRequest proto.InternalMessageInfo
+
+func (m *QueryAvailableCoursesRequest) GetStudent() string {
+	if m != nil {
+		return m.Student
+	}
+	return ""
+}
+
+type QueryAvailableCoursesResponse struct {
+}
+
+func (m *QueryAvailableCoursesResponse) Reset()         { *m = QueryAvailableCoursesResponse{} }
+func (m *QueryAvailableCoursesResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryAvailableCoursesResponse) ProtoMessage()    {}
+func (*QueryAvailableCoursesResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e9e5b1a08015a0dc, []int{5}
+}
+func (m *QueryAvailableCoursesResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryAvailableCoursesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryAvailableCoursesResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryAvailableCoursesResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryAvailableCoursesResponse.Merge(m, src)
+}
+func (m *QueryAvailableCoursesResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryAvailableCoursesResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryAvailableCoursesResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryAvailableCoursesResponse proto.InternalMessageInfo
+
+type QueryCheckEquivalenceRequest struct {
+	TokenId     string `protobuf:"bytes,1,opt,name=tokenId,proto3" json:"tokenId,omitempty"`
+	Institution string `protobuf:"bytes,2,opt,name=institution,proto3" json:"institution,omitempty"`
+}
+
+func (m *QueryCheckEquivalenceRequest) Reset()         { *m = QueryCheckEquivalenceRequest{} }
+func (m *QueryCheckEquivalenceRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryCheckEquivalenceRequest) ProtoMessage()    {}
+func (*QueryCheckEquivalenceRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e9e5b1a08015a0dc, []int{6}
+}
+func (m *QueryCheckEquivalenceRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryCheckEquivalenceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryCheckEquivalenceRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryCheckEquivalenceRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryCheckEquivalenceRequest.Merge(m, src)
+}
+func (m *QueryCheckEquivalenceRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryCheckEquivalenceRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryCheckEquivalenceRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryCheckEquivalenceRequest proto.InternalMessageInfo
+
+func (m *QueryCheckEquivalenceRequest) GetTokenId() string {
+	if m != nil {
+		return m.TokenId
+	}
+	return ""
+}
+
+func (m *QueryCheckEquivalenceRequest) GetInstitution() string {
+	if m != nil {
+		return m.Institution
+	}
+	return ""
+}
+
+type QueryCheckEquivalenceResponse struct {
+}
+
+func (m *QueryCheckEquivalenceResponse) Reset()         { *m = QueryCheckEquivalenceResponse{} }
+func (m *QueryCheckEquivalenceResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryCheckEquivalenceResponse) ProtoMessage()    {}
+func (*QueryCheckEquivalenceResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e9e5b1a08015a0dc, []int{7}
+}
+func (m *QueryCheckEquivalenceResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryCheckEquivalenceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryCheckEquivalenceResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryCheckEquivalenceResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryCheckEquivalenceResponse.Merge(m, src)
+}
+func (m *QueryCheckEquivalenceResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryCheckEquivalenceResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryCheckEquivalenceResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryCheckEquivalenceResponse proto.InternalMessageInfo
+
+type QueryCriticalCoursesRequest struct {
+	Institution string `protobuf:"bytes,1,opt,name=institution,proto3" json:"institution,omitempty"`
+	Threshold   uint64 `protobuf:"varint,2,opt,name=threshold,proto3" json:"threshold,omitempty"`
+}
+
+func (m *QueryCriticalCoursesRequest) Reset()         { *m = QueryCriticalCoursesRequest{} }
+func (m *QueryCriticalCoursesRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryCriticalCoursesRequest) ProtoMessage()    {}
+func (*QueryCriticalCoursesRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e9e5b1a08015a0dc, []int{8}
+}
+func (m *QueryCriticalCoursesRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryCriticalCoursesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryCriticalCoursesRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryCriticalCoursesRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryCriticalCoursesRequest.Merge(m, src)
+}
+func (m *QueryCriticalCoursesRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryCriticalCoursesRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryCriticalCoursesRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryCriticalCoursesRequest proto.InternalMessageInfo
+
+func (m *QueryCriticalCoursesRequest) GetInstitution() string {
+	if m != nil {
+		return m.Institution
+	}
+	return ""
+}
+
+func (m *QueryCriticalCoursesRequest) GetThreshold() uint64 {
+	if m != nil {
+		return m.Threshold
+	}
+	return 0
+}
+
+type QueryCriticalCoursesResponse struct {
+}
+
+func (m *QueryCriticalCoursesResponse) Reset()         { *m = QueryCriticalCoursesResponse{} }
+func (m *QueryCriticalCoursesResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryCriticalCoursesResponse) ProtoMessage()    {}
+func (*QueryCriticalCoursesResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e9e5b1a08015a0dc, []int{9}
+}
+func (m *QueryCriticalCoursesResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryCriticalCoursesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryCriticalCoursesResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryCriticalCoursesResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryCriticalCoursesResponse.Merge(m, src)
+}
+func (m *QueryCriticalCoursesResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryCriticalCoursesResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryCriticalCoursesResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryCriticalCoursesResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*QueryParamsRequest)(nil), "academictoken.curriculum.QueryParamsRequest")
 	proto.RegisterType((*QueryParamsResponse)(nil), "academictoken.curriculum.QueryParamsResponse")
+	proto.RegisterType((*QueryGetAcademicTreeRequest)(nil), "academictoken.curriculum.QueryGetAcademicTreeRequest")
+	proto.RegisterType((*QueryGetAcademicTreeResponse)(nil), "academictoken.curriculum.QueryGetAcademicTreeResponse")
+	proto.RegisterType((*QueryAvailableCoursesRequest)(nil), "academictoken.curriculum.QueryAvailableCoursesRequest")
+	proto.RegisterType((*QueryAvailableCoursesResponse)(nil), "academictoken.curriculum.QueryAvailableCoursesResponse")
+	proto.RegisterType((*QueryCheckEquivalenceRequest)(nil), "academictoken.curriculum.QueryCheckEquivalenceRequest")
+	proto.RegisterType((*QueryCheckEquivalenceResponse)(nil), "academictoken.curriculum.QueryCheckEquivalenceResponse")
+	proto.RegisterType((*QueryCriticalCoursesRequest)(nil), "academictoken.curriculum.QueryCriticalCoursesRequest")
+	proto.RegisterType((*QueryCriticalCoursesResponse)(nil), "academictoken.curriculum.QueryCriticalCoursesResponse")
 }
 
 func init() {
@@ -125,29 +469,48 @@ func init() {
 }
 
 var fileDescriptor_e9e5b1a08015a0dc = []byte{
-	// 338 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x90, 0xc1, 0x4a, 0xf3, 0x40,
-	0x10, 0xc7, 0xb3, 0x1f, 0x7c, 0x05, 0xe3, 0xc9, 0xd8, 0x43, 0x29, 0x12, 0x4b, 0x51, 0x90, 0x62,
-	0x33, 0xb4, 0x22, 0xe8, 0xd1, 0x7a, 0x16, 0x6a, 0xf5, 0xd4, 0xdb, 0x64, 0x5d, 0xe2, 0x62, 0xb3,
-	0x93, 0x66, 0x37, 0x62, 0xaf, 0x3e, 0x81, 0xe0, 0xd5, 0xb3, 0x78, 0xf4, 0x31, 0x7a, 0x2c, 0x78,
-	0xf1, 0x24, 0xd2, 0x0a, 0xbe, 0x86, 0x34, 0x09, 0x68, 0xd1, 0x88, 0x97, 0x65, 0x98, 0xfd, 0xcd,
-	0x6f, 0xff, 0x3b, 0xf6, 0x06, 0x72, 0x3c, 0x13, 0xa1, 0xe4, 0x86, 0x2e, 0x84, 0x02, 0x9e, 0xc4,
-	0xb1, 0xe4, 0xc9, 0x20, 0x09, 0x61, 0x98, 0x88, 0x78, 0xe4, 0x45, 0x31, 0x19, 0x72, 0x2a, 0x0b,
-	0x94, 0xf7, 0x49, 0x55, 0x57, 0x30, 0x94, 0x8a, 0x20, 0x3d, 0x33, 0xb8, 0x5a, 0x0e, 0x28, 0xa0,
-	0xb4, 0x84, 0x79, 0x95, 0x77, 0xd7, 0x02, 0xa2, 0x60, 0x20, 0x00, 0x23, 0x09, 0xa8, 0x14, 0x19,
-	0x34, 0x92, 0x94, 0xce, 0x6f, 0x1b, 0x9c, 0x74, 0x48, 0x1a, 0x7c, 0xd4, 0x22, 0x7b, 0x19, 0x2e,
-	0x5b, 0xbe, 0x30, 0xd8, 0x82, 0x08, 0x03, 0xa9, 0x52, 0x38, 0x67, 0x37, 0x0b, 0x23, 0x47, 0x18,
-	0x63, 0x98, 0x2b, 0xeb, 0x65, 0xdb, 0x39, 0x9e, 0x8b, 0xba, 0x69, 0xb3, 0x27, 0x86, 0x89, 0xd0,
-	0xa6, 0xde, 0xb7, 0x57, 0x17, 0xba, 0x3a, 0x22, 0xa5, 0x85, 0x73, 0x68, 0x97, 0xb2, 0xe1, 0x0a,
-	0xab, 0xb1, 0xad, 0xe5, 0x76, 0xcd, 0x2b, 0xfa, 0xb1, 0x97, 0x4d, 0x76, 0x96, 0xc6, 0x2f, 0xeb,
-	0xd6, 0xc3, 0xfb, 0x63, 0x83, 0xf5, 0xf2, 0xd1, 0xf6, 0x3d, 0xb3, 0xff, 0xa7, 0x72, 0xe7, 0x8e,
-	0xd9, 0xa5, 0x8c, 0x73, 0xb6, 0x8b, 0x4d, 0xdf, 0xe3, 0x55, 0x9b, 0x7f, 0xa4, 0xb3, 0xd8, 0xf5,
-	0xdd, 0xeb, 0xa7, 0xb7, 0xdb, 0x7f, 0xe0, 0x34, 0xa1, 0x23, 0x51, 0x71, 0x6c, 0xb6, 0xf7, 0x8f,
-	0x4e, 0xba, 0x70, 0x90, 0x3b, 0x4e, 0x7f, 0x5e, 0x50, 0xa7, 0x37, 0x9e, 0xba, 0x6c, 0x32, 0x75,
-	0xd9, 0xeb, 0xd4, 0x65, 0x37, 0x33, 0xd7, 0x9a, 0xcc, 0x5c, 0xeb, 0x79, 0xe6, 0x5a, 0xfd, 0xbd,
-	0x40, 0x9a, 0xf3, 0xc4, 0xf7, 0x38, 0x85, 0xbf, 0x29, 0xaf, 0xbe, 0x4a, 0xcd, 0x28, 0x12, 0xda,
-	0x2f, 0xa5, 0x5b, 0xdf, 0xf9, 0x08, 0x00, 0x00, 0xff, 0xff, 0xbb, 0x63, 0x1c, 0xf6, 0x51, 0x02,
-	0x00, 0x00,
+	// 645 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x55, 0x41, 0x6b, 0x13, 0x41,
+	0x14, 0xce, 0x14, 0xad, 0x76, 0x7a, 0x68, 0x1d, 0x7b, 0x08, 0xb1, 0x6e, 0x4b, 0x50, 0x90, 0x62,
+	0x33, 0xb4, 0x52, 0x5b, 0x8f, 0x4d, 0x14, 0x51, 0x10, 0xda, 0xad, 0x07, 0x2d, 0x48, 0x98, 0x4c,
+	0x86, 0xcd, 0xd0, 0xdd, 0x9d, 0xed, 0xce, 0x6c, 0xb1, 0x84, 0x5c, 0x04, 0xef, 0x82, 0x57, 0x7f,
+	0x80, 0x47, 0x7f, 0x46, 0x0f, 0x82, 0x05, 0x2f, 0x82, 0x28, 0xd2, 0x08, 0xfe, 0x0d, 0xc9, 0xec,
+	0x24, 0xd9, 0x6e, 0xb2, 0x6e, 0xea, 0x25, 0xec, 0xbe, 0x79, 0xef, 0xfb, 0xde, 0x37, 0xef, 0x7b,
+	0x59, 0x78, 0x8b, 0x50, 0xd2, 0x64, 0x1e, 0xa7, 0x4a, 0x1c, 0x30, 0x1f, 0xd3, 0x28, 0x0c, 0x39,
+	0x8d, 0xdc, 0xc8, 0xc3, 0x87, 0x11, 0x0b, 0x8f, 0x2b, 0x41, 0x28, 0x94, 0x40, 0xc5, 0x73, 0x59,
+	0x95, 0x61, 0x56, 0xe9, 0x1a, 0xf1, 0xb8, 0x2f, 0xb0, 0xfe, 0x8d, 0x93, 0x4b, 0x0b, 0x8e, 0x70,
+	0x84, 0x7e, 0xc4, 0xbd, 0x27, 0x13, 0x5d, 0x74, 0x84, 0x70, 0x5c, 0x86, 0x49, 0xc0, 0x31, 0xf1,
+	0x7d, 0xa1, 0x88, 0xe2, 0xc2, 0x97, 0xe6, 0x74, 0x85, 0x0a, 0xe9, 0x09, 0x89, 0x1b, 0x44, 0xb2,
+	0x98, 0x19, 0x1f, 0xad, 0x35, 0x98, 0x22, 0x6b, 0x38, 0x20, 0x0e, 0xf7, 0x75, 0xb2, 0xc9, 0xbd,
+	0x9d, 0xd9, 0x72, 0x40, 0x42, 0xe2, 0x19, 0xc8, 0xf2, 0x02, 0x44, 0xbb, 0x3d, 0xa0, 0x1d, 0x1d,
+	0xb4, 0xd9, 0x61, 0xc4, 0xa4, 0x2a, 0xef, 0xc3, 0xeb, 0xe7, 0xa2, 0x32, 0x10, 0xbe, 0x64, 0xa8,
+	0x06, 0xa7, 0xe3, 0xe2, 0x22, 0x58, 0x06, 0x77, 0x66, 0xd7, 0x97, 0x2b, 0x59, 0x8a, 0x2b, 0x71,
+	0x65, 0x75, 0xe6, 0xe4, 0xe7, 0x52, 0xe1, 0xe3, 0x9f, 0x4f, 0x2b, 0xc0, 0x36, 0xa5, 0xe5, 0x4d,
+	0x78, 0x43, 0x63, 0x3f, 0x66, 0x6a, 0xdb, 0x54, 0x3f, 0x0f, 0x19, 0x33, 0xd4, 0xa8, 0x08, 0xaf,
+	0x48, 0x15, 0x35, 0x99, 0xaf, 0x34, 0xc9, 0x8c, 0xdd, 0x7f, 0x2d, 0x5b, 0x70, 0x71, 0x7c, 0x61,
+	0xdc, 0x5d, 0x79, 0xcb, 0x9c, 0x6f, 0x1f, 0x11, 0xee, 0x92, 0x86, 0xcb, 0x6a, 0x22, 0x0a, 0x25,
+	0x93, 0xf9, 0xc8, 0x4b, 0xf0, 0x66, 0x46, 0xa5, 0x81, 0xde, 0x37, 0xd0, 0xb5, 0x16, 0xa3, 0x07,
+	0x8f, 0x0e, 0x23, 0x7e, 0x44, 0x5c, 0xe6, 0xd3, 0x64, 0xd3, 0xfa, 0x06, 0x9e, 0x34, 0xfb, 0xd0,
+	0xe6, 0x15, 0x2d, 0xc3, 0x59, 0xee, 0x4b, 0xc5, 0x55, 0xd4, 0x9b, 0x4d, 0x71, 0x4a, 0x9f, 0x26,
+	0x43, 0x03, 0xf2, 0x51, 0x6c, 0x43, 0xfe, 0xca, 0x5c, 0x58, 0x2d, 0xe4, 0x8a, 0x53, 0xe2, 0xa6,
+	0x64, 0xa5, 0x18, 0xc0, 0x08, 0x03, 0x5a, 0x84, 0x33, 0xaa, 0x15, 0x32, 0xd9, 0x12, 0x6e, 0x53,
+	0x77, 0x70, 0xc9, 0x1e, 0x06, 0x06, 0xd7, 0x3a, 0x02, 0x1f, 0xd3, 0xaf, 0xbf, 0xbd, 0x0a, 0x2f,
+	0xeb, 0x04, 0xf4, 0x01, 0xc0, 0xe9, 0x78, 0xae, 0xe8, 0x6e, 0xf6, 0xe4, 0x47, 0xed, 0x54, 0x5a,
+	0x9d, 0x30, 0xdb, 0x08, 0xde, 0x78, 0xf3, 0xf5, 0xf7, 0xfb, 0x29, 0x8c, 0x56, 0x71, 0x95, 0x13,
+	0x9f, 0x92, 0xd5, 0xf5, 0x07, 0xcf, 0xf6, 0x76, 0xf0, 0x60, 0xe8, 0xe3, 0x0d, 0x8d, 0x3e, 0x03,
+	0x38, 0x97, 0xf2, 0x06, 0xda, 0xc8, 0x61, 0x1e, 0x6f, 0xc2, 0xd2, 0xfd, 0x8b, 0x96, 0x99, 0xce,
+	0x9f, 0xea, 0xce, 0x1f, 0xa2, 0xea, 0x84, 0x9d, 0x3b, 0x4c, 0xd5, 0xfb, 0x4c, 0x75, 0x15, 0x32,
+	0x86, 0xdb, 0xc6, 0x93, 0x1d, 0xf4, 0x05, 0xc0, 0xf9, 0xb4, 0x21, 0x51, 0x5e, 0x63, 0x19, 0xde,
+	0x2f, 0x6d, 0x5e, 0xb8, 0xee, 0x3f, 0x15, 0x91, 0x3e, 0x50, 0x9d, 0xc6, 0x48, 0x09, 0x45, 0x3f,
+	0x00, 0x9c, 0x4f, 0xbb, 0x3c, 0x57, 0x51, 0xc6, 0xca, 0xe5, 0x2a, 0xca, 0x5c, 0xa7, 0x17, 0x5a,
+	0x91, 0x8d, 0x76, 0x26, 0x54, 0x44, 0x7b, 0x40, 0x75, 0x36, 0x44, 0xc2, 0x6d, 0xb3, 0xdc, 0x1d,
+	0xdc, 0x4e, 0xac, 0x59, 0x07, 0x7d, 0x07, 0x70, 0x2e, 0xb5, 0x45, 0xb9, 0x06, 0x1c, 0xbf, 0xd4,
+	0xb9, 0x06, 0xcc, 0x58, 0xd6, 0xf2, 0x4b, 0x2d, 0x6e, 0x0f, 0xed, 0x4e, 0x2a, 0xce, 0xe0, 0x0c,
+	0xa7, 0x95, 0x54, 0x84, 0xdb, 0x83, 0xbf, 0x89, 0x4e, 0xd5, 0x3e, 0x39, 0xb3, 0xc0, 0xe9, 0x99,
+	0x05, 0x7e, 0x9d, 0x59, 0xe0, 0x5d, 0xd7, 0x2a, 0x9c, 0x76, 0xad, 0xc2, 0xb7, 0xae, 0x55, 0xd8,
+	0xdf, 0x72, 0xb8, 0x6a, 0x45, 0x8d, 0x0a, 0x15, 0xde, 0xbf, 0x68, 0x5f, 0x27, 0x89, 0xd5, 0x71,
+	0xc0, 0x64, 0x63, 0x5a, 0x7f, 0x84, 0xee, 0xfd, 0x0d, 0x00, 0x00, 0xff, 0xff, 0x89, 0xa2, 0xba,
+	0x26, 0x60, 0x07, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -164,6 +527,14 @@ const _ = grpc.SupportPackageIsVersion4
 type QueryClient interface {
 	// Parameters queries the parameters of the module.
 	Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error)
+	// Queries a list of GetAcademicTree items.
+	GetAcademicTree(ctx context.Context, in *QueryGetAcademicTreeRequest, opts ...grpc.CallOption) (*QueryGetAcademicTreeResponse, error)
+	// Queries a list of AvailableCourses items.
+	AvailableCourses(ctx context.Context, in *QueryAvailableCoursesRequest, opts ...grpc.CallOption) (*QueryAvailableCoursesResponse, error)
+	// Queries a list of CheckEquivalence items.
+	CheckEquivalence(ctx context.Context, in *QueryCheckEquivalenceRequest, opts ...grpc.CallOption) (*QueryCheckEquivalenceResponse, error)
+	// Queries a list of CriticalCourses items.
+	CriticalCourses(ctx context.Context, in *QueryCriticalCoursesRequest, opts ...grpc.CallOption) (*QueryCriticalCoursesResponse, error)
 }
 
 type queryClient struct {
@@ -183,10 +554,54 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 	return out, nil
 }
 
+func (c *queryClient) GetAcademicTree(ctx context.Context, in *QueryGetAcademicTreeRequest, opts ...grpc.CallOption) (*QueryGetAcademicTreeResponse, error) {
+	out := new(QueryGetAcademicTreeResponse)
+	err := c.cc.Invoke(ctx, "/academictoken.curriculum.Query/GetAcademicTree", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) AvailableCourses(ctx context.Context, in *QueryAvailableCoursesRequest, opts ...grpc.CallOption) (*QueryAvailableCoursesResponse, error) {
+	out := new(QueryAvailableCoursesResponse)
+	err := c.cc.Invoke(ctx, "/academictoken.curriculum.Query/AvailableCourses", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) CheckEquivalence(ctx context.Context, in *QueryCheckEquivalenceRequest, opts ...grpc.CallOption) (*QueryCheckEquivalenceResponse, error) {
+	out := new(QueryCheckEquivalenceResponse)
+	err := c.cc.Invoke(ctx, "/academictoken.curriculum.Query/CheckEquivalence", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) CriticalCourses(ctx context.Context, in *QueryCriticalCoursesRequest, opts ...grpc.CallOption) (*QueryCriticalCoursesResponse, error) {
+	out := new(QueryCriticalCoursesResponse)
+	err := c.cc.Invoke(ctx, "/academictoken.curriculum.Query/CriticalCourses", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 type QueryServer interface {
 	// Parameters queries the parameters of the module.
 	Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error)
+	// Queries a list of GetAcademicTree items.
+	GetAcademicTree(context.Context, *QueryGetAcademicTreeRequest) (*QueryGetAcademicTreeResponse, error)
+	// Queries a list of AvailableCourses items.
+	AvailableCourses(context.Context, *QueryAvailableCoursesRequest) (*QueryAvailableCoursesResponse, error)
+	// Queries a list of CheckEquivalence items.
+	CheckEquivalence(context.Context, *QueryCheckEquivalenceRequest) (*QueryCheckEquivalenceResponse, error)
+	// Queries a list of CriticalCourses items.
+	CriticalCourses(context.Context, *QueryCriticalCoursesRequest) (*QueryCriticalCoursesResponse, error)
 }
 
 // UnimplementedQueryServer can be embedded to have forward compatible implementations.
@@ -195,6 +610,18 @@ type UnimplementedQueryServer struct {
 
 func (*UnimplementedQueryServer) Params(ctx context.Context, req *QueryParamsRequest) (*QueryParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Params not implemented")
+}
+func (*UnimplementedQueryServer) GetAcademicTree(ctx context.Context, req *QueryGetAcademicTreeRequest) (*QueryGetAcademicTreeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAcademicTree not implemented")
+}
+func (*UnimplementedQueryServer) AvailableCourses(ctx context.Context, req *QueryAvailableCoursesRequest) (*QueryAvailableCoursesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AvailableCourses not implemented")
+}
+func (*UnimplementedQueryServer) CheckEquivalence(ctx context.Context, req *QueryCheckEquivalenceRequest) (*QueryCheckEquivalenceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CheckEquivalence not implemented")
+}
+func (*UnimplementedQueryServer) CriticalCourses(ctx context.Context, req *QueryCriticalCoursesRequest) (*QueryCriticalCoursesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CriticalCourses not implemented")
 }
 
 func RegisterQueryServer(s grpc1.Server, srv QueryServer) {
@@ -219,6 +646,78 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_GetAcademicTree_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetAcademicTreeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).GetAcademicTree(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/academictoken.curriculum.Query/GetAcademicTree",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).GetAcademicTree(ctx, req.(*QueryGetAcademicTreeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_AvailableCourses_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAvailableCoursesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).AvailableCourses(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/academictoken.curriculum.Query/AvailableCourses",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).AvailableCourses(ctx, req.(*QueryAvailableCoursesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_CheckEquivalence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryCheckEquivalenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).CheckEquivalence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/academictoken.curriculum.Query/CheckEquivalence",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).CheckEquivalence(ctx, req.(*QueryCheckEquivalenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_CriticalCourses_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryCriticalCoursesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).CriticalCourses(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/academictoken.curriculum.Query/CriticalCourses",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).CriticalCourses(ctx, req.(*QueryCriticalCoursesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var Query_serviceDesc = _Query_serviceDesc
 var _Query_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "academictoken.curriculum.Query",
@@ -227,6 +726,22 @@ var _Query_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Params",
 			Handler:    _Query_Params_Handler,
+		},
+		{
+			MethodName: "GetAcademicTree",
+			Handler:    _Query_GetAcademicTree_Handler,
+		},
+		{
+			MethodName: "AvailableCourses",
+			Handler:    _Query_AvailableCourses_Handler,
+		},
+		{
+			MethodName: "CheckEquivalence",
+			Handler:    _Query_CheckEquivalence_Handler,
+		},
+		{
+			MethodName: "CriticalCourses",
+			Handler:    _Query_CriticalCourses_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -289,6 +804,230 @@ func (m *QueryParamsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+func (m *QueryGetAcademicTreeRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetAcademicTreeRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetAcademicTreeRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Student) > 0 {
+		i -= len(m.Student)
+		copy(dAtA[i:], m.Student)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Student)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryGetAcademicTreeResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryGetAcademicTreeResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryGetAcademicTreeResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryAvailableCoursesRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryAvailableCoursesRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryAvailableCoursesRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Student) > 0 {
+		i -= len(m.Student)
+		copy(dAtA[i:], m.Student)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Student)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryAvailableCoursesResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryAvailableCoursesResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryAvailableCoursesResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryCheckEquivalenceRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryCheckEquivalenceRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryCheckEquivalenceRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Institution) > 0 {
+		i -= len(m.Institution)
+		copy(dAtA[i:], m.Institution)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Institution)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.TokenId) > 0 {
+		i -= len(m.TokenId)
+		copy(dAtA[i:], m.TokenId)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.TokenId)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryCheckEquivalenceResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryCheckEquivalenceResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryCheckEquivalenceResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryCriticalCoursesRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryCriticalCoursesRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryCriticalCoursesRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Threshold != 0 {
+		i = encodeVarintQuery(dAtA, i, uint64(m.Threshold))
+		i--
+		dAtA[i] = 0x10
+	}
+	if len(m.Institution) > 0 {
+		i -= len(m.Institution)
+		copy(dAtA[i:], m.Institution)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Institution)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryCriticalCoursesResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryCriticalCoursesResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryCriticalCoursesResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintQuery(dAtA []byte, offset int, v uint64) int {
 	offset -= sovQuery(v)
 	base := offset
@@ -317,6 +1056,101 @@ func (m *QueryParamsResponse) Size() (n int) {
 	_ = l
 	l = m.Params.Size()
 	n += 1 + l + sovQuery(uint64(l))
+	return n
+}
+
+func (m *QueryGetAcademicTreeRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Student)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryGetAcademicTreeResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *QueryAvailableCoursesRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Student)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryAvailableCoursesResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *QueryCheckEquivalenceRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.TokenId)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	l = len(m.Institution)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryCheckEquivalenceResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *QueryCriticalCoursesRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Institution)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	if m.Threshold != 0 {
+		n += 1 + sovQuery(uint64(m.Threshold))
+	}
+	return n
+}
+
+func (m *QueryCriticalCoursesResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
 	return n
 }
 
@@ -438,6 +1272,585 @@ func (m *QueryParamsResponse) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetAcademicTreeRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetAcademicTreeRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetAcademicTreeRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Student", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Student = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryGetAcademicTreeResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryGetAcademicTreeResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryGetAcademicTreeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryAvailableCoursesRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryAvailableCoursesRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryAvailableCoursesRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Student", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Student = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryAvailableCoursesResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryAvailableCoursesResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryAvailableCoursesResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryCheckEquivalenceRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryCheckEquivalenceRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryCheckEquivalenceRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field TokenId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.TokenId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Institution", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Institution = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryCheckEquivalenceResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryCheckEquivalenceResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryCheckEquivalenceResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryCriticalCoursesRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryCriticalCoursesRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryCriticalCoursesRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Institution", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Institution = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Threshold", wireType)
+			}
+			m.Threshold = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Threshold |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryCriticalCoursesResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryCriticalCoursesResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryCriticalCoursesResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
 		default:
 			iNdEx = preIndex
 			skippy, err := skipQuery(dAtA[iNdEx:])

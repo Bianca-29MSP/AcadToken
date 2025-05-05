@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package academictoken.curriculum;
 
 import "amino/amino.proto";
@@ -11,20 +12,70 @@ option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
 
 // Query defines the gRPC querier service.
 service Query {
+  
   // Parameters queries the parameters of the module.
-  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+  rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/params";
+  
+  }
+  
+  // Queries a list of GetAcademicTree items.
+  rpc GetAcademicTree (QueryGetAcademicTreeRequest) returns (QueryGetAcademicTreeResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/get_academic_tree/{student}";
+  
+  }
+  
+  // Queries a list of AvailableCourses items.
+  rpc AvailableCourses (QueryAvailableCoursesRequest) returns (QueryAvailableCoursesResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/available_courses/{student}";
+  
+  }
+  
+  // Queries a list of CheckEquivalence items.
+  rpc CheckEquivalence (QueryCheckEquivalenceRequest) returns (QueryCheckEquivalenceResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/check_equivalence/{tokenId}/{institution}";
+  
+  }
+  
+  // Queries a list of CriticalCourses items.
+  rpc CriticalCourses (QueryCriticalCoursesRequest) returns (QueryCriticalCoursesResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/critical_courses/{institution}/{threshold}";
+  
   }
 }
-
 // QueryParamsRequest is request type for the Query/Params RPC method.
 message QueryParamsRequest {}
 
 // QueryParamsResponse is response type for the Query/Params RPC method.
 message QueryParamsResponse {
+  
   // params holds all the parameters of this module.
-  Params params = 1 [
-    (gogoproto.nullable) = false,
-    (amino.dont_omitempty) = true
-  ];
+  Params params = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
 }
+
+message QueryGetAcademicTreeRequest {
+  string student = 1;
+}
+
+message QueryGetAcademicTreeResponse {}
+
+message QueryAvailableCoursesRequest {
+  string student = 1;
+}
+
+message QueryAvailableCoursesResponse {}
+
+message QueryCheckEquivalenceRequest {
+  string tokenId     = 1;
+  string institution = 2;
+}
+
+message QueryCheckEquivalenceResponse {}
+
+message QueryCriticalCoursesRequest {
+  string institution = 1;
+  uint64 threshold   = 2;
+}
+
+message QueryCriticalCoursesResponse {}
+

@@ -18,6 +18,9 @@ service Msg {
   // parameters. The authority defaults to the x/gov module account.
   rpc UpdateParams        (MsgUpdateParams       ) returns (MsgUpdateParamsResponse       );
   rpc RegisterInstitution (MsgRegisterInstitution) returns (MsgRegisterInstitutionResponse);
+  rpc IssueCourseToken    (MsgIssueCourseToken   ) returns (MsgIssueCourseTokenResponse   );
+  rpc VerifyPrerequisites (MsgVerifyPrerequisites) returns (MsgVerifyPrerequisitesResponse);
+  rpc ProposeEquivalence  (MsgProposeEquivalence ) returns (MsgProposeEquivalenceResponse );
 }
 // MsgUpdateParams is the Msg/UpdateParams request type.
 message MsgUpdateParams {
@@ -45,4 +48,39 @@ message MsgRegisterInstitution {
 }
 
 message MsgRegisterInstitutionResponse {}
+
+message MsgIssueCourseToken {
+  option (cosmos.msg.v1.signer) = "creator";
+           string creator        =  1;
+           string tokenId        =  2;
+           string name           =  3;
+           string code           =  4;
+           string contentHash    =  5;
+           string institution    =  6;
+           string completionDate =  7;
+           uint64 grade          =  8;
+  repeated string prerequisites  =  9;
+           string recipient      = 10;
+}
+
+message MsgIssueCourseTokenResponse {}
+
+message MsgVerifyPrerequisites {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator    = 1;
+  string student    = 2;
+  string courseCode = 3;
+}
+
+message MsgVerifyPrerequisitesResponse {}
+
+message MsgProposeEquivalence {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator           = 1;
+  string sourceTokenId     = 2;
+  string targetInstitution = 3;
+  string targetCourseCode  = 4;
+}
+
+message MsgProposeEquivalenceResponse {}
 

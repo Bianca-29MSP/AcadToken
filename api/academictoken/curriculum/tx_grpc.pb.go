@@ -22,6 +22,9 @@ const _ = grpc.SupportPackageIsVersion7
 const (
 	Msg_UpdateParams_FullMethodName        = "/academictoken.curriculum.Msg/UpdateParams"
 	Msg_RegisterInstitution_FullMethodName = "/academictoken.curriculum.Msg/RegisterInstitution"
+	Msg_IssueCourseToken_FullMethodName    = "/academictoken.curriculum.Msg/IssueCourseToken"
+	Msg_VerifyPrerequisites_FullMethodName = "/academictoken.curriculum.Msg/VerifyPrerequisites"
+	Msg_ProposeEquivalence_FullMethodName  = "/academictoken.curriculum.Msg/ProposeEquivalence"
 )
 
 // MsgClient is the client API for Msg service.
@@ -32,6 +35,9 @@ type MsgClient interface {
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(ctx context.Context, in *MsgUpdateParams, opts ...grpc.CallOption) (*MsgUpdateParamsResponse, error)
 	RegisterInstitution(ctx context.Context, in *MsgRegisterInstitution, opts ...grpc.CallOption) (*MsgRegisterInstitutionResponse, error)
+	IssueCourseToken(ctx context.Context, in *MsgIssueCourseToken, opts ...grpc.CallOption) (*MsgIssueCourseTokenResponse, error)
+	VerifyPrerequisites(ctx context.Context, in *MsgVerifyPrerequisites, opts ...grpc.CallOption) (*MsgVerifyPrerequisitesResponse, error)
+	ProposeEquivalence(ctx context.Context, in *MsgProposeEquivalence, opts ...grpc.CallOption) (*MsgProposeEquivalenceResponse, error)
 }
 
 type msgClient struct {
@@ -60,6 +66,33 @@ func (c *msgClient) RegisterInstitution(ctx context.Context, in *MsgRegisterInst
 	return out, nil
 }
 
+func (c *msgClient) IssueCourseToken(ctx context.Context, in *MsgIssueCourseToken, opts ...grpc.CallOption) (*MsgIssueCourseTokenResponse, error) {
+	out := new(MsgIssueCourseTokenResponse)
+	err := c.cc.Invoke(ctx, Msg_IssueCourseToken_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) VerifyPrerequisites(ctx context.Context, in *MsgVerifyPrerequisites, opts ...grpc.CallOption) (*MsgVerifyPrerequisitesResponse, error) {
+	out := new(MsgVerifyPrerequisitesResponse)
+	err := c.cc.Invoke(ctx, Msg_VerifyPrerequisites_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) ProposeEquivalence(ctx context.Context, in *MsgProposeEquivalence, opts ...grpc.CallOption) (*MsgProposeEquivalenceResponse, error) {
+	out := new(MsgProposeEquivalenceResponse)
+	err := c.cc.Invoke(ctx, Msg_ProposeEquivalence_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 // All implementations must embed UnimplementedMsgServer
 // for forward compatibility
@@ -68,6 +101,9 @@ type MsgServer interface {
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
 	RegisterInstitution(context.Context, *MsgRegisterInstitution) (*MsgRegisterInstitutionResponse, error)
+	IssueCourseToken(context.Context, *MsgIssueCourseToken) (*MsgIssueCourseTokenResponse, error)
+	VerifyPrerequisites(context.Context, *MsgVerifyPrerequisites) (*MsgVerifyPrerequisitesResponse, error)
+	ProposeEquivalence(context.Context, *MsgProposeEquivalence) (*MsgProposeEquivalenceResponse, error)
 	mustEmbedUnimplementedMsgServer()
 }
 
@@ -80,6 +116,15 @@ func (UnimplementedMsgServer) UpdateParams(context.Context, *MsgUpdateParams) (*
 }
 func (UnimplementedMsgServer) RegisterInstitution(context.Context, *MsgRegisterInstitution) (*MsgRegisterInstitutionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterInstitution not implemented")
+}
+func (UnimplementedMsgServer) IssueCourseToken(context.Context, *MsgIssueCourseToken) (*MsgIssueCourseTokenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method IssueCourseToken not implemented")
+}
+func (UnimplementedMsgServer) VerifyPrerequisites(context.Context, *MsgVerifyPrerequisites) (*MsgVerifyPrerequisitesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method VerifyPrerequisites not implemented")
+}
+func (UnimplementedMsgServer) ProposeEquivalence(context.Context, *MsgProposeEquivalence) (*MsgProposeEquivalenceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ProposeEquivalence not implemented")
 }
 func (UnimplementedMsgServer) mustEmbedUnimplementedMsgServer() {}
 
@@ -130,6 +175,60 @@ func _Msg_RegisterInstitution_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_IssueCourseToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgIssueCourseToken)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).IssueCourseToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_IssueCourseToken_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).IssueCourseToken(ctx, req.(*MsgIssueCourseToken))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_VerifyPrerequisites_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgVerifyPrerequisites)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).VerifyPrerequisites(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_VerifyPrerequisites_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).VerifyPrerequisites(ctx, req.(*MsgVerifyPrerequisites))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_ProposeEquivalence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgProposeEquivalence)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).ProposeEquivalence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_ProposeEquivalence_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).ProposeEquivalence(ctx, req.(*MsgProposeEquivalence))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Msg_ServiceDesc is the grpc.ServiceDesc for Msg service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -144,6 +243,18 @@ var Msg_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RegisterInstitution",
 			Handler:    _Msg_RegisterInstitution_Handler,
+		},
+		{
+			MethodName: "IssueCourseToken",
+			Handler:    _Msg_IssueCourseToken_Handler,
+		},
+		{
+			MethodName: "VerifyPrerequisites",
+			Handler:    _Msg_VerifyPrerequisites_Handler,
+		},
+		{
+			MethodName: "ProposeEquivalence",
+			Handler:    _Msg_ProposeEquivalence_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
