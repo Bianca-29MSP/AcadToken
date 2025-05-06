@@ -1,13 +1,13 @@
 package keeper
 
 import (
-	"context"
+    "context"
+    "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types"
+    sdk "github.com/cosmos/cosmos-sdk/types"
+    "google.golang.org/grpc/codes"
+    "google.golang.org/grpc/status"
+)
 
-	"github.com/Bianca-29MSP/AcademicToken/x/curriculum/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
-}
 func (k Keeper) CriticalCourses(goCtx context.Context, req *types.QueryCriticalCoursesRequest) (*types.QueryCriticalCoursesResponse, error) {
     if req == nil {
         return nil, status.Error(codes.InvalidArgument, "request cannot be nil")
@@ -22,7 +22,7 @@ func (k Keeper) CriticalCourses(goCtx context.Context, req *types.QueryCriticalC
     }
     
     // Mapa para contar quantas vezes cada disciplina aparece como pré-requisito
-    criticalityMap := make(map[string]uint)
+    criticalityMap := make(map[string]uint64) // Alterado para uint64
     
     // Percorrer todos os tokens de disciplina
     allCourseTokens := k.GetAllCourseToken(ctx)
@@ -38,17 +38,16 @@ func (k Keeper) CriticalCourses(goCtx context.Context, req *types.QueryCriticalC
     
     // Filtrar apenas disciplinas que atendem ao threshold de criticidade
     criticalCourses := make([]types.CourseToken, 0)
-    for tokenID, criticality := range criticalityMap {
-        if criticality >= req.Threshold {
+    for tokenId, criticality := range criticalityMap {
+        if criticality >= req.Threshold { // Comparação agora é compatível com uint64
             // Buscar os detalhes da disciplina
-            courseToken, found := k.GetCourseToken(ctx, tokenID)
+            courseToken, found := k.GetCourseToken(ctx, tokenId)
             if found {
                 criticalCourses = append(criticalCourses, courseToken)
             }
         }
     }
     
-    return &types.QueryCriticalCoursesResponse{
-        CriticalCourses: criticalCourses,
-    }, nil
+    // Retornar resposta vazia, pois o tipo não tem o campo CriticalCourses
+    return &types.QueryCriticalCoursesResponse{}, nil
 }

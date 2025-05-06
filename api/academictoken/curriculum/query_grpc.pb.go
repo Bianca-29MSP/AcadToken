@@ -8,7 +8,6 @@ package curriculum
 
 import (
 	context "context"
-
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,11 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Query_Params_FullMethodName           = "/academictoken.curriculum.Query/Params"
-	Query_GetAcademicTree_FullMethodName  = "/academictoken.curriculum.Query/GetAcademicTree"
-	Query_AvailableCourses_FullMethodName = "/academictoken.curriculum.Query/AvailableCourses"
-	Query_CheckEquivalence_FullMethodName = "/academictoken.curriculum.Query/CheckEquivalence"
-	Query_CriticalCourses_FullMethodName  = "/academictoken.curriculum.Query/CriticalCourses"
+	Query_Params_FullMethodName               = "/academictoken.curriculum.Query/Params"
+	Query_GetAcademicTree_FullMethodName      = "/academictoken.curriculum.Query/GetAcademicTree"
+	Query_AvailableCourses_FullMethodName     = "/academictoken.curriculum.Query/AvailableCourses"
+	Query_CheckEquivalence_FullMethodName     = "/academictoken.curriculum.Query/CheckEquivalence"
+	Query_CriticalCourses_FullMethodName      = "/academictoken.curriculum.Query/CriticalCourses"
+	Query_Institution_FullMethodName          = "/academictoken.curriculum.Query/Institution"
+	Query_InstitutionAll_FullMethodName       = "/academictoken.curriculum.Query/InstitutionAll"
+	Query_CourseToken_FullMethodName          = "/academictoken.curriculum.Query/CourseToken"
+	Query_CourseTokenAll_FullMethodName       = "/academictoken.curriculum.Query/CourseTokenAll"
+	Query_CourseEquivalence_FullMethodName    = "/academictoken.curriculum.Query/CourseEquivalence"
+	Query_CourseEquivalenceAll_FullMethodName = "/academictoken.curriculum.Query/CourseEquivalenceAll"
 )
 
 // QueryClient is the client API for Query service.
@@ -41,6 +46,15 @@ type QueryClient interface {
 	CheckEquivalence(ctx context.Context, in *QueryCheckEquivalenceRequest, opts ...grpc.CallOption) (*QueryCheckEquivalenceResponse, error)
 	// Queries a list of CriticalCourses items.
 	CriticalCourses(ctx context.Context, in *QueryCriticalCoursesRequest, opts ...grpc.CallOption) (*QueryCriticalCoursesResponse, error)
+	// Queries a list of Institution items.
+	Institution(ctx context.Context, in *QueryGetInstitutionRequest, opts ...grpc.CallOption) (*QueryGetInstitutionResponse, error)
+	InstitutionAll(ctx context.Context, in *QueryAllInstitutionRequest, opts ...grpc.CallOption) (*QueryAllInstitutionResponse, error)
+	// Queries a list of CourseToken items.
+	CourseToken(ctx context.Context, in *QueryGetCourseTokenRequest, opts ...grpc.CallOption) (*QueryGetCourseTokenResponse, error)
+	CourseTokenAll(ctx context.Context, in *QueryAllCourseTokenRequest, opts ...grpc.CallOption) (*QueryAllCourseTokenResponse, error)
+	// Queries a list of CourseEquivalence items.
+	CourseEquivalence(ctx context.Context, in *QueryGetCourseEquivalenceRequest, opts ...grpc.CallOption) (*QueryGetCourseEquivalenceResponse, error)
+	CourseEquivalenceAll(ctx context.Context, in *QueryAllCourseEquivalenceRequest, opts ...grpc.CallOption) (*QueryAllCourseEquivalenceResponse, error)
 }
 
 type queryClient struct {
@@ -96,6 +110,60 @@ func (c *queryClient) CriticalCourses(ctx context.Context, in *QueryCriticalCour
 	return out, nil
 }
 
+func (c *queryClient) Institution(ctx context.Context, in *QueryGetInstitutionRequest, opts ...grpc.CallOption) (*QueryGetInstitutionResponse, error) {
+	out := new(QueryGetInstitutionResponse)
+	err := c.cc.Invoke(ctx, Query_Institution_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) InstitutionAll(ctx context.Context, in *QueryAllInstitutionRequest, opts ...grpc.CallOption) (*QueryAllInstitutionResponse, error) {
+	out := new(QueryAllInstitutionResponse)
+	err := c.cc.Invoke(ctx, Query_InstitutionAll_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) CourseToken(ctx context.Context, in *QueryGetCourseTokenRequest, opts ...grpc.CallOption) (*QueryGetCourseTokenResponse, error) {
+	out := new(QueryGetCourseTokenResponse)
+	err := c.cc.Invoke(ctx, Query_CourseToken_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) CourseTokenAll(ctx context.Context, in *QueryAllCourseTokenRequest, opts ...grpc.CallOption) (*QueryAllCourseTokenResponse, error) {
+	out := new(QueryAllCourseTokenResponse)
+	err := c.cc.Invoke(ctx, Query_CourseTokenAll_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) CourseEquivalence(ctx context.Context, in *QueryGetCourseEquivalenceRequest, opts ...grpc.CallOption) (*QueryGetCourseEquivalenceResponse, error) {
+	out := new(QueryGetCourseEquivalenceResponse)
+	err := c.cc.Invoke(ctx, Query_CourseEquivalence_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) CourseEquivalenceAll(ctx context.Context, in *QueryAllCourseEquivalenceRequest, opts ...grpc.CallOption) (*QueryAllCourseEquivalenceResponse, error) {
+	out := new(QueryAllCourseEquivalenceResponse)
+	err := c.cc.Invoke(ctx, Query_CourseEquivalenceAll_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 // All implementations must embed UnimplementedQueryServer
 // for forward compatibility
@@ -110,6 +178,15 @@ type QueryServer interface {
 	CheckEquivalence(context.Context, *QueryCheckEquivalenceRequest) (*QueryCheckEquivalenceResponse, error)
 	// Queries a list of CriticalCourses items.
 	CriticalCourses(context.Context, *QueryCriticalCoursesRequest) (*QueryCriticalCoursesResponse, error)
+	// Queries a list of Institution items.
+	Institution(context.Context, *QueryGetInstitutionRequest) (*QueryGetInstitutionResponse, error)
+	InstitutionAll(context.Context, *QueryAllInstitutionRequest) (*QueryAllInstitutionResponse, error)
+	// Queries a list of CourseToken items.
+	CourseToken(context.Context, *QueryGetCourseTokenRequest) (*QueryGetCourseTokenResponse, error)
+	CourseTokenAll(context.Context, *QueryAllCourseTokenRequest) (*QueryAllCourseTokenResponse, error)
+	// Queries a list of CourseEquivalence items.
+	CourseEquivalence(context.Context, *QueryGetCourseEquivalenceRequest) (*QueryGetCourseEquivalenceResponse, error)
+	CourseEquivalenceAll(context.Context, *QueryAllCourseEquivalenceRequest) (*QueryAllCourseEquivalenceResponse, error)
 	mustEmbedUnimplementedQueryServer()
 }
 
@@ -131,6 +208,24 @@ func (UnimplementedQueryServer) CheckEquivalence(context.Context, *QueryCheckEqu
 }
 func (UnimplementedQueryServer) CriticalCourses(context.Context, *QueryCriticalCoursesRequest) (*QueryCriticalCoursesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CriticalCourses not implemented")
+}
+func (UnimplementedQueryServer) Institution(context.Context, *QueryGetInstitutionRequest) (*QueryGetInstitutionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Institution not implemented")
+}
+func (UnimplementedQueryServer) InstitutionAll(context.Context, *QueryAllInstitutionRequest) (*QueryAllInstitutionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InstitutionAll not implemented")
+}
+func (UnimplementedQueryServer) CourseToken(context.Context, *QueryGetCourseTokenRequest) (*QueryGetCourseTokenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CourseToken not implemented")
+}
+func (UnimplementedQueryServer) CourseTokenAll(context.Context, *QueryAllCourseTokenRequest) (*QueryAllCourseTokenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CourseTokenAll not implemented")
+}
+func (UnimplementedQueryServer) CourseEquivalence(context.Context, *QueryGetCourseEquivalenceRequest) (*QueryGetCourseEquivalenceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CourseEquivalence not implemented")
+}
+func (UnimplementedQueryServer) CourseEquivalenceAll(context.Context, *QueryAllCourseEquivalenceRequest) (*QueryAllCourseEquivalenceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CourseEquivalenceAll not implemented")
 }
 func (UnimplementedQueryServer) mustEmbedUnimplementedQueryServer() {}
 
@@ -235,6 +330,114 @@ func _Query_CriticalCourses_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_Institution_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetInstitutionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).Institution(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_Institution_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).Institution(ctx, req.(*QueryGetInstitutionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_InstitutionAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllInstitutionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).InstitutionAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_InstitutionAll_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).InstitutionAll(ctx, req.(*QueryAllInstitutionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_CourseToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetCourseTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).CourseToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_CourseToken_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).CourseToken(ctx, req.(*QueryGetCourseTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_CourseTokenAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllCourseTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).CourseTokenAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_CourseTokenAll_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).CourseTokenAll(ctx, req.(*QueryAllCourseTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_CourseEquivalence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetCourseEquivalenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).CourseEquivalence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_CourseEquivalence_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).CourseEquivalence(ctx, req.(*QueryGetCourseEquivalenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_CourseEquivalenceAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllCourseEquivalenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).CourseEquivalenceAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_CourseEquivalenceAll_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).CourseEquivalenceAll(ctx, req.(*QueryAllCourseEquivalenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Query_ServiceDesc is the grpc.ServiceDesc for Query service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -261,6 +464,30 @@ var Query_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CriticalCourses",
 			Handler:    _Query_CriticalCourses_Handler,
+		},
+		{
+			MethodName: "Institution",
+			Handler:    _Query_Institution_Handler,
+		},
+		{
+			MethodName: "InstitutionAll",
+			Handler:    _Query_InstitutionAll_Handler,
+		},
+		{
+			MethodName: "CourseToken",
+			Handler:    _Query_CourseToken_Handler,
+		},
+		{
+			MethodName: "CourseTokenAll",
+			Handler:    _Query_CourseTokenAll_Handler,
+		},
+		{
+			MethodName: "CourseEquivalence",
+			Handler:    _Query_CourseEquivalence_Handler,
+		},
+		{
+			MethodName: "CourseEquivalenceAll",
+			Handler:    _Query_CourseEquivalenceAll_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

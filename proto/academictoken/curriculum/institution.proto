@@ -4,8 +4,10 @@ package academictoken.curriculum;
 option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
 
 message Institution {
+  string index = 1; 
+  string address = 2; 
+  string name = 3; 
+  bool isAuthorized = 4; 
   
-  string address = 1; 
-  string name = 2; 
-  bool isAuthorized = 3; 
 }
+

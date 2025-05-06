@@ -2,28 +2,186 @@
 package curriculum
 
 import (
-	fmt "fmt"
-	io "io"
-	reflect "reflect"
-	sync "sync"
-
 	_ "cosmossdk.io/api/amino"
+	fmt "fmt"
 	runtime "github.com/cosmos/cosmos-proto/runtime"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoiface "google.golang.org/protobuf/runtime/protoiface"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	io "io"
+	reflect "reflect"
+	sync "sync"
 )
 
+var _ protoreflect.List = (*_GenesisState_2_list)(nil)
+
+type _GenesisState_2_list struct {
+	list *[]*Institution
+}
+
+func (x *_GenesisState_2_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_GenesisState_2_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_GenesisState_2_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Institution)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_GenesisState_2_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Institution)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_GenesisState_2_list) AppendMutable() protoreflect.Value {
+	v := new(Institution)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_2_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_GenesisState_2_list) NewElement() protoreflect.Value {
+	v := new(Institution)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_2_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_GenesisState_3_list)(nil)
+
+type _GenesisState_3_list struct {
+	list *[]*CourseToken
+}
+
+func (x *_GenesisState_3_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_GenesisState_3_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_GenesisState_3_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*CourseToken)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_GenesisState_3_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*CourseToken)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_GenesisState_3_list) AppendMutable() protoreflect.Value {
+	v := new(CourseToken)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_3_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_GenesisState_3_list) NewElement() protoreflect.Value {
+	v := new(CourseToken)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_3_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_GenesisState_4_list)(nil)
+
+type _GenesisState_4_list struct {
+	list *[]*CourseEquivalence
+}
+
+func (x *_GenesisState_4_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_GenesisState_4_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_GenesisState_4_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*CourseEquivalence)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_GenesisState_4_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*CourseEquivalence)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_GenesisState_4_list) AppendMutable() protoreflect.Value {
+	v := new(CourseEquivalence)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_4_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_GenesisState_4_list) NewElement() protoreflect.Value {
+	v := new(CourseEquivalence)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_4_list) IsValid() bool {
+	return x.list != nil
+}
+
 var (
-	md_GenesisState        protoreflect.MessageDescriptor
-	fd_GenesisState_params protoreflect.FieldDescriptor
+	md_GenesisState                       protoreflect.MessageDescriptor
+	fd_GenesisState_params                protoreflect.FieldDescriptor
+	fd_GenesisState_institutionList       protoreflect.FieldDescriptor
+	fd_GenesisState_courseTokenList       protoreflect.FieldDescriptor
+	fd_GenesisState_courseEquivalenceList protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_academictoken_curriculum_genesis_proto_init()
 	md_GenesisState = File_academictoken_curriculum_genesis_proto.Messages().ByName("GenesisState")
 	fd_GenesisState_params = md_GenesisState.Fields().ByName("params")
+	fd_GenesisState_institutionList = md_GenesisState.Fields().ByName("institutionList")
+	fd_GenesisState_courseTokenList = md_GenesisState.Fields().ByName("courseTokenList")
+	fd_GenesisState_courseEquivalenceList = md_GenesisState.Fields().ByName("courseEquivalenceList")
 }
 
 var _ protoreflect.Message = (*fastReflection_GenesisState)(nil)
@@ -97,6 +255,24 @@ func (x *fastReflection_GenesisState) Range(f func(protoreflect.FieldDescriptor,
 			return
 		}
 	}
+	if len(x.InstitutionList) != 0 {
+		value := protoreflect.ValueOfList(&_GenesisState_2_list{list: &x.InstitutionList})
+		if !f(fd_GenesisState_institutionList, value) {
+			return
+		}
+	}
+	if len(x.CourseTokenList) != 0 {
+		value := protoreflect.ValueOfList(&_GenesisState_3_list{list: &x.CourseTokenList})
+		if !f(fd_GenesisState_courseTokenList, value) {
+			return
+		}
+	}
+	if len(x.CourseEquivalenceList) != 0 {
+		value := protoreflect.ValueOfList(&_GenesisState_4_list{list: &x.CourseEquivalenceList})
+		if !f(fd_GenesisState_courseEquivalenceList, value) {
+			return
+		}
+	}
 }
 
 // Has reports whether a field is populated.
@@ -114,6 +290,12 @@ func (x *fastReflection_GenesisState) Has(fd protoreflect.FieldDescriptor) bool 
 	switch fd.FullName() {
 	case "academictoken.curriculum.GenesisState.params":
 		return x.Params != nil
+	case "academictoken.curriculum.GenesisState.institutionList":
+		return len(x.InstitutionList) != 0
+	case "academictoken.curriculum.GenesisState.courseTokenList":
+		return len(x.CourseTokenList) != 0
+	case "academictoken.curriculum.GenesisState.courseEquivalenceList":
+		return len(x.CourseEquivalenceList) != 0
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.GenesisState"))
@@ -132,6 +314,12 @@ func (x *fastReflection_GenesisState) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
 	case "academictoken.curriculum.GenesisState.params":
 		x.Params = nil
+	case "academictoken.curriculum.GenesisState.institutionList":
+		x.InstitutionList = nil
+	case "academictoken.curriculum.GenesisState.courseTokenList":
+		x.CourseTokenList = nil
+	case "academictoken.curriculum.GenesisState.courseEquivalenceList":
+		x.CourseEquivalenceList = nil
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.GenesisState"))
@@ -151,6 +339,24 @@ func (x *fastReflection_GenesisState) Get(descriptor protoreflect.FieldDescripto
 	case "academictoken.curriculum.GenesisState.params":
 		value := x.Params
 		return protoreflect.ValueOfMessage(value.ProtoReflect())
+	case "academictoken.curriculum.GenesisState.institutionList":
+		if len(x.InstitutionList) == 0 {
+			return protoreflect.ValueOfList(&_GenesisState_2_list{})
+		}
+		listValue := &_GenesisState_2_list{list: &x.InstitutionList}
+		return protoreflect.ValueOfList(listValue)
+	case "academictoken.curriculum.GenesisState.courseTokenList":
+		if len(x.CourseTokenList) == 0 {
+			return protoreflect.ValueOfList(&_GenesisState_3_list{})
+		}
+		listValue := &_GenesisState_3_list{list: &x.CourseTokenList}
+		return protoreflect.ValueOfList(listValue)
+	case "academictoken.curriculum.GenesisState.courseEquivalenceList":
+		if len(x.CourseEquivalenceList) == 0 {
+			return protoreflect.ValueOfList(&_GenesisState_4_list{})
+		}
+		listValue := &_GenesisState_4_list{list: &x.CourseEquivalenceList}
+		return protoreflect.ValueOfList(listValue)
 	default:
 		if descriptor.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.GenesisState"))
@@ -173,6 +379,18 @@ func (x *fastReflection_GenesisState) Set(fd protoreflect.FieldDescriptor, value
 	switch fd.FullName() {
 	case "academictoken.curriculum.GenesisState.params":
 		x.Params = value.Message().Interface().(*Params)
+	case "academictoken.curriculum.GenesisState.institutionList":
+		lv := value.List()
+		clv := lv.(*_GenesisState_2_list)
+		x.InstitutionList = *clv.list
+	case "academictoken.curriculum.GenesisState.courseTokenList":
+		lv := value.List()
+		clv := lv.(*_GenesisState_3_list)
+		x.CourseTokenList = *clv.list
+	case "academictoken.curriculum.GenesisState.courseEquivalenceList":
+		lv := value.List()
+		clv := lv.(*_GenesisState_4_list)
+		x.CourseEquivalenceList = *clv.list
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.GenesisState"))
@@ -198,6 +416,24 @@ func (x *fastReflection_GenesisState) Mutable(fd protoreflect.FieldDescriptor) p
 			x.Params = new(Params)
 		}
 		return protoreflect.ValueOfMessage(x.Params.ProtoReflect())
+	case "academictoken.curriculum.GenesisState.institutionList":
+		if x.InstitutionList == nil {
+			x.InstitutionList = []*Institution{}
+		}
+		value := &_GenesisState_2_list{list: &x.InstitutionList}
+		return protoreflect.ValueOfList(value)
+	case "academictoken.curriculum.GenesisState.courseTokenList":
+		if x.CourseTokenList == nil {
+			x.CourseTokenList = []*CourseToken{}
+		}
+		value := &_GenesisState_3_list{list: &x.CourseTokenList}
+		return protoreflect.ValueOfList(value)
+	case "academictoken.curriculum.GenesisState.courseEquivalenceList":
+		if x.CourseEquivalenceList == nil {
+			x.CourseEquivalenceList = []*CourseEquivalence{}
+		}
+		value := &_GenesisState_4_list{list: &x.CourseEquivalenceList}
+		return protoreflect.ValueOfList(value)
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.GenesisState"))
@@ -214,6 +450,15 @@ func (x *fastReflection_GenesisState) NewField(fd protoreflect.FieldDescriptor) 
 	case "academictoken.curriculum.GenesisState.params":
 		m := new(Params)
 		return protoreflect.ValueOfMessage(m.ProtoReflect())
+	case "academictoken.curriculum.GenesisState.institutionList":
+		list := []*Institution{}
+		return protoreflect.ValueOfList(&_GenesisState_2_list{list: &list})
+	case "academictoken.curriculum.GenesisState.courseTokenList":
+		list := []*CourseToken{}
+		return protoreflect.ValueOfList(&_GenesisState_3_list{list: &list})
+	case "academictoken.curriculum.GenesisState.courseEquivalenceList":
+		list := []*CourseEquivalence{}
+		return protoreflect.ValueOfList(&_GenesisState_4_list{list: &list})
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.GenesisState"))
@@ -287,6 +532,24 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 			l = options.Size(x.Params)
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
+		if len(x.InstitutionList) > 0 {
+			for _, e := range x.InstitutionList {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.CourseTokenList) > 0 {
+			for _, e := range x.CourseTokenList {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.CourseEquivalenceList) > 0 {
+			for _, e := range x.CourseEquivalenceList {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
 		if x.unknownFields != nil {
 			n += len(x.unknownFields)
 		}
@@ -315,6 +578,54 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 		if x.unknownFields != nil {
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.CourseEquivalenceList) > 0 {
+			for iNdEx := len(x.CourseEquivalenceList) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.CourseEquivalenceList[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0x22
+			}
+		}
+		if len(x.CourseTokenList) > 0 {
+			for iNdEx := len(x.CourseTokenList) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.CourseTokenList[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0x1a
+			}
+		}
+		if len(x.InstitutionList) > 0 {
+			for iNdEx := len(x.InstitutionList) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.InstitutionList[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0x12
+			}
 		}
 		if x.Params != nil {
 			encoded, err := options.Marshal(x.Params)
@@ -415,6 +726,108 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
 				}
 				iNdEx = postIndex
+			case 2:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field InstitutionList", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.InstitutionList = append(x.InstitutionList, &Institution{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.InstitutionList[len(x.InstitutionList)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 3:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field CourseTokenList", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.CourseTokenList = append(x.CourseTokenList, &CourseToken{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.CourseTokenList[len(x.CourseTokenList)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 4:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field CourseEquivalenceList", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.CourseEquivalenceList = append(x.CourseEquivalenceList, &CourseEquivalence{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.CourseEquivalenceList[len(x.CourseEquivalenceList)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
 			default:
 				iNdEx = preIndex
 				skippy, err := runtime.Skip(dAtA[iNdEx:])
@@ -470,7 +883,10 @@ type GenesisState struct {
 	unknownFields protoimpl.UnknownFields
 
 	// params defines all the parameters of the module.
-	Params *Params `protobuf:"bytes,1,opt,name=params,proto3" json:"params,omitempty"`
+	Params                *Params              `protobuf:"bytes,1,opt,name=params,proto3" json:"params,omitempty"`
+	InstitutionList       []*Institution       `protobuf:"bytes,2,rep,name=institutionList,proto3" json:"institutionList,omitempty"`
+	CourseTokenList       []*CourseToken       `protobuf:"bytes,3,rep,name=courseTokenList,proto3" json:"courseTokenList,omitempty"`
+	CourseEquivalenceList []*CourseEquivalence `protobuf:"bytes,4,rep,name=courseEquivalenceList,proto3" json:"courseEquivalenceList,omitempty"`
 }
 
 func (x *GenesisState) Reset() {
@@ -500,6 +916,27 @@ func (x *GenesisState) GetParams() *Params {
 	return nil
 }
 
+func (x *GenesisState) GetInstitutionList() []*Institution {
+	if x != nil {
+		return x.InstitutionList
+	}
+	return nil
+}
+
+func (x *GenesisState) GetCourseTokenList() []*CourseToken {
+	if x != nil {
+		return x.CourseTokenList
+	}
+	return nil
+}
+
+func (x *GenesisState) GetCourseEquivalenceList() []*CourseEquivalence {
+	if x != nil {
+		return x.CourseEquivalenceList
+	}
+	return nil
+}
+
 var File_academictoken_curriculum_genesis_proto protoreflect.FileDescriptor
 
 var file_academictoken_curriculum_genesis_proto_rawDesc = []byte{
@@ -512,28 +949,54 @@ var file_academictoken_curriculum_genesis_proto_rawDesc = []byte{
 	0x2f, 0x67, 0x6f, 0x67, 0x6f, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x25, 0x61, 0x63, 0x61,
 	0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x69,
 	0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x2e, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x22, 0x53, 0x0a, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x53, 0x74, 0x61,
-	0x74, 0x65, 0x12, 0x43, 0x0a, 0x06, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b,
-	0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x50, 0x61,
-	0x72, 0x61, 0x6d, 0x73, 0x42, 0x09, 0xc8, 0xde, 0x1f, 0x00, 0xa8, 0xe7, 0xb0, 0x2a, 0x01, 0x52,
-	0x06, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x42, 0xf1, 0x01, 0x0a, 0x1c, 0x63, 0x6f, 0x6d, 0x2e,
+	0x74, 0x6f, 0x1a, 0x2a, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65,
+	0x6e, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2f, 0x69, 0x6e, 0x73,
+	0x74, 0x69, 0x74, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2b,
+	0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2f, 0x63, 0x75,
+	0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2f, 0x63, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x5f,
+	0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x31, 0x61, 0x63, 0x61,
+	0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x69,
+	0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2f, 0x63, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x5f, 0x65, 0x71, 0x75,
+	0x69, 0x76, 0x61, 0x6c, 0x65, 0x6e, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xea,
+	0x02, 0x0a, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12,
+	0x43, 0x0a, 0x06, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x20, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e,
+	0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x50, 0x61, 0x72, 0x61, 0x6d,
+	0x73, 0x42, 0x09, 0xc8, 0xde, 0x1f, 0x00, 0xa8, 0xe7, 0xb0, 0x2a, 0x01, 0x52, 0x06, 0x70, 0x61,
+	0x72, 0x61, 0x6d, 0x73, 0x12, 0x55, 0x0a, 0x0f, 0x69, 0x6e, 0x73, 0x74, 0x69, 0x74, 0x75, 0x74,
+	0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x25, 0x2e,
 	0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75,
-	0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x42, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69,
-	0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x42, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x42, 0x69, 0x61, 0x6e, 0x63, 0x61, 0x2d, 0x32, 0x39, 0x4d, 0x53,
-	0x50, 0x2f, 0x41, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x2f,
-	0x61, 0x70, 0x69, 0x2f, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65,
-	0x6e, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0xa2, 0x02, 0x03, 0x41,
-	0x43, 0x58, 0xaa, 0x02, 0x18, 0x41, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b,
-	0x65, 0x6e, 0x2e, 0x43, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0xca, 0x02, 0x18,
-	0x41, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x5c, 0x43, 0x75,
-	0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0xe2, 0x02, 0x24, 0x41, 0x63, 0x61, 0x64, 0x65,
-	0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x5c, 0x43, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75,
-	0x6c, 0x75, 0x6d, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea,
-	0x02, 0x19, 0x41, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x3a,
-	0x3a, 0x43, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x49, 0x6e, 0x73, 0x74, 0x69, 0x74, 0x75,
+	0x74, 0x69, 0x6f, 0x6e, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0f, 0x69, 0x6e, 0x73, 0x74,
+	0x69, 0x74, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x55, 0x0a, 0x0f, 0x63,
+	0x6f, 0x75, 0x72, 0x73, 0x65, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x18, 0x03,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74,
+	0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e,
+	0x43, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x42, 0x04, 0xc8, 0xde, 0x1f,
+	0x00, 0x52, 0x0f, 0x63, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x4c, 0x69,
+	0x73, 0x74, 0x12, 0x67, 0x0a, 0x15, 0x63, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x45, 0x71, 0x75, 0x69,
+	0x76, 0x61, 0x6c, 0x65, 0x6e, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x18, 0x04, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x2b, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65,
+	0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x43, 0x6f, 0x75,
+	0x72, 0x73, 0x65, 0x45, 0x71, 0x75, 0x69, 0x76, 0x61, 0x6c, 0x65, 0x6e, 0x63, 0x65, 0x42, 0x04,
+	0xc8, 0xde, 0x1f, 0x00, 0x52, 0x15, 0x63, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x45, 0x71, 0x75, 0x69,
+	0x76, 0x61, 0x6c, 0x65, 0x6e, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x42, 0xf1, 0x01, 0x0a, 0x1c,
+	0x63, 0x6f, 0x6d, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65,
+	0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x42, 0x0c, 0x47, 0x65,
+	0x6e, 0x65, 0x73, 0x69, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x42, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x42, 0x69, 0x61, 0x6e, 0x63, 0x61, 0x2d,
+	0x32, 0x39, 0x4d, 0x53, 0x50, 0x2f, 0x41, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x54, 0x6f,
+	0x6b, 0x65, 0x6e, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63,
+	0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d,
+	0xa2, 0x02, 0x03, 0x41, 0x43, 0x58, 0xaa, 0x02, 0x18, 0x41, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69,
+	0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x43, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75,
+	0x6d, 0xca, 0x02, 0x18, 0x41, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65,
+	0x6e, 0x5c, 0x43, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0xe2, 0x02, 0x24, 0x41,
+	0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x5c, 0x43, 0x75, 0x72,
+	0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64,
+	0x61, 0x74, 0x61, 0xea, 0x02, 0x19, 0x41, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f,
+	0x6b, 0x65, 0x6e, 0x3a, 0x3a, 0x43, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -550,16 +1013,22 @@ func file_academictoken_curriculum_genesis_proto_rawDescGZIP() []byte {
 
 var file_academictoken_curriculum_genesis_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_academictoken_curriculum_genesis_proto_goTypes = []interface{}{
-	(*GenesisState)(nil), // 0: academictoken.curriculum.GenesisState
-	(*Params)(nil),       // 1: academictoken.curriculum.Params
+	(*GenesisState)(nil),      // 0: academictoken.curriculum.GenesisState
+	(*Params)(nil),            // 1: academictoken.curriculum.Params
+	(*Institution)(nil),       // 2: academictoken.curriculum.Institution
+	(*CourseToken)(nil),       // 3: academictoken.curriculum.CourseToken
+	(*CourseEquivalence)(nil), // 4: academictoken.curriculum.CourseEquivalence
 }
 var file_academictoken_curriculum_genesis_proto_depIdxs = []int32{
 	1, // 0: academictoken.curriculum.GenesisState.params:type_name -> academictoken.curriculum.Params
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	2, // 1: academictoken.curriculum.GenesisState.institutionList:type_name -> academictoken.curriculum.Institution
+	3, // 2: academictoken.curriculum.GenesisState.courseTokenList:type_name -> academictoken.curriculum.CourseToken
+	4, // 3: academictoken.curriculum.GenesisState.courseEquivalenceList:type_name -> academictoken.curriculum.CourseEquivalence
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_academictoken_curriculum_genesis_proto_init() }
@@ -568,6 +1037,9 @@ func file_academictoken_curriculum_genesis_proto_init() {
 		return
 	}
 	file_academictoken_curriculum_params_proto_init()
+	file_academictoken_curriculum_institution_proto_init()
+	file_academictoken_curriculum_course_token_proto_init()
+	file_academictoken_curriculum_course_equivalence_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_academictoken_curriculum_genesis_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GenesisState); i {

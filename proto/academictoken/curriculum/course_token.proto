@@ -4,14 +4,16 @@ package academictoken.curriculum;
 option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
 
 message CourseToken {
+  string index = 1; 
+  string tokenId = 2; 
+  string name = 3; 
+  string code = 4; 
+  string contentHash = 5; 
+  string institution = 6; 
+  string completionDate = 7; 
+  uint64 grade = 8; 
+  repeated string prerequisites = 9; 
+  string owner = 10; 
   
-  string tokenId = 1; 
-  string name = 2; 
-  string code = 3; 
-  string contentHash = 4; 
-  string institution = 5; 
-  string completionDate = 6; 
-  uint64 grade = 7; 
-  repeated string prerequisites = 8; 
-  string owner = 9; 
 }
+

@@ -4,10 +4,12 @@ package academictoken.curriculum;
 option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
 
 message CourseEquivalence {
+  string index = 1; 
+  string sourceTokenId = 2; 
+  string targetInstitution = 3; 
+  string targetCourseCode = 4; 
+  uint64 equivalenceStatus = 5; 
+  uint64 approvalCount = 6; 
   
-  string sourceTokenId = 1; 
-  string targetInstitution = 2; 
-  string targetCourseCode = 3; 
-  uint64 equivalenceStatus = 4; 
-  uint64 approvalCount = 5; 
 }
+

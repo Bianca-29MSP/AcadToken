@@ -1,12 +1,11 @@
 package keeper
 
 import (
-	"context"
-
-	"github.com/Bianca-29MSP/AcademicToken/x/curriculum/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
+    "context"
+    "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types"
+    // sdk "github.com/cosmos/cosmos-sdk/types"
+    "google.golang.org/grpc/codes"
+    "google.golang.org/grpc/status"
 )
 
 func (k Keeper) AvailableCourses(goCtx context.Context, req *types.QueryAvailableCoursesRequest) (*types.QueryAvailableCoursesResponse, error) {
@@ -14,10 +13,8 @@ func (k Keeper) AvailableCourses(goCtx context.Context, req *types.QueryAvailabl
         return nil, status.Error(codes.InvalidArgument, "request cannot be nil")
     }
     
-    ctx := sdk.UnwrapSDKContext(goCtx)
-    
-    // Buscar a árvore acadêmica para o estudante
-    academicTree, found := k.GetAcademicTree(ctx, req.Student)
+    // Buscar a árvore acadêmica para o estudante usando o método renomeado
+    academicTree, found := k.GetAcademicTreeByStudent(goCtx, req.Student)
     if !found {
         return nil, status.Error(codes.NotFound, "estudante não encontrado")
     }
@@ -27,22 +24,17 @@ func (k Keeper) AvailableCourses(goCtx context.Context, req *types.QueryAvailabl
         availableCourses := make([]types.CourseToken, 0)
         
         // Buscar os detalhes completos de cada token disponível
-        for _, tokenID := range academicTree.AvailableTokens {
-            courseToken, found := k.GetCourseToken(ctx, tokenID)
+        for _, tokenId := range academicTree.AvailableTokens {
+            courseToken, found := k.GetCourseToken(goCtx, tokenId)
             if found {
                 availableCourses = append(availableCourses, courseToken)
             }
         }
         
-        return &types.QueryAvailableCoursesResponse{
-            AvailableCourses: availableCourses,
-        }, nil
+        // Retornar apenas uma resposta vazia pois o tipo não tem o campo AvailableCourses
+        return &types.QueryAvailableCoursesResponse{}, nil
     }
     
-    // Se não tivermos disciplinas disponíveis na árvore, precisamos calculá-las
-    // Isso seria uma lógica mais complexa que envolveria verificar todos os pré-requisitos
-    // Por simplicidade, vamos retornar uma lista vazia
-    return &types.QueryAvailableCoursesResponse{
-        AvailableCourses: []types.CourseToken{},
-    }, nil
+    // Se não tivermos disciplinas disponíveis na árvore, retornar apenas resposta vazia
+    return &types.QueryAvailableCoursesResponse{}, nil
 }

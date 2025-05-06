@@ -45,6 +45,39 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "institution"}, {ProtoField: "threshold"}},
 				},
 
+				{
+					RpcMethod: "InstitutionAll",
+					Use:       "list-institution",
+					Short:     "List all Institution",
+				},
+				{
+					RpcMethod:      "Institution",
+					Use:            "show-institution [id]",
+					Short:          "Shows a Institution",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
+				{
+					RpcMethod: "CourseTokenAll",
+					Use:       "list-course-token",
+					Short:     "List all CourseToken",
+				},
+				{
+					RpcMethod:      "CourseToken",
+					Use:            "show-course-token [id]",
+					Short:          "Shows a CourseToken",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
+				{
+					RpcMethod: "CourseEquivalenceAll",
+					Use:       "list-course-equivalence",
+					Short:     "List all CourseEquivalence",
+				},
+				{
+					RpcMethod:      "CourseEquivalence",
+					Use:            "show-course-equivalence [id]",
+					Short:          "Shows a CourseEquivalence",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},

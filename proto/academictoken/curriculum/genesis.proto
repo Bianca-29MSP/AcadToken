@@ -1,17 +1,23 @@
 syntax = "proto3";
+
 package academictoken.curriculum;
 
 import "amino/amino.proto";
 import "gogoproto/gogo.proto";
 import "academictoken/curriculum/params.proto";
+import "academictoken/curriculum/institution.proto";
+import "academictoken/curriculum/course_token.proto";
+import "academictoken/curriculum/course_equivalence.proto";
 
 option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
 
 // GenesisState defines the curriculum module's genesis state.
 message GenesisState {
+  
   // params defines all the parameters of the module.
-  Params params = 1 [
-    (gogoproto.nullable) = false,
-    (amino.dont_omitempty) = true
-  ];
+           Params            params                = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
+  repeated Institution       institutionList       = 2 [(gogoproto.nullable) = false] ;
+  repeated CourseToken       courseTokenList       = 3 [(gogoproto.nullable) = false] ;
+  repeated CourseEquivalence courseEquivalenceList = 4 [(gogoproto.nullable) = false] ;
 }
+

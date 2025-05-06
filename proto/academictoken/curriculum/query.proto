@@ -7,6 +7,10 @@ import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "academictoken/curriculum/params.proto";
+import "academictoken/curriculum/institution.proto";
+import "academictoken/curriculum/course_token.proto";
+import "academictoken/curriculum/course_equivalence.proto";
+import "academictoken/curriculum/academic_tree.proto";
 
 option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
 
@@ -42,6 +46,36 @@ service Query {
     option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/critical_courses/{institution}/{threshold}";
   
   }
+  
+  // Queries a list of Institution items.
+  rpc Institution    (QueryGetInstitutionRequest) returns (QueryGetInstitutionResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/institution/{index}";
+  
+  }
+  rpc InstitutionAll (QueryAllInstitutionRequest) returns (QueryAllInstitutionResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/institution";
+  
+  }
+  
+  // Queries a list of CourseToken items.
+  rpc CourseToken    (QueryGetCourseTokenRequest) returns (QueryGetCourseTokenResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/course_token/{index}";
+  
+  }
+  rpc CourseTokenAll (QueryAllCourseTokenRequest) returns (QueryAllCourseTokenResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/course_token";
+  
+  }
+  
+  // Queries a list of CourseEquivalence items.
+  rpc CourseEquivalence    (QueryGetCourseEquivalenceRequest) returns (QueryGetCourseEquivalenceResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/course_equivalence/{index}";
+  
+  }
+  rpc CourseEquivalenceAll (QueryAllCourseEquivalenceRequest) returns (QueryAllCourseEquivalenceResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/course_equivalence";
+  
+  }
 }
 // QueryParamsRequest is request type for the Query/Params RPC method.
 message QueryParamsRequest {}
@@ -57,25 +91,84 @@ message QueryGetAcademicTreeRequest {
   string student = 1;
 }
 
-message QueryGetAcademicTreeResponse {}
+message QueryGetAcademicTreeResponse {
+  AcademicTree academicTree = 1;
+}
 
 message QueryAvailableCoursesRequest {
   string student = 1;
 }
 
-message QueryAvailableCoursesResponse {}
+message QueryAvailableCoursesResponse {
+  repeated CourseToken availableCourses = 1;
+}
 
 message QueryCheckEquivalenceRequest {
   string tokenId     = 1;
   string institution = 2;
 }
 
-message QueryCheckEquivalenceResponse {}
+message QueryCheckEquivalenceResponse {
+  repeated CourseEquivalence equivalences = 1;
+}
 
 message QueryCriticalCoursesRequest {
   string institution = 1;
   uint64 threshold   = 2;
 }
 
-message QueryCriticalCoursesResponse {}
+message QueryCriticalCoursesResponse {
+  repeated CourseToken criticalCourses = 1;
+}
+
+message QueryGetInstitutionRequest {
+  string index = 1;
+}
+
+message QueryGetInstitutionResponse {
+  Institution institution = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllInstitutionRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllInstitutionResponse {
+  repeated Institution                            institution = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination  = 2;
+}
+
+message QueryGetCourseTokenRequest {
+  string index = 1;
+}
+
+message QueryGetCourseTokenResponse {
+  CourseToken courseToken = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllCourseTokenRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllCourseTokenResponse {
+  repeated CourseToken                            courseToken = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination  = 2;
+}
+
+message QueryGetCourseEquivalenceRequest {
+  string index = 1;
+}
+
+message QueryGetCourseEquivalenceResponse {
+  CourseEquivalence courseEquivalence = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllCourseEquivalenceRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllCourseEquivalenceResponse {
+  repeated CourseEquivalence                      courseEquivalence = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination        = 2;
+}
 
