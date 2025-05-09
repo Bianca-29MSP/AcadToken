@@ -46,6 +46,14 @@ func TestGenesisState_Validate(t *testing.T) {
 						Index: "1",
 					},
 				},
+				CourseContentList: []types.CourseContent{
+					{
+						Index: "0",
+					},
+					{
+						Index: "1",
+					},
+				},
 				// this line is used by starport scaffolding # types/genesis/validField
 			},
 			valid: true,
@@ -82,6 +90,20 @@ func TestGenesisState_Validate(t *testing.T) {
 			desc: "duplicated courseEquivalence",
 			genState: &types.GenesisState{
 				CourseEquivalenceList: []types.CourseEquivalence{
+					{
+						Index: "0",
+					},
+					{
+						Index: "0",
+					},
+				},
+			},
+			valid: false,
+		},
+		{
+			desc: "duplicated courseContent",
+			genState: &types.GenesisState{
+				CourseContentList: []types.CourseContent{
 					{
 						Index: "0",
 					},

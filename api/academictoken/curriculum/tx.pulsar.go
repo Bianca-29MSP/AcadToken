@@ -5043,6 +5043,2132 @@ func (x *fastReflection_MsgProposeEquivalenceResponse) ProtoMethods() *protoifac
 	}
 }
 
+var _ protoreflect.List = (*_MsgCreateCourseContent_9_list)(nil)
+
+type _MsgCreateCourseContent_9_list struct {
+	list *[]string
+}
+
+func (x *_MsgCreateCourseContent_9_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_MsgCreateCourseContent_9_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_MsgCreateCourseContent_9_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_MsgCreateCourseContent_9_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_MsgCreateCourseContent_9_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message MsgCreateCourseContent at list field Objectives as it is not of Message kind"))
+}
+
+func (x *_MsgCreateCourseContent_9_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_MsgCreateCourseContent_9_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_MsgCreateCourseContent_9_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_MsgCreateCourseContent_10_list)(nil)
+
+type _MsgCreateCourseContent_10_list struct {
+	list *[]string
+}
+
+func (x *_MsgCreateCourseContent_10_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_MsgCreateCourseContent_10_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_MsgCreateCourseContent_10_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_MsgCreateCourseContent_10_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_MsgCreateCourseContent_10_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message MsgCreateCourseContent at list field TopicUnits as it is not of Message kind"))
+}
+
+func (x *_MsgCreateCourseContent_10_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_MsgCreateCourseContent_10_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_MsgCreateCourseContent_10_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_MsgCreateCourseContent_11_list)(nil)
+
+type _MsgCreateCourseContent_11_list struct {
+	list *[]string
+}
+
+func (x *_MsgCreateCourseContent_11_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_MsgCreateCourseContent_11_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_MsgCreateCourseContent_11_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_MsgCreateCourseContent_11_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_MsgCreateCourseContent_11_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message MsgCreateCourseContent at list field Methodologies as it is not of Message kind"))
+}
+
+func (x *_MsgCreateCourseContent_11_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_MsgCreateCourseContent_11_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_MsgCreateCourseContent_11_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_MsgCreateCourseContent_12_list)(nil)
+
+type _MsgCreateCourseContent_12_list struct {
+	list *[]string
+}
+
+func (x *_MsgCreateCourseContent_12_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_MsgCreateCourseContent_12_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_MsgCreateCourseContent_12_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_MsgCreateCourseContent_12_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_MsgCreateCourseContent_12_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message MsgCreateCourseContent at list field EvaluationMethods as it is not of Message kind"))
+}
+
+func (x *_MsgCreateCourseContent_12_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_MsgCreateCourseContent_12_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_MsgCreateCourseContent_12_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_MsgCreateCourseContent_13_list)(nil)
+
+type _MsgCreateCourseContent_13_list struct {
+	list *[]string
+}
+
+func (x *_MsgCreateCourseContent_13_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_MsgCreateCourseContent_13_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_MsgCreateCourseContent_13_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_MsgCreateCourseContent_13_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_MsgCreateCourseContent_13_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message MsgCreateCourseContent at list field BibliographyBasic as it is not of Message kind"))
+}
+
+func (x *_MsgCreateCourseContent_13_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_MsgCreateCourseContent_13_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_MsgCreateCourseContent_13_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_MsgCreateCourseContent_14_list)(nil)
+
+type _MsgCreateCourseContent_14_list struct {
+	list *[]string
+}
+
+func (x *_MsgCreateCourseContent_14_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_MsgCreateCourseContent_14_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_MsgCreateCourseContent_14_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_MsgCreateCourseContent_14_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_MsgCreateCourseContent_14_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message MsgCreateCourseContent at list field BibliographyComplementary as it is not of Message kind"))
+}
+
+func (x *_MsgCreateCourseContent_14_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_MsgCreateCourseContent_14_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_MsgCreateCourseContent_14_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_MsgCreateCourseContent_15_list)(nil)
+
+type _MsgCreateCourseContent_15_list struct {
+	list *[]string
+}
+
+func (x *_MsgCreateCourseContent_15_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_MsgCreateCourseContent_15_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_MsgCreateCourseContent_15_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_MsgCreateCourseContent_15_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_MsgCreateCourseContent_15_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message MsgCreateCourseContent at list field Keywords as it is not of Message kind"))
+}
+
+func (x *_MsgCreateCourseContent_15_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_MsgCreateCourseContent_15_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_MsgCreateCourseContent_15_list) IsValid() bool {
+	return x.list != nil
+}
+
+var (
+	md_MsgCreateCourseContent                           protoreflect.MessageDescriptor
+	fd_MsgCreateCourseContent_creator                   protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_courseId                  protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_institution               protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_title                     protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_code                      protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_workloadHours             protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_credits                   protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_description               protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_objectives                protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_topicUnits                protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_methodologies             protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_evaluationMethods         protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_bibliographyBasic         protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_bibliographyComplementary protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_keywords                  protoreflect.FieldDescriptor
+	fd_MsgCreateCourseContent_contentHash               protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_academictoken_curriculum_tx_proto_init()
+	md_MsgCreateCourseContent = File_academictoken_curriculum_tx_proto.Messages().ByName("MsgCreateCourseContent")
+	fd_MsgCreateCourseContent_creator = md_MsgCreateCourseContent.Fields().ByName("creator")
+	fd_MsgCreateCourseContent_courseId = md_MsgCreateCourseContent.Fields().ByName("courseId")
+	fd_MsgCreateCourseContent_institution = md_MsgCreateCourseContent.Fields().ByName("institution")
+	fd_MsgCreateCourseContent_title = md_MsgCreateCourseContent.Fields().ByName("title")
+	fd_MsgCreateCourseContent_code = md_MsgCreateCourseContent.Fields().ByName("code")
+	fd_MsgCreateCourseContent_workloadHours = md_MsgCreateCourseContent.Fields().ByName("workloadHours")
+	fd_MsgCreateCourseContent_credits = md_MsgCreateCourseContent.Fields().ByName("credits")
+	fd_MsgCreateCourseContent_description = md_MsgCreateCourseContent.Fields().ByName("description")
+	fd_MsgCreateCourseContent_objectives = md_MsgCreateCourseContent.Fields().ByName("objectives")
+	fd_MsgCreateCourseContent_topicUnits = md_MsgCreateCourseContent.Fields().ByName("topicUnits")
+	fd_MsgCreateCourseContent_methodologies = md_MsgCreateCourseContent.Fields().ByName("methodologies")
+	fd_MsgCreateCourseContent_evaluationMethods = md_MsgCreateCourseContent.Fields().ByName("evaluationMethods")
+	fd_MsgCreateCourseContent_bibliographyBasic = md_MsgCreateCourseContent.Fields().ByName("bibliographyBasic")
+	fd_MsgCreateCourseContent_bibliographyComplementary = md_MsgCreateCourseContent.Fields().ByName("bibliographyComplementary")
+	fd_MsgCreateCourseContent_keywords = md_MsgCreateCourseContent.Fields().ByName("keywords")
+	fd_MsgCreateCourseContent_contentHash = md_MsgCreateCourseContent.Fields().ByName("contentHash")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgCreateCourseContent)(nil)
+
+type fastReflection_MsgCreateCourseContent MsgCreateCourseContent
+
+func (x *MsgCreateCourseContent) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgCreateCourseContent)(x)
+}
+
+func (x *MsgCreateCourseContent) slowProtoReflect() protoreflect.Message {
+	mi := &file_academictoken_curriculum_tx_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgCreateCourseContent_messageType fastReflection_MsgCreateCourseContent_messageType
+var _ protoreflect.MessageType = fastReflection_MsgCreateCourseContent_messageType{}
+
+type fastReflection_MsgCreateCourseContent_messageType struct{}
+
+func (x fastReflection_MsgCreateCourseContent_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgCreateCourseContent)(nil)
+}
+func (x fastReflection_MsgCreateCourseContent_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgCreateCourseContent)
+}
+func (x fastReflection_MsgCreateCourseContent_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCreateCourseContent
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgCreateCourseContent) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCreateCourseContent
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgCreateCourseContent) Type() protoreflect.MessageType {
+	return _fastReflection_MsgCreateCourseContent_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgCreateCourseContent) New() protoreflect.Message {
+	return new(fastReflection_MsgCreateCourseContent)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgCreateCourseContent) Interface() protoreflect.ProtoMessage {
+	return (*MsgCreateCourseContent)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgCreateCourseContent) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Creator != "" {
+		value := protoreflect.ValueOfString(x.Creator)
+		if !f(fd_MsgCreateCourseContent_creator, value) {
+			return
+		}
+	}
+	if x.CourseId != "" {
+		value := protoreflect.ValueOfString(x.CourseId)
+		if !f(fd_MsgCreateCourseContent_courseId, value) {
+			return
+		}
+	}
+	if x.Institution != "" {
+		value := protoreflect.ValueOfString(x.Institution)
+		if !f(fd_MsgCreateCourseContent_institution, value) {
+			return
+		}
+	}
+	if x.Title != "" {
+		value := protoreflect.ValueOfString(x.Title)
+		if !f(fd_MsgCreateCourseContent_title, value) {
+			return
+		}
+	}
+	if x.Code != "" {
+		value := protoreflect.ValueOfString(x.Code)
+		if !f(fd_MsgCreateCourseContent_code, value) {
+			return
+		}
+	}
+	if x.WorkloadHours != uint64(0) {
+		value := protoreflect.ValueOfUint64(x.WorkloadHours)
+		if !f(fd_MsgCreateCourseContent_workloadHours, value) {
+			return
+		}
+	}
+	if x.Credits != uint64(0) {
+		value := protoreflect.ValueOfUint64(x.Credits)
+		if !f(fd_MsgCreateCourseContent_credits, value) {
+			return
+		}
+	}
+	if x.Description != "" {
+		value := protoreflect.ValueOfString(x.Description)
+		if !f(fd_MsgCreateCourseContent_description, value) {
+			return
+		}
+	}
+	if len(x.Objectives) != 0 {
+		value := protoreflect.ValueOfList(&_MsgCreateCourseContent_9_list{list: &x.Objectives})
+		if !f(fd_MsgCreateCourseContent_objectives, value) {
+			return
+		}
+	}
+	if len(x.TopicUnits) != 0 {
+		value := protoreflect.ValueOfList(&_MsgCreateCourseContent_10_list{list: &x.TopicUnits})
+		if !f(fd_MsgCreateCourseContent_topicUnits, value) {
+			return
+		}
+	}
+	if len(x.Methodologies) != 0 {
+		value := protoreflect.ValueOfList(&_MsgCreateCourseContent_11_list{list: &x.Methodologies})
+		if !f(fd_MsgCreateCourseContent_methodologies, value) {
+			return
+		}
+	}
+	if len(x.EvaluationMethods) != 0 {
+		value := protoreflect.ValueOfList(&_MsgCreateCourseContent_12_list{list: &x.EvaluationMethods})
+		if !f(fd_MsgCreateCourseContent_evaluationMethods, value) {
+			return
+		}
+	}
+	if len(x.BibliographyBasic) != 0 {
+		value := protoreflect.ValueOfList(&_MsgCreateCourseContent_13_list{list: &x.BibliographyBasic})
+		if !f(fd_MsgCreateCourseContent_bibliographyBasic, value) {
+			return
+		}
+	}
+	if len(x.BibliographyComplementary) != 0 {
+		value := protoreflect.ValueOfList(&_MsgCreateCourseContent_14_list{list: &x.BibliographyComplementary})
+		if !f(fd_MsgCreateCourseContent_bibliographyComplementary, value) {
+			return
+		}
+	}
+	if len(x.Keywords) != 0 {
+		value := protoreflect.ValueOfList(&_MsgCreateCourseContent_15_list{list: &x.Keywords})
+		if !f(fd_MsgCreateCourseContent_keywords, value) {
+			return
+		}
+	}
+	if x.ContentHash != "" {
+		value := protoreflect.ValueOfString(x.ContentHash)
+		if !f(fd_MsgCreateCourseContent_contentHash, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgCreateCourseContent) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "academictoken.curriculum.MsgCreateCourseContent.creator":
+		return x.Creator != ""
+	case "academictoken.curriculum.MsgCreateCourseContent.courseId":
+		return x.CourseId != ""
+	case "academictoken.curriculum.MsgCreateCourseContent.institution":
+		return x.Institution != ""
+	case "academictoken.curriculum.MsgCreateCourseContent.title":
+		return x.Title != ""
+	case "academictoken.curriculum.MsgCreateCourseContent.code":
+		return x.Code != ""
+	case "academictoken.curriculum.MsgCreateCourseContent.workloadHours":
+		return x.WorkloadHours != uint64(0)
+	case "academictoken.curriculum.MsgCreateCourseContent.credits":
+		return x.Credits != uint64(0)
+	case "academictoken.curriculum.MsgCreateCourseContent.description":
+		return x.Description != ""
+	case "academictoken.curriculum.MsgCreateCourseContent.objectives":
+		return len(x.Objectives) != 0
+	case "academictoken.curriculum.MsgCreateCourseContent.topicUnits":
+		return len(x.TopicUnits) != 0
+	case "academictoken.curriculum.MsgCreateCourseContent.methodologies":
+		return len(x.Methodologies) != 0
+	case "academictoken.curriculum.MsgCreateCourseContent.evaluationMethods":
+		return len(x.EvaluationMethods) != 0
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyBasic":
+		return len(x.BibliographyBasic) != 0
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyComplementary":
+		return len(x.BibliographyComplementary) != 0
+	case "academictoken.curriculum.MsgCreateCourseContent.keywords":
+		return len(x.Keywords) != 0
+	case "academictoken.curriculum.MsgCreateCourseContent.contentHash":
+		return x.ContentHash != ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContent"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContent does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCreateCourseContent) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "academictoken.curriculum.MsgCreateCourseContent.creator":
+		x.Creator = ""
+	case "academictoken.curriculum.MsgCreateCourseContent.courseId":
+		x.CourseId = ""
+	case "academictoken.curriculum.MsgCreateCourseContent.institution":
+		x.Institution = ""
+	case "academictoken.curriculum.MsgCreateCourseContent.title":
+		x.Title = ""
+	case "academictoken.curriculum.MsgCreateCourseContent.code":
+		x.Code = ""
+	case "academictoken.curriculum.MsgCreateCourseContent.workloadHours":
+		x.WorkloadHours = uint64(0)
+	case "academictoken.curriculum.MsgCreateCourseContent.credits":
+		x.Credits = uint64(0)
+	case "academictoken.curriculum.MsgCreateCourseContent.description":
+		x.Description = ""
+	case "academictoken.curriculum.MsgCreateCourseContent.objectives":
+		x.Objectives = nil
+	case "academictoken.curriculum.MsgCreateCourseContent.topicUnits":
+		x.TopicUnits = nil
+	case "academictoken.curriculum.MsgCreateCourseContent.methodologies":
+		x.Methodologies = nil
+	case "academictoken.curriculum.MsgCreateCourseContent.evaluationMethods":
+		x.EvaluationMethods = nil
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyBasic":
+		x.BibliographyBasic = nil
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyComplementary":
+		x.BibliographyComplementary = nil
+	case "academictoken.curriculum.MsgCreateCourseContent.keywords":
+		x.Keywords = nil
+	case "academictoken.curriculum.MsgCreateCourseContent.contentHash":
+		x.ContentHash = ""
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContent"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContent does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgCreateCourseContent) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "academictoken.curriculum.MsgCreateCourseContent.creator":
+		value := x.Creator
+		return protoreflect.ValueOfString(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.courseId":
+		value := x.CourseId
+		return protoreflect.ValueOfString(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.institution":
+		value := x.Institution
+		return protoreflect.ValueOfString(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.title":
+		value := x.Title
+		return protoreflect.ValueOfString(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.code":
+		value := x.Code
+		return protoreflect.ValueOfString(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.workloadHours":
+		value := x.WorkloadHours
+		return protoreflect.ValueOfUint64(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.credits":
+		value := x.Credits
+		return protoreflect.ValueOfUint64(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.description":
+		value := x.Description
+		return protoreflect.ValueOfString(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.objectives":
+		if len(x.Objectives) == 0 {
+			return protoreflect.ValueOfList(&_MsgCreateCourseContent_9_list{})
+		}
+		listValue := &_MsgCreateCourseContent_9_list{list: &x.Objectives}
+		return protoreflect.ValueOfList(listValue)
+	case "academictoken.curriculum.MsgCreateCourseContent.topicUnits":
+		if len(x.TopicUnits) == 0 {
+			return protoreflect.ValueOfList(&_MsgCreateCourseContent_10_list{})
+		}
+		listValue := &_MsgCreateCourseContent_10_list{list: &x.TopicUnits}
+		return protoreflect.ValueOfList(listValue)
+	case "academictoken.curriculum.MsgCreateCourseContent.methodologies":
+		if len(x.Methodologies) == 0 {
+			return protoreflect.ValueOfList(&_MsgCreateCourseContent_11_list{})
+		}
+		listValue := &_MsgCreateCourseContent_11_list{list: &x.Methodologies}
+		return protoreflect.ValueOfList(listValue)
+	case "academictoken.curriculum.MsgCreateCourseContent.evaluationMethods":
+		if len(x.EvaluationMethods) == 0 {
+			return protoreflect.ValueOfList(&_MsgCreateCourseContent_12_list{})
+		}
+		listValue := &_MsgCreateCourseContent_12_list{list: &x.EvaluationMethods}
+		return protoreflect.ValueOfList(listValue)
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyBasic":
+		if len(x.BibliographyBasic) == 0 {
+			return protoreflect.ValueOfList(&_MsgCreateCourseContent_13_list{})
+		}
+		listValue := &_MsgCreateCourseContent_13_list{list: &x.BibliographyBasic}
+		return protoreflect.ValueOfList(listValue)
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyComplementary":
+		if len(x.BibliographyComplementary) == 0 {
+			return protoreflect.ValueOfList(&_MsgCreateCourseContent_14_list{})
+		}
+		listValue := &_MsgCreateCourseContent_14_list{list: &x.BibliographyComplementary}
+		return protoreflect.ValueOfList(listValue)
+	case "academictoken.curriculum.MsgCreateCourseContent.keywords":
+		if len(x.Keywords) == 0 {
+			return protoreflect.ValueOfList(&_MsgCreateCourseContent_15_list{})
+		}
+		listValue := &_MsgCreateCourseContent_15_list{list: &x.Keywords}
+		return protoreflect.ValueOfList(listValue)
+	case "academictoken.curriculum.MsgCreateCourseContent.contentHash":
+		value := x.ContentHash
+		return protoreflect.ValueOfString(value)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContent"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContent does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCreateCourseContent) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "academictoken.curriculum.MsgCreateCourseContent.creator":
+		x.Creator = value.Interface().(string)
+	case "academictoken.curriculum.MsgCreateCourseContent.courseId":
+		x.CourseId = value.Interface().(string)
+	case "academictoken.curriculum.MsgCreateCourseContent.institution":
+		x.Institution = value.Interface().(string)
+	case "academictoken.curriculum.MsgCreateCourseContent.title":
+		x.Title = value.Interface().(string)
+	case "academictoken.curriculum.MsgCreateCourseContent.code":
+		x.Code = value.Interface().(string)
+	case "academictoken.curriculum.MsgCreateCourseContent.workloadHours":
+		x.WorkloadHours = value.Uint()
+	case "academictoken.curriculum.MsgCreateCourseContent.credits":
+		x.Credits = value.Uint()
+	case "academictoken.curriculum.MsgCreateCourseContent.description":
+		x.Description = value.Interface().(string)
+	case "academictoken.curriculum.MsgCreateCourseContent.objectives":
+		lv := value.List()
+		clv := lv.(*_MsgCreateCourseContent_9_list)
+		x.Objectives = *clv.list
+	case "academictoken.curriculum.MsgCreateCourseContent.topicUnits":
+		lv := value.List()
+		clv := lv.(*_MsgCreateCourseContent_10_list)
+		x.TopicUnits = *clv.list
+	case "academictoken.curriculum.MsgCreateCourseContent.methodologies":
+		lv := value.List()
+		clv := lv.(*_MsgCreateCourseContent_11_list)
+		x.Methodologies = *clv.list
+	case "academictoken.curriculum.MsgCreateCourseContent.evaluationMethods":
+		lv := value.List()
+		clv := lv.(*_MsgCreateCourseContent_12_list)
+		x.EvaluationMethods = *clv.list
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyBasic":
+		lv := value.List()
+		clv := lv.(*_MsgCreateCourseContent_13_list)
+		x.BibliographyBasic = *clv.list
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyComplementary":
+		lv := value.List()
+		clv := lv.(*_MsgCreateCourseContent_14_list)
+		x.BibliographyComplementary = *clv.list
+	case "academictoken.curriculum.MsgCreateCourseContent.keywords":
+		lv := value.List()
+		clv := lv.(*_MsgCreateCourseContent_15_list)
+		x.Keywords = *clv.list
+	case "academictoken.curriculum.MsgCreateCourseContent.contentHash":
+		x.ContentHash = value.Interface().(string)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContent"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContent does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCreateCourseContent) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "academictoken.curriculum.MsgCreateCourseContent.objectives":
+		if x.Objectives == nil {
+			x.Objectives = []string{}
+		}
+		value := &_MsgCreateCourseContent_9_list{list: &x.Objectives}
+		return protoreflect.ValueOfList(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.topicUnits":
+		if x.TopicUnits == nil {
+			x.TopicUnits = []string{}
+		}
+		value := &_MsgCreateCourseContent_10_list{list: &x.TopicUnits}
+		return protoreflect.ValueOfList(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.methodologies":
+		if x.Methodologies == nil {
+			x.Methodologies = []string{}
+		}
+		value := &_MsgCreateCourseContent_11_list{list: &x.Methodologies}
+		return protoreflect.ValueOfList(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.evaluationMethods":
+		if x.EvaluationMethods == nil {
+			x.EvaluationMethods = []string{}
+		}
+		value := &_MsgCreateCourseContent_12_list{list: &x.EvaluationMethods}
+		return protoreflect.ValueOfList(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyBasic":
+		if x.BibliographyBasic == nil {
+			x.BibliographyBasic = []string{}
+		}
+		value := &_MsgCreateCourseContent_13_list{list: &x.BibliographyBasic}
+		return protoreflect.ValueOfList(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyComplementary":
+		if x.BibliographyComplementary == nil {
+			x.BibliographyComplementary = []string{}
+		}
+		value := &_MsgCreateCourseContent_14_list{list: &x.BibliographyComplementary}
+		return protoreflect.ValueOfList(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.keywords":
+		if x.Keywords == nil {
+			x.Keywords = []string{}
+		}
+		value := &_MsgCreateCourseContent_15_list{list: &x.Keywords}
+		return protoreflect.ValueOfList(value)
+	case "academictoken.curriculum.MsgCreateCourseContent.creator":
+		panic(fmt.Errorf("field creator of message academictoken.curriculum.MsgCreateCourseContent is not mutable"))
+	case "academictoken.curriculum.MsgCreateCourseContent.courseId":
+		panic(fmt.Errorf("field courseId of message academictoken.curriculum.MsgCreateCourseContent is not mutable"))
+	case "academictoken.curriculum.MsgCreateCourseContent.institution":
+		panic(fmt.Errorf("field institution of message academictoken.curriculum.MsgCreateCourseContent is not mutable"))
+	case "academictoken.curriculum.MsgCreateCourseContent.title":
+		panic(fmt.Errorf("field title of message academictoken.curriculum.MsgCreateCourseContent is not mutable"))
+	case "academictoken.curriculum.MsgCreateCourseContent.code":
+		panic(fmt.Errorf("field code of message academictoken.curriculum.MsgCreateCourseContent is not mutable"))
+	case "academictoken.curriculum.MsgCreateCourseContent.workloadHours":
+		panic(fmt.Errorf("field workloadHours of message academictoken.curriculum.MsgCreateCourseContent is not mutable"))
+	case "academictoken.curriculum.MsgCreateCourseContent.credits":
+		panic(fmt.Errorf("field credits of message academictoken.curriculum.MsgCreateCourseContent is not mutable"))
+	case "academictoken.curriculum.MsgCreateCourseContent.description":
+		panic(fmt.Errorf("field description of message academictoken.curriculum.MsgCreateCourseContent is not mutable"))
+	case "academictoken.curriculum.MsgCreateCourseContent.contentHash":
+		panic(fmt.Errorf("field contentHash of message academictoken.curriculum.MsgCreateCourseContent is not mutable"))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContent"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContent does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgCreateCourseContent) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "academictoken.curriculum.MsgCreateCourseContent.creator":
+		return protoreflect.ValueOfString("")
+	case "academictoken.curriculum.MsgCreateCourseContent.courseId":
+		return protoreflect.ValueOfString("")
+	case "academictoken.curriculum.MsgCreateCourseContent.institution":
+		return protoreflect.ValueOfString("")
+	case "academictoken.curriculum.MsgCreateCourseContent.title":
+		return protoreflect.ValueOfString("")
+	case "academictoken.curriculum.MsgCreateCourseContent.code":
+		return protoreflect.ValueOfString("")
+	case "academictoken.curriculum.MsgCreateCourseContent.workloadHours":
+		return protoreflect.ValueOfUint64(uint64(0))
+	case "academictoken.curriculum.MsgCreateCourseContent.credits":
+		return protoreflect.ValueOfUint64(uint64(0))
+	case "academictoken.curriculum.MsgCreateCourseContent.description":
+		return protoreflect.ValueOfString("")
+	case "academictoken.curriculum.MsgCreateCourseContent.objectives":
+		list := []string{}
+		return protoreflect.ValueOfList(&_MsgCreateCourseContent_9_list{list: &list})
+	case "academictoken.curriculum.MsgCreateCourseContent.topicUnits":
+		list := []string{}
+		return protoreflect.ValueOfList(&_MsgCreateCourseContent_10_list{list: &list})
+	case "academictoken.curriculum.MsgCreateCourseContent.methodologies":
+		list := []string{}
+		return protoreflect.ValueOfList(&_MsgCreateCourseContent_11_list{list: &list})
+	case "academictoken.curriculum.MsgCreateCourseContent.evaluationMethods":
+		list := []string{}
+		return protoreflect.ValueOfList(&_MsgCreateCourseContent_12_list{list: &list})
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyBasic":
+		list := []string{}
+		return protoreflect.ValueOfList(&_MsgCreateCourseContent_13_list{list: &list})
+	case "academictoken.curriculum.MsgCreateCourseContent.bibliographyComplementary":
+		list := []string{}
+		return protoreflect.ValueOfList(&_MsgCreateCourseContent_14_list{list: &list})
+	case "academictoken.curriculum.MsgCreateCourseContent.keywords":
+		list := []string{}
+		return protoreflect.ValueOfList(&_MsgCreateCourseContent_15_list{list: &list})
+	case "academictoken.curriculum.MsgCreateCourseContent.contentHash":
+		return protoreflect.ValueOfString("")
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContent"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContent does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgCreateCourseContent) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in academictoken.curriculum.MsgCreateCourseContent", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgCreateCourseContent) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCreateCourseContent) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgCreateCourseContent) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgCreateCourseContent) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgCreateCourseContent)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		l = len(x.Creator)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.CourseId)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Institution)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Title)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Code)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.WorkloadHours != 0 {
+			n += 1 + runtime.Sov(uint64(x.WorkloadHours))
+		}
+		if x.Credits != 0 {
+			n += 1 + runtime.Sov(uint64(x.Credits))
+		}
+		l = len(x.Description)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if len(x.Objectives) > 0 {
+			for _, s := range x.Objectives {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.TopicUnits) > 0 {
+			for _, s := range x.TopicUnits {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.Methodologies) > 0 {
+			for _, s := range x.Methodologies {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.EvaluationMethods) > 0 {
+			for _, s := range x.EvaluationMethods {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.BibliographyBasic) > 0 {
+			for _, s := range x.BibliographyBasic {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.BibliographyComplementary) > 0 {
+			for _, s := range x.BibliographyComplementary {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.Keywords) > 0 {
+			for _, s := range x.Keywords {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		l = len(x.ContentHash)
+		if l > 0 {
+			n += 2 + l + runtime.Sov(uint64(l))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCreateCourseContent)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.ContentHash) > 0 {
+			i -= len(x.ContentHash)
+			copy(dAtA[i:], x.ContentHash)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.ContentHash)))
+			i--
+			dAtA[i] = 0x1
+			i--
+			dAtA[i] = 0x82
+		}
+		if len(x.Keywords) > 0 {
+			for iNdEx := len(x.Keywords) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.Keywords[iNdEx])
+				copy(dAtA[i:], x.Keywords[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Keywords[iNdEx])))
+				i--
+				dAtA[i] = 0x7a
+			}
+		}
+		if len(x.BibliographyComplementary) > 0 {
+			for iNdEx := len(x.BibliographyComplementary) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.BibliographyComplementary[iNdEx])
+				copy(dAtA[i:], x.BibliographyComplementary[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.BibliographyComplementary[iNdEx])))
+				i--
+				dAtA[i] = 0x72
+			}
+		}
+		if len(x.BibliographyBasic) > 0 {
+			for iNdEx := len(x.BibliographyBasic) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.BibliographyBasic[iNdEx])
+				copy(dAtA[i:], x.BibliographyBasic[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.BibliographyBasic[iNdEx])))
+				i--
+				dAtA[i] = 0x6a
+			}
+		}
+		if len(x.EvaluationMethods) > 0 {
+			for iNdEx := len(x.EvaluationMethods) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.EvaluationMethods[iNdEx])
+				copy(dAtA[i:], x.EvaluationMethods[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.EvaluationMethods[iNdEx])))
+				i--
+				dAtA[i] = 0x62
+			}
+		}
+		if len(x.Methodologies) > 0 {
+			for iNdEx := len(x.Methodologies) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.Methodologies[iNdEx])
+				copy(dAtA[i:], x.Methodologies[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Methodologies[iNdEx])))
+				i--
+				dAtA[i] = 0x5a
+			}
+		}
+		if len(x.TopicUnits) > 0 {
+			for iNdEx := len(x.TopicUnits) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.TopicUnits[iNdEx])
+				copy(dAtA[i:], x.TopicUnits[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.TopicUnits[iNdEx])))
+				i--
+				dAtA[i] = 0x52
+			}
+		}
+		if len(x.Objectives) > 0 {
+			for iNdEx := len(x.Objectives) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.Objectives[iNdEx])
+				copy(dAtA[i:], x.Objectives[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Objectives[iNdEx])))
+				i--
+				dAtA[i] = 0x4a
+			}
+		}
+		if len(x.Description) > 0 {
+			i -= len(x.Description)
+			copy(dAtA[i:], x.Description)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Description)))
+			i--
+			dAtA[i] = 0x42
+		}
+		if x.Credits != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.Credits))
+			i--
+			dAtA[i] = 0x38
+		}
+		if x.WorkloadHours != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.WorkloadHours))
+			i--
+			dAtA[i] = 0x30
+		}
+		if len(x.Code) > 0 {
+			i -= len(x.Code)
+			copy(dAtA[i:], x.Code)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Code)))
+			i--
+			dAtA[i] = 0x2a
+		}
+		if len(x.Title) > 0 {
+			i -= len(x.Title)
+			copy(dAtA[i:], x.Title)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Title)))
+			i--
+			dAtA[i] = 0x22
+		}
+		if len(x.Institution) > 0 {
+			i -= len(x.Institution)
+			copy(dAtA[i:], x.Institution)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Institution)))
+			i--
+			dAtA[i] = 0x1a
+		}
+		if len(x.CourseId) > 0 {
+			i -= len(x.CourseId)
+			copy(dAtA[i:], x.CourseId)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.CourseId)))
+			i--
+			dAtA[i] = 0x12
+		}
+		if len(x.Creator) > 0 {
+			i -= len(x.Creator)
+			copy(dAtA[i:], x.Creator)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Creator)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCreateCourseContent)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateCourseContent: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateCourseContent: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Creator = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 2:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field CourseId", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.CourseId = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 3:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Institution", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Institution = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 4:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Title", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Title = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 5:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Code", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Code = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 6:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field WorkloadHours", wireType)
+				}
+				x.WorkloadHours = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.WorkloadHours |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 7:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Credits", wireType)
+				}
+				x.Credits = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.Credits |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 8:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Description", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Description = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 9:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Objectives", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Objectives = append(x.Objectives, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			case 10:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field TopicUnits", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.TopicUnits = append(x.TopicUnits, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			case 11:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Methodologies", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Methodologies = append(x.Methodologies, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			case 12:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field EvaluationMethods", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.EvaluationMethods = append(x.EvaluationMethods, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			case 13:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field BibliographyBasic", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.BibliographyBasic = append(x.BibliographyBasic, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			case 14:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field BibliographyComplementary", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.BibliographyComplementary = append(x.BibliographyComplementary, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			case 15:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Keywords", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Keywords = append(x.Keywords, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			case 16:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field ContentHash", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.ContentHash = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var (
+	md_MsgCreateCourseContentResponse protoreflect.MessageDescriptor
+)
+
+func init() {
+	file_academictoken_curriculum_tx_proto_init()
+	md_MsgCreateCourseContentResponse = File_academictoken_curriculum_tx_proto.Messages().ByName("MsgCreateCourseContentResponse")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgCreateCourseContentResponse)(nil)
+
+type fastReflection_MsgCreateCourseContentResponse MsgCreateCourseContentResponse
+
+func (x *MsgCreateCourseContentResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgCreateCourseContentResponse)(x)
+}
+
+func (x *MsgCreateCourseContentResponse) slowProtoReflect() protoreflect.Message {
+	mi := &file_academictoken_curriculum_tx_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgCreateCourseContentResponse_messageType fastReflection_MsgCreateCourseContentResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgCreateCourseContentResponse_messageType{}
+
+type fastReflection_MsgCreateCourseContentResponse_messageType struct{}
+
+func (x fastReflection_MsgCreateCourseContentResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgCreateCourseContentResponse)(nil)
+}
+func (x fastReflection_MsgCreateCourseContentResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgCreateCourseContentResponse)
+}
+func (x fastReflection_MsgCreateCourseContentResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCreateCourseContentResponse
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgCreateCourseContentResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCreateCourseContentResponse
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgCreateCourseContentResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgCreateCourseContentResponse_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgCreateCourseContentResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgCreateCourseContentResponse)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgCreateCourseContentResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgCreateCourseContentResponse)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgCreateCourseContentResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgCreateCourseContentResponse) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContentResponse"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContentResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCreateCourseContentResponse) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContentResponse"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContentResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgCreateCourseContentResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContentResponse"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContentResponse does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCreateCourseContentResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContentResponse"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContentResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCreateCourseContentResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContentResponse"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContentResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgCreateCourseContentResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: academictoken.curriculum.MsgCreateCourseContentResponse"))
+		}
+		panic(fmt.Errorf("message academictoken.curriculum.MsgCreateCourseContentResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgCreateCourseContentResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in academictoken.curriculum.MsgCreateCourseContentResponse", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgCreateCourseContentResponse) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCreateCourseContentResponse) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgCreateCourseContentResponse) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgCreateCourseContentResponse) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgCreateCourseContentResponse)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCreateCourseContentResponse)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCreateCourseContentResponse)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateCourseContentResponse: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateCourseContentResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
 // Code generated by protoc-gen-go. DO NOT EDIT.
 // versions:
 // 	protoc-gen-go v1.27.0
@@ -5502,6 +7628,187 @@ func (*MsgProposeEquivalenceResponse) Descriptor() ([]byte, []int) {
 	return file_academictoken_curriculum_tx_proto_rawDescGZIP(), []int{9}
 }
 
+type MsgCreateCourseContent struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Creator                   string   `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	CourseId                  string   `protobuf:"bytes,2,opt,name=courseId,proto3" json:"courseId,omitempty"`
+	Institution               string   `protobuf:"bytes,3,opt,name=institution,proto3" json:"institution,omitempty"`
+	Title                     string   `protobuf:"bytes,4,opt,name=title,proto3" json:"title,omitempty"`
+	Code                      string   `protobuf:"bytes,5,opt,name=code,proto3" json:"code,omitempty"`
+	WorkloadHours             uint64   `protobuf:"varint,6,opt,name=workloadHours,proto3" json:"workloadHours,omitempty"`
+	Credits                   uint64   `protobuf:"varint,7,opt,name=credits,proto3" json:"credits,omitempty"`
+	Description               string   `protobuf:"bytes,8,opt,name=description,proto3" json:"description,omitempty"`
+	Objectives                []string `protobuf:"bytes,9,rep,name=objectives,proto3" json:"objectives,omitempty"`
+	TopicUnits                []string `protobuf:"bytes,10,rep,name=topicUnits,proto3" json:"topicUnits,omitempty"`
+	Methodologies             []string `protobuf:"bytes,11,rep,name=methodologies,proto3" json:"methodologies,omitempty"`
+	EvaluationMethods         []string `protobuf:"bytes,12,rep,name=evaluationMethods,proto3" json:"evaluationMethods,omitempty"`
+	BibliographyBasic         []string `protobuf:"bytes,13,rep,name=bibliographyBasic,proto3" json:"bibliographyBasic,omitempty"`
+	BibliographyComplementary []string `protobuf:"bytes,14,rep,name=bibliographyComplementary,proto3" json:"bibliographyComplementary,omitempty"`
+	Keywords                  []string `protobuf:"bytes,15,rep,name=keywords,proto3" json:"keywords,omitempty"`
+	ContentHash               string   `protobuf:"bytes,16,opt,name=contentHash,proto3" json:"contentHash,omitempty"`
+}
+
+func (x *MsgCreateCourseContent) Reset() {
+	*x = MsgCreateCourseContent{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_academictoken_curriculum_tx_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgCreateCourseContent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgCreateCourseContent) ProtoMessage() {}
+
+// Deprecated: Use MsgCreateCourseContent.ProtoReflect.Descriptor instead.
+func (*MsgCreateCourseContent) Descriptor() ([]byte, []int) {
+	return file_academictoken_curriculum_tx_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *MsgCreateCourseContent) GetCreator() string {
+	if x != nil {
+		return x.Creator
+	}
+	return ""
+}
+
+func (x *MsgCreateCourseContent) GetCourseId() string {
+	if x != nil {
+		return x.CourseId
+	}
+	return ""
+}
+
+func (x *MsgCreateCourseContent) GetInstitution() string {
+	if x != nil {
+		return x.Institution
+	}
+	return ""
+}
+
+func (x *MsgCreateCourseContent) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *MsgCreateCourseContent) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+func (x *MsgCreateCourseContent) GetWorkloadHours() uint64 {
+	if x != nil {
+		return x.WorkloadHours
+	}
+	return 0
+}
+
+func (x *MsgCreateCourseContent) GetCredits() uint64 {
+	if x != nil {
+		return x.Credits
+	}
+	return 0
+}
+
+func (x *MsgCreateCourseContent) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *MsgCreateCourseContent) GetObjectives() []string {
+	if x != nil {
+		return x.Objectives
+	}
+	return nil
+}
+
+func (x *MsgCreateCourseContent) GetTopicUnits() []string {
+	if x != nil {
+		return x.TopicUnits
+	}
+	return nil
+}
+
+func (x *MsgCreateCourseContent) GetMethodologies() []string {
+	if x != nil {
+		return x.Methodologies
+	}
+	return nil
+}
+
+func (x *MsgCreateCourseContent) GetEvaluationMethods() []string {
+	if x != nil {
+		return x.EvaluationMethods
+	}
+	return nil
+}
+
+func (x *MsgCreateCourseContent) GetBibliographyBasic() []string {
+	if x != nil {
+		return x.BibliographyBasic
+	}
+	return nil
+}
+
+func (x *MsgCreateCourseContent) GetBibliographyComplementary() []string {
+	if x != nil {
+		return x.BibliographyComplementary
+	}
+	return nil
+}
+
+func (x *MsgCreateCourseContent) GetKeywords() []string {
+	if x != nil {
+		return x.Keywords
+	}
+	return nil
+}
+
+func (x *MsgCreateCourseContent) GetContentHash() string {
+	if x != nil {
+		return x.ContentHash
+	}
+	return ""
+}
+
+type MsgCreateCourseContentResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *MsgCreateCourseContentResponse) Reset() {
+	*x = MsgCreateCourseContentResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_academictoken_curriculum_tx_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgCreateCourseContentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgCreateCourseContentResponse) ProtoMessage() {}
+
+// Deprecated: Use MsgCreateCourseContentResponse.ProtoReflect.Descriptor instead.
+func (*MsgCreateCourseContentResponse) Descriptor() ([]byte, []int) {
+	return file_academictoken_curriculum_tx_proto_rawDescGZIP(), []int{11}
+}
+
 var File_academictoken_curriculum_tx_proto protoreflect.FileDescriptor
 
 var file_academictoken_curriculum_tx_proto_rawDesc = []byte{
@@ -5587,62 +7894,109 @@ var file_academictoken_curriculum_tx_proto_rawDesc = []byte{
 	0x72, 0x73, 0x65, 0x43, 0x6f, 0x64, 0x65, 0x3a, 0x0c, 0x82, 0xe7, 0xb0, 0x2a, 0x07, 0x63, 0x72,
 	0x65, 0x61, 0x74, 0x6f, 0x72, 0x22, 0x1f, 0x0a, 0x1d, 0x4d, 0x73, 0x67, 0x50, 0x72, 0x6f, 0x70,
 	0x6f, 0x73, 0x65, 0x45, 0x71, 0x75, 0x69, 0x76, 0x61, 0x6c, 0x65, 0x6e, 0x63, 0x65, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xfc, 0x04, 0x0a, 0x03, 0x4d, 0x73, 0x67, 0x12, 0x6c,
-	0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x29,
-	0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63,
-	0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64,
-	0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x1a, 0x31, 0x2e, 0x61, 0x63, 0x61, 0x64,
-	0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63,
-	0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61,
-	0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x81, 0x01, 0x0a,
-	0x13, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x73, 0x74, 0x69, 0x74, 0x75,
-	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x30, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74,
-	0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e,
-	0x4d, 0x73, 0x67, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x73, 0x74, 0x69,
-	0x74, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x1a, 0x38, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69,
-	0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75,
-	0x6d, 0x2e, 0x4d, 0x73, 0x67, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x73,
-	0x74, 0x69, 0x74, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x12, 0x78, 0x0a, 0x10, 0x49, 0x73, 0x73, 0x75, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x54,
-	0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x2d, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74,
-	0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e,
-	0x4d, 0x73, 0x67, 0x49, 0x73, 0x73, 0x75, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x54, 0x6f,
-	0x6b, 0x65, 0x6e, 0x1a, 0x35, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f,
-	0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d,
-	0x73, 0x67, 0x49, 0x73, 0x73, 0x75, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x54, 0x6f, 0x6b,
-	0x65, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x81, 0x01, 0x0a, 0x13, 0x56,
-	0x65, 0x72, 0x69, 0x66, 0x79, 0x50, 0x72, 0x65, 0x72, 0x65, 0x71, 0x75, 0x69, 0x73, 0x69, 0x74,
-	0x65, 0x73, 0x12, 0x30, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b,
-	0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d, 0x73,
-	0x67, 0x56, 0x65, 0x72, 0x69, 0x66, 0x79, 0x50, 0x72, 0x65, 0x72, 0x65, 0x71, 0x75, 0x69, 0x73,
-	0x69, 0x74, 0x65, 0x73, 0x1a, 0x38, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74,
-	0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e,
-	0x4d, 0x73, 0x67, 0x56, 0x65, 0x72, 0x69, 0x66, 0x79, 0x50, 0x72, 0x65, 0x72, 0x65, 0x71, 0x75,
-	0x69, 0x73, 0x69, 0x74, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x7e,
-	0x0a, 0x12, 0x50, 0x72, 0x6f, 0x70, 0x6f, 0x73, 0x65, 0x45, 0x71, 0x75, 0x69, 0x76, 0x61, 0x6c,
-	0x65, 0x6e, 0x63, 0x65, 0x12, 0x2f, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74,
-	0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e,
-	0x4d, 0x73, 0x67, 0x50, 0x72, 0x6f, 0x70, 0x6f, 0x73, 0x65, 0x45, 0x71, 0x75, 0x69, 0x76, 0x61,
-	0x6c, 0x65, 0x6e, 0x63, 0x65, 0x1a, 0x37, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63,
-	0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d,
-	0x2e, 0x4d, 0x73, 0x67, 0x50, 0x72, 0x6f, 0x70, 0x6f, 0x73, 0x65, 0x45, 0x71, 0x75, 0x69, 0x76,
-	0x61, 0x6c, 0x65, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x1a, 0x05,
-	0x80, 0xe7, 0xb0, 0x2a, 0x01, 0x42, 0xec, 0x01, 0x0a, 0x1c, 0x63, 0x6f, 0x6d, 0x2e, 0x61, 0x63,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xc8, 0x04, 0x0a, 0x16, 0x4d, 0x73, 0x67, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e,
+	0x74, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x1a, 0x0a, 0x08, 0x63,
+	0x6f, 0x75, 0x72, 0x73, 0x65, 0x49, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x63,
+	0x6f, 0x75, 0x72, 0x73, 0x65, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x0b, 0x69, 0x6e, 0x73, 0x74, 0x69,
+	0x74, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x69, 0x6e,
+	0x73, 0x74, 0x69, 0x74, 0x75, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74,
+	0x6c, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12,
+	0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x63,
+	0x6f, 0x64, 0x65, 0x12, 0x24, 0x0a, 0x0d, 0x77, 0x6f, 0x72, 0x6b, 0x6c, 0x6f, 0x61, 0x64, 0x48,
+	0x6f, 0x75, 0x72, 0x73, 0x18, 0x06, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0d, 0x77, 0x6f, 0x72, 0x6b,
+	0x6c, 0x6f, 0x61, 0x64, 0x48, 0x6f, 0x75, 0x72, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x72, 0x65,
+	0x64, 0x69, 0x74, 0x73, 0x18, 0x07, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x63, 0x72, 0x65, 0x64,
+	0x69, 0x74, 0x73, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
+	0x6f, 0x6e, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69,
+	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1e, 0x0a, 0x0a, 0x6f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x69,
+	0x76, 0x65, 0x73, 0x18, 0x09, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0a, 0x6f, 0x62, 0x6a, 0x65, 0x63,
+	0x74, 0x69, 0x76, 0x65, 0x73, 0x12, 0x1e, 0x0a, 0x0a, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x55, 0x6e,
+	0x69, 0x74, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0a, 0x74, 0x6f, 0x70, 0x69, 0x63,
+	0x55, 0x6e, 0x69, 0x74, 0x73, 0x12, 0x24, 0x0a, 0x0d, 0x6d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x6f,
+	0x6c, 0x6f, 0x67, 0x69, 0x65, 0x73, 0x18, 0x0b, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0d, 0x6d, 0x65,
+	0x74, 0x68, 0x6f, 0x64, 0x6f, 0x6c, 0x6f, 0x67, 0x69, 0x65, 0x73, 0x12, 0x2c, 0x0a, 0x11, 0x65,
+	0x76, 0x61, 0x6c, 0x75, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x73,
+	0x18, 0x0c, 0x20, 0x03, 0x28, 0x09, 0x52, 0x11, 0x65, 0x76, 0x61, 0x6c, 0x75, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x73, 0x12, 0x2c, 0x0a, 0x11, 0x62, 0x69, 0x62,
+	0x6c, 0x69, 0x6f, 0x67, 0x72, 0x61, 0x70, 0x68, 0x79, 0x42, 0x61, 0x73, 0x69, 0x63, 0x18, 0x0d,
+	0x20, 0x03, 0x28, 0x09, 0x52, 0x11, 0x62, 0x69, 0x62, 0x6c, 0x69, 0x6f, 0x67, 0x72, 0x61, 0x70,
+	0x68, 0x79, 0x42, 0x61, 0x73, 0x69, 0x63, 0x12, 0x3c, 0x0a, 0x19, 0x62, 0x69, 0x62, 0x6c, 0x69,
+	0x6f, 0x67, 0x72, 0x61, 0x70, 0x68, 0x79, 0x43, 0x6f, 0x6d, 0x70, 0x6c, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x61, 0x72, 0x79, 0x18, 0x0e, 0x20, 0x03, 0x28, 0x09, 0x52, 0x19, 0x62, 0x69, 0x62, 0x6c,
+	0x69, 0x6f, 0x67, 0x72, 0x61, 0x70, 0x68, 0x79, 0x43, 0x6f, 0x6d, 0x70, 0x6c, 0x65, 0x6d, 0x65,
+	0x6e, 0x74, 0x61, 0x72, 0x79, 0x12, 0x1a, 0x0a, 0x08, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64,
+	0x73, 0x18, 0x0f, 0x20, 0x03, 0x28, 0x09, 0x52, 0x08, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64,
+	0x73, 0x12, 0x20, 0x0a, 0x0b, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x48, 0x61, 0x73, 0x68,
+	0x18, 0x10, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x48,
+	0x61, 0x73, 0x68, 0x3a, 0x0c, 0x82, 0xe7, 0xb0, 0x2a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f,
+	0x72, 0x22, 0x20, 0x0a, 0x1e, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f,
+	0x75, 0x72, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x32, 0x80, 0x06, 0x0a, 0x03, 0x4d, 0x73, 0x67, 0x12, 0x6c, 0x0a, 0x0c, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x29, 0x2e, 0x61, 0x63,
 	0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72,
-	0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x42, 0x07, 0x54, 0x78, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50,
-	0x01, 0x5a, 0x42, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x42, 0x69,
-	0x61, 0x6e, 0x63, 0x61, 0x2d, 0x32, 0x39, 0x4d, 0x53, 0x50, 0x2f, 0x41, 0x63, 0x61, 0x64, 0x65,
-	0x6d, 0x69, 0x63, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x63, 0x61,
-	0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2f, 0x63, 0x75, 0x72, 0x72, 0x69,
-	0x63, 0x75, 0x6c, 0x75, 0x6d, 0xa2, 0x02, 0x03, 0x41, 0x43, 0x58, 0xaa, 0x02, 0x18, 0x41, 0x63,
-	0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x43, 0x75, 0x72, 0x72,
-	0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0xca, 0x02, 0x18, 0x41, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69,
-	0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x5c, 0x43, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75,
-	0x6d, 0xe2, 0x02, 0x24, 0x41, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65,
-	0x6e, 0x5c, 0x43, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x5c, 0x47, 0x50, 0x42,
-	0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x19, 0x41, 0x63, 0x61, 0x64, 0x65,
-	0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x3a, 0x3a, 0x43, 0x75, 0x72, 0x72, 0x69, 0x63,
-	0x75, 0x6c, 0x75, 0x6d, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x1a, 0x31, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69,
+	0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75,
+	0x6d, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d,
+	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x81, 0x01, 0x0a, 0x13, 0x52, 0x65,
+	0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x73, 0x74, 0x69, 0x74, 0x75, 0x74, 0x69, 0x6f,
+	0x6e, 0x12, 0x30, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65,
+	0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d, 0x73, 0x67,
+	0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x73, 0x74, 0x69, 0x74, 0x75, 0x74,
+	0x69, 0x6f, 0x6e, 0x1a, 0x38, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f,
+	0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d,
+	0x73, 0x67, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x73, 0x74, 0x69, 0x74,
+	0x75, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x78, 0x0a,
+	0x10, 0x49, 0x73, 0x73, 0x75, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x54, 0x6f, 0x6b, 0x65,
+	0x6e, 0x12, 0x2d, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65,
+	0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d, 0x73, 0x67,
+	0x49, 0x73, 0x73, 0x75, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x54, 0x6f, 0x6b, 0x65, 0x6e,
+	0x1a, 0x35, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e,
+	0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d, 0x73, 0x67, 0x49,
+	0x73, 0x73, 0x75, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x81, 0x01, 0x0a, 0x13, 0x56, 0x65, 0x72, 0x69,
+	0x66, 0x79, 0x50, 0x72, 0x65, 0x72, 0x65, 0x71, 0x75, 0x69, 0x73, 0x69, 0x74, 0x65, 0x73, 0x12,
+	0x30, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e,
+	0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d, 0x73, 0x67, 0x56, 0x65,
+	0x72, 0x69, 0x66, 0x79, 0x50, 0x72, 0x65, 0x72, 0x65, 0x71, 0x75, 0x69, 0x73, 0x69, 0x74, 0x65,
+	0x73, 0x1a, 0x38, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65,
+	0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d, 0x73, 0x67,
+	0x56, 0x65, 0x72, 0x69, 0x66, 0x79, 0x50, 0x72, 0x65, 0x72, 0x65, 0x71, 0x75, 0x69, 0x73, 0x69,
+	0x74, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x7e, 0x0a, 0x12, 0x50,
+	0x72, 0x6f, 0x70, 0x6f, 0x73, 0x65, 0x45, 0x71, 0x75, 0x69, 0x76, 0x61, 0x6c, 0x65, 0x6e, 0x63,
+	0x65, 0x12, 0x2f, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65,
+	0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d, 0x73, 0x67,
+	0x50, 0x72, 0x6f, 0x70, 0x6f, 0x73, 0x65, 0x45, 0x71, 0x75, 0x69, 0x76, 0x61, 0x6c, 0x65, 0x6e,
+	0x63, 0x65, 0x1a, 0x37, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b,
+	0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d, 0x73,
+	0x67, 0x50, 0x72, 0x6f, 0x70, 0x6f, 0x73, 0x65, 0x45, 0x71, 0x75, 0x69, 0x76, 0x61, 0x6c, 0x65,
+	0x6e, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x81, 0x01, 0x0a, 0x13,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x43, 0x6f, 0x6e, 0x74,
+	0x65, 0x6e, 0x74, 0x12, 0x30, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f,
+	0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x2e, 0x4d,
+	0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x73, 0x65, 0x43, 0x6f,
+	0x6e, 0x74, 0x65, 0x6e, 0x74, 0x1a, 0x38, 0x2e, 0x61, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63,
+	0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d,
+	0x2e, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x6f, 0x75, 0x72, 0x73, 0x65,
+	0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x1a,
+	0x05, 0x80, 0xe7, 0xb0, 0x2a, 0x01, 0x42, 0xec, 0x01, 0x0a, 0x1c, 0x63, 0x6f, 0x6d, 0x2e, 0x61,
+	0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x63, 0x75, 0x72,
+	0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x42, 0x07, 0x54, 0x78, 0x50, 0x72, 0x6f, 0x74, 0x6f,
+	0x50, 0x01, 0x5a, 0x42, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x42,
+	0x69, 0x61, 0x6e, 0x63, 0x61, 0x2d, 0x32, 0x39, 0x4d, 0x53, 0x50, 0x2f, 0x41, 0x63, 0x61, 0x64,
+	0x65, 0x6d, 0x69, 0x63, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x63,
+	0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2f, 0x63, 0x75, 0x72, 0x72,
+	0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0xa2, 0x02, 0x03, 0x41, 0x43, 0x58, 0xaa, 0x02, 0x18, 0x41,
+	0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x2e, 0x43, 0x75, 0x72,
+	0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0xca, 0x02, 0x18, 0x41, 0x63, 0x61, 0x64, 0x65, 0x6d,
+	0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x5c, 0x43, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c,
+	0x75, 0x6d, 0xe2, 0x02, 0x24, 0x41, 0x63, 0x61, 0x64, 0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b,
+	0x65, 0x6e, 0x5c, 0x43, 0x75, 0x72, 0x72, 0x69, 0x63, 0x75, 0x6c, 0x75, 0x6d, 0x5c, 0x47, 0x50,
+	0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x19, 0x41, 0x63, 0x61, 0x64,
+	0x65, 0x6d, 0x69, 0x63, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x3a, 0x3a, 0x43, 0x75, 0x72, 0x72, 0x69,
+	0x63, 0x75, 0x6c, 0x75, 0x6d, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -5657,7 +8011,7 @@ func file_academictoken_curriculum_tx_proto_rawDescGZIP() []byte {
 	return file_academictoken_curriculum_tx_proto_rawDescData
 }
 
-var file_academictoken_curriculum_tx_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_academictoken_curriculum_tx_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_academictoken_curriculum_tx_proto_goTypes = []interface{}{
 	(*MsgUpdateParams)(nil),                // 0: academictoken.curriculum.MsgUpdateParams
 	(*MsgUpdateParamsResponse)(nil),        // 1: academictoken.curriculum.MsgUpdateParamsResponse
@@ -5669,22 +8023,26 @@ var file_academictoken_curriculum_tx_proto_goTypes = []interface{}{
 	(*MsgVerifyPrerequisitesResponse)(nil), // 7: academictoken.curriculum.MsgVerifyPrerequisitesResponse
 	(*MsgProposeEquivalence)(nil),          // 8: academictoken.curriculum.MsgProposeEquivalence
 	(*MsgProposeEquivalenceResponse)(nil),  // 9: academictoken.curriculum.MsgProposeEquivalenceResponse
-	(*Params)(nil),                         // 10: academictoken.curriculum.Params
+	(*MsgCreateCourseContent)(nil),         // 10: academictoken.curriculum.MsgCreateCourseContent
+	(*MsgCreateCourseContentResponse)(nil), // 11: academictoken.curriculum.MsgCreateCourseContentResponse
+	(*Params)(nil),                         // 12: academictoken.curriculum.Params
 }
 var file_academictoken_curriculum_tx_proto_depIdxs = []int32{
-	10, // 0: academictoken.curriculum.MsgUpdateParams.params:type_name -> academictoken.curriculum.Params
+	12, // 0: academictoken.curriculum.MsgUpdateParams.params:type_name -> academictoken.curriculum.Params
 	0,  // 1: academictoken.curriculum.Msg.UpdateParams:input_type -> academictoken.curriculum.MsgUpdateParams
 	2,  // 2: academictoken.curriculum.Msg.RegisterInstitution:input_type -> academictoken.curriculum.MsgRegisterInstitution
 	4,  // 3: academictoken.curriculum.Msg.IssueCourseToken:input_type -> academictoken.curriculum.MsgIssueCourseToken
 	6,  // 4: academictoken.curriculum.Msg.VerifyPrerequisites:input_type -> academictoken.curriculum.MsgVerifyPrerequisites
 	8,  // 5: academictoken.curriculum.Msg.ProposeEquivalence:input_type -> academictoken.curriculum.MsgProposeEquivalence
-	1,  // 6: academictoken.curriculum.Msg.UpdateParams:output_type -> academictoken.curriculum.MsgUpdateParamsResponse
-	3,  // 7: academictoken.curriculum.Msg.RegisterInstitution:output_type -> academictoken.curriculum.MsgRegisterInstitutionResponse
-	5,  // 8: academictoken.curriculum.Msg.IssueCourseToken:output_type -> academictoken.curriculum.MsgIssueCourseTokenResponse
-	7,  // 9: academictoken.curriculum.Msg.VerifyPrerequisites:output_type -> academictoken.curriculum.MsgVerifyPrerequisitesResponse
-	9,  // 10: academictoken.curriculum.Msg.ProposeEquivalence:output_type -> academictoken.curriculum.MsgProposeEquivalenceResponse
-	6,  // [6:11] is the sub-list for method output_type
-	1,  // [1:6] is the sub-list for method input_type
+	10, // 6: academictoken.curriculum.Msg.CreateCourseContent:input_type -> academictoken.curriculum.MsgCreateCourseContent
+	1,  // 7: academictoken.curriculum.Msg.UpdateParams:output_type -> academictoken.curriculum.MsgUpdateParamsResponse
+	3,  // 8: academictoken.curriculum.Msg.RegisterInstitution:output_type -> academictoken.curriculum.MsgRegisterInstitutionResponse
+	5,  // 9: academictoken.curriculum.Msg.IssueCourseToken:output_type -> academictoken.curriculum.MsgIssueCourseTokenResponse
+	7,  // 10: academictoken.curriculum.Msg.VerifyPrerequisites:output_type -> academictoken.curriculum.MsgVerifyPrerequisitesResponse
+	9,  // 11: academictoken.curriculum.Msg.ProposeEquivalence:output_type -> academictoken.curriculum.MsgProposeEquivalenceResponse
+	11, // 12: academictoken.curriculum.Msg.CreateCourseContent:output_type -> academictoken.curriculum.MsgCreateCourseContentResponse
+	7,  // [7:13] is the sub-list for method output_type
+	1,  // [1:7] is the sub-list for method input_type
 	1,  // [1:1] is the sub-list for extension type_name
 	1,  // [1:1] is the sub-list for extension extendee
 	0,  // [0:1] is the sub-list for field type_name
@@ -5817,6 +8175,30 @@ func file_academictoken_curriculum_tx_proto_init() {
 				return nil
 			}
 		}
+		file_academictoken_curriculum_tx_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgCreateCourseContent); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_academictoken_curriculum_tx_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgCreateCourseContentResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -5824,7 +8206,7 @@ func file_academictoken_curriculum_tx_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_academictoken_curriculum_tx_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   10,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

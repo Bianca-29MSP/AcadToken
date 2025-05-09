@@ -21,6 +21,10 @@ func InitGenesis(ctx sdk.Context, k keeper.Keeper, genState types.GenesisState) 
 	for _, elem := range genState.CourseEquivalenceList {
 		k.SetCourseEquivalence(ctx, elem)
 	}
+	// Set all the courseContent
+	for _, elem := range genState.CourseContentList {
+		k.SetCourseContent(ctx, elem)
+	}
 	// this line is used by starport scaffolding # genesis/module/init
 	if err := k.SetParams(ctx, genState.Params); err != nil {
 		panic(err)
@@ -35,6 +39,7 @@ func ExportGenesis(ctx sdk.Context, k keeper.Keeper) *types.GenesisState {
 	genesis.InstitutionList = k.GetAllInstitution(ctx)
 	genesis.CourseTokenList = k.GetAllCourseToken(ctx)
 	genesis.CourseEquivalenceList = k.GetAllCourseEquivalence(ctx)
+	genesis.CourseContentList = k.GetAllCourseContent(ctx)
 	// this line is used by starport scaffolding # genesis/module/export
 
 	return genesis

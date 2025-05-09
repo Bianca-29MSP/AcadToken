@@ -1,0 +1,71 @@
+syntax = "proto3";
+package academictoken.academicnft;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "academictoken/academicnft/params.proto";
+import "academictoken/academicnft/course_nft.proto";
+
+option go_package = "github.com/Bianca-29MSP/AcademicToken/x/academicnft/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  // Parameters queries the parameters of the module.
+  rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/academicnft/params";
+  }
+  
+  // Queries a list of CourseNft items.
+  rpc CourseNft (QueryGetCourseNftRequest) returns (QueryGetCourseNftResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/academicnft/course_nft/{index}";
+  }
+  
+  rpc CourseNftAll (QueryAllCourseNftRequest) returns (QueryAllCourseNftResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/academicnft/course_nft";
+  }
+  
+  // NFTsByOwner retorna todos os NFTs de um proprietário
+  rpc NFTsByOwner (QueryNFTsByOwnerRequest) returns (QueryNFTsByOwnerResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/academicnft/nfts/owner/{owner}";
+  }
+}
+
+// QueryParamsRequest is request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  // params holds all the parameters of this module.
+  Params params = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
+}
+
+message QueryGetCourseNftRequest {
+  string index = 1;
+}
+
+message QueryGetCourseNftResponse {
+  CourseNft courseNft = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllCourseNftRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllCourseNftResponse {
+  repeated CourseNft courseNft = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// QueryNFTsByOwnerRequest é a requisição para o comando NFTsByOwner
+message QueryNFTsByOwnerRequest {
+  string owner = 1;
+  cosmos.base.query.v1beta1.PageRequest pagination = 2;
+}
+
+// QueryNFTsByOwnerResponse é a resposta para o comando NFTsByOwner
+message QueryNFTsByOwnerResponse {
+  repeated CourseNft nfts = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}

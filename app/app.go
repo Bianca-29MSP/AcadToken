@@ -78,6 +78,7 @@ import (
 	academictokenmodulekeeper "github.com/Bianca-29MSP/AcademicToken/x/academictoken/keeper"
 	curriculummodulekeeper "github.com/Bianca-29MSP/AcademicToken/x/curriculum/keeper"
 
+	academicnftmodulekeeper "github.com/Bianca-29MSP/AcademicToken/x/academicnft/keeper"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 
 	"github.com/Bianca-29MSP/AcademicToken/docs"
@@ -149,6 +150,7 @@ type App struct {
 
 	AcademictokenKeeper academictokenmodulekeeper.Keeper
 	CurriculumKeeper    curriculummodulekeeper.Keeper
+	AcademicnftKeeper   academicnftmodulekeeper.Keeper
 	// this line is used by starport scaffolding # stargate/app/keeperDeclaration
 
 	// simulation manager
@@ -254,6 +256,7 @@ func New(
 		&app.CircuitBreakerKeeper,
 		&app.AcademictokenKeeper,
 		&app.CurriculumKeeper,
+		&app.AcademicnftKeeper,
 		// this line is used by starport scaffolding # stargate/app/keeperDefinition
 	); err != nil {
 		panic(err)

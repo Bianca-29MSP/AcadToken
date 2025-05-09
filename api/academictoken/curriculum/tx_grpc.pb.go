@@ -24,6 +24,7 @@ const (
 	Msg_IssueCourseToken_FullMethodName    = "/academictoken.curriculum.Msg/IssueCourseToken"
 	Msg_VerifyPrerequisites_FullMethodName = "/academictoken.curriculum.Msg/VerifyPrerequisites"
 	Msg_ProposeEquivalence_FullMethodName  = "/academictoken.curriculum.Msg/ProposeEquivalence"
+	Msg_CreateCourseContent_FullMethodName = "/academictoken.curriculum.Msg/CreateCourseContent"
 )
 
 // MsgClient is the client API for Msg service.
@@ -37,6 +38,7 @@ type MsgClient interface {
 	IssueCourseToken(ctx context.Context, in *MsgIssueCourseToken, opts ...grpc.CallOption) (*MsgIssueCourseTokenResponse, error)
 	VerifyPrerequisites(ctx context.Context, in *MsgVerifyPrerequisites, opts ...grpc.CallOption) (*MsgVerifyPrerequisitesResponse, error)
 	ProposeEquivalence(ctx context.Context, in *MsgProposeEquivalence, opts ...grpc.CallOption) (*MsgProposeEquivalenceResponse, error)
+	CreateCourseContent(ctx context.Context, in *MsgCreateCourseContent, opts ...grpc.CallOption) (*MsgCreateCourseContentResponse, error)
 }
 
 type msgClient struct {
@@ -92,6 +94,15 @@ func (c *msgClient) ProposeEquivalence(ctx context.Context, in *MsgProposeEquiva
 	return out, nil
 }
 
+func (c *msgClient) CreateCourseContent(ctx context.Context, in *MsgCreateCourseContent, opts ...grpc.CallOption) (*MsgCreateCourseContentResponse, error) {
+	out := new(MsgCreateCourseContentResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateCourseContent_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 // All implementations must embed UnimplementedMsgServer
 // for forward compatibility
@@ -103,6 +114,7 @@ type MsgServer interface {
 	IssueCourseToken(context.Context, *MsgIssueCourseToken) (*MsgIssueCourseTokenResponse, error)
 	VerifyPrerequisites(context.Context, *MsgVerifyPrerequisites) (*MsgVerifyPrerequisitesResponse, error)
 	ProposeEquivalence(context.Context, *MsgProposeEquivalence) (*MsgProposeEquivalenceResponse, error)
+	CreateCourseContent(context.Context, *MsgCreateCourseContent) (*MsgCreateCourseContentResponse, error)
 	mustEmbedUnimplementedMsgServer()
 }
 
@@ -124,6 +136,9 @@ func (UnimplementedMsgServer) VerifyPrerequisites(context.Context, *MsgVerifyPre
 }
 func (UnimplementedMsgServer) ProposeEquivalence(context.Context, *MsgProposeEquivalence) (*MsgProposeEquivalenceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ProposeEquivalence not implemented")
+}
+func (UnimplementedMsgServer) CreateCourseContent(context.Context, *MsgCreateCourseContent) (*MsgCreateCourseContentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCourseContent not implemented")
 }
 func (UnimplementedMsgServer) mustEmbedUnimplementedMsgServer() {}
 
@@ -228,6 +243,24 @@ func _Msg_ProposeEquivalence_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_CreateCourseContent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateCourseContent)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateCourseContent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateCourseContent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateCourseContent(ctx, req.(*MsgCreateCourseContent))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Msg_ServiceDesc is the grpc.ServiceDesc for Msg service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -254,6 +287,10 @@ var Msg_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ProposeEquivalence",
 			Handler:    _Msg_ProposeEquivalence_Handler,
+		},
+		{
+			MethodName: "CreateCourseContent",
+			Handler:    _Msg_CreateCourseContent_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

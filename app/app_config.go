@@ -53,8 +53,11 @@ import (
 	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
 	"google.golang.org/protobuf/types/known/durationpb"
 
+	academicnftmodulev1 "github.com/Bianca-29MSP/AcademicToken/api/academictoken/academicnft/module"
 	academictokenmodulev1 "github.com/Bianca-29MSP/AcademicToken/api/academictoken/academictoken/module"
 	curriculummodulev1 "github.com/Bianca-29MSP/AcademicToken/api/academictoken/curriculum/module"
+	_ "github.com/Bianca-29MSP/AcademicToken/x/academicnft/module" // import for side-effects
+	academicnftmoduletypes "github.com/Bianca-29MSP/AcademicToken/x/academicnft/types"
 	_ "github.com/Bianca-29MSP/AcademicToken/x/academictoken/module" // import for side-effects
 	academictokenmoduletypes "github.com/Bianca-29MSP/AcademicToken/x/academictoken/types"
 	_ "github.com/Bianca-29MSP/AcademicToken/x/curriculum/module" // import for side-effects
@@ -98,6 +101,7 @@ var (
 		// chain modules
 		academictokenmoduletypes.ModuleName,
 		curriculummoduletypes.ModuleName,
+		academicnftmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
 	}
 
@@ -124,6 +128,7 @@ var (
 		// chain modules
 		academictokenmoduletypes.ModuleName,
 		curriculummoduletypes.ModuleName,
+		academicnftmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/beginBlockers
 	}
 
@@ -144,6 +149,7 @@ var (
 		// chain modules
 		academictokenmoduletypes.ModuleName,
 		curriculummoduletypes.ModuleName,
+		academicnftmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/endBlockers
 	}
 
@@ -307,6 +313,10 @@ var (
 			{
 				Name:   curriculummoduletypes.ModuleName,
 				Config: appconfig.WrapAny(&curriculummodulev1.Module{}),
+			},
+			{
+				Name:   academicnftmoduletypes.ModuleName,
+				Config: appconfig.WrapAny(&academicnftmodulev1.Module{}),
 			},
 			// this line is used by starport scaffolding # stargate/app/moduleConfig
 		},

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package academictoken.academicnft;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "academictoken/academicnft/params.proto";
+import "academictoken/academicnft/course_nft.proto";
+
+option go_package = "github.com/Bianca-29MSP/AcademicToken/x/academicnft/types";
+
+// GenesisState defines the academicnft module's genesis state.
+message GenesisState {
+  
+  // params defines all the parameters of the module.
+           Params    params        = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
+  repeated CourseNft courseNftList = 2 [(gogoproto.nullable) = false] ;
+}
+

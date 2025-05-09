@@ -13,6 +13,7 @@ func DefaultGenesis() *GenesisState {
 		InstitutionList:       []Institution{},
 		CourseTokenList:       []CourseToken{},
 		CourseEquivalenceList: []CourseEquivalence{},
+		CourseContentList:     []CourseContent{},
 		// this line is used by starport scaffolding # genesis/types/default
 		Params: DefaultParams(),
 	}
@@ -50,6 +51,16 @@ func (gs GenesisState) Validate() error {
 			return fmt.Errorf("duplicated index for courseEquivalence")
 		}
 		courseEquivalenceIndexMap[index] = struct{}{}
+	}
+	// Check for duplicated index in courseContent
+	courseContentIndexMap := make(map[string]struct{})
+
+	for _, elem := range gs.CourseContentList {
+		index := string(CourseContentKey(elem.Index))
+		if _, ok := courseContentIndexMap[index]; ok {
+			return fmt.Errorf("duplicated index for courseContent")
+		}
+		courseContentIndexMap[index] = struct{}{}
 	}
 	// this line is used by starport scaffolding # genesis/types/validate
 

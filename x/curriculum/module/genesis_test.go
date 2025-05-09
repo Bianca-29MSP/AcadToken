@@ -38,6 +38,14 @@ func TestGenesis(t *testing.T) {
 				Index: "1",
 			},
 		},
+		CourseContentList: []types.CourseContent{
+			{
+				Index: "0",
+			},
+			{
+				Index: "1",
+			},
+		},
 		// this line is used by starport scaffolding # genesis/test/state
 	}
 
@@ -52,5 +60,6 @@ func TestGenesis(t *testing.T) {
 	require.ElementsMatch(t, genesisState.InstitutionList, got.InstitutionList)
 	require.ElementsMatch(t, genesisState.CourseTokenList, got.CourseTokenList)
 	require.ElementsMatch(t, genesisState.CourseEquivalenceList, got.CourseEquivalenceList)
+	require.ElementsMatch(t, genesisState.CourseContentList, got.CourseContentList)
 	// this line is used by starport scaffolding # genesis/test/assert
 }

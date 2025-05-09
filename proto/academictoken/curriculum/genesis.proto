@@ -8,6 +8,7 @@ import "academictoken/curriculum/params.proto";
 import "academictoken/curriculum/institution.proto";
 import "academictoken/curriculum/course_token.proto";
 import "academictoken/curriculum/course_equivalence.proto";
+import "academictoken/curriculum/course_content.proto";
 
 option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
 
@@ -19,5 +20,6 @@ message GenesisState {
   repeated Institution       institutionList       = 2 [(gogoproto.nullable) = false] ;
   repeated CourseToken       courseTokenList       = 3 [(gogoproto.nullable) = false] ;
   repeated CourseEquivalence courseEquivalenceList = 4 [(gogoproto.nullable) = false] ;
+  repeated CourseContent     courseContentList     = 5 [(gogoproto.nullable) = false] ;
 }
 

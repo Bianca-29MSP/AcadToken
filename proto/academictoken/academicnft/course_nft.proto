@@ -1,0 +1,30 @@
+syntax = "proto3";
+package academictoken.academicnft;
+
+option go_package = "github.com/Bianca-29MSP/AcademicToken/x/academicnft/types";
+
+message CourseNft {
+  string index = 1; 
+  string nftId = 2; 
+  string creator = 3; 
+  string owner = 4; 
+  string courseId = 5; 
+  string institution = 6; 
+  string title = 7; 
+  string code = 8; 
+  uint64 workloadHours = 9; 
+  uint64 credits = 10; 
+  string description = 11; 
+  repeated string objectives = 12; 
+  repeated string topicUnits = 13; 
+  repeated string methodologies = 14; 
+  repeated string evaluationMethods = 15; 
+  repeated string bibliographyBasic = 16; 
+  repeated string bibliographyComplementary = 17; 
+  repeated string keywords = 18; 
+  string contentHash = 19; 
+  int32 createdAt = 20; 
+  repeated string approvedEquivalences = 21; 
+  
+}
+

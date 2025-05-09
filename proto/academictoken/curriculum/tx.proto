@@ -21,6 +21,7 @@ service Msg {
   rpc IssueCourseToken    (MsgIssueCourseToken   ) returns (MsgIssueCourseTokenResponse   );
   rpc VerifyPrerequisites (MsgVerifyPrerequisites) returns (MsgVerifyPrerequisitesResponse);
   rpc ProposeEquivalence  (MsgProposeEquivalence ) returns (MsgProposeEquivalenceResponse );
+  rpc CreateCourseContent (MsgCreateCourseContent) returns (MsgCreateCourseContentResponse);
 }
 // MsgUpdateParams is the Msg/UpdateParams request type.
 message MsgUpdateParams {
@@ -83,4 +84,26 @@ message MsgProposeEquivalence {
 }
 
 message MsgProposeEquivalenceResponse {}
+
+message MsgCreateCourseContent {
+  option (cosmos.msg.v1.signer) = "creator";
+           string creator                   =  1;
+           string courseId                  =  2;
+           string institution               =  3;
+           string title                     =  4;
+           string code                      =  5;
+           uint64 workloadHours             =  6;
+           uint64 credits                   =  7;
+           string description               =  8;
+  repeated string objectives                =  9;
+  repeated string topicUnits                = 10;
+  repeated string methodologies             = 11;
+  repeated string evaluationMethods         = 12;
+  repeated string bibliographyBasic         = 13;
+  repeated string bibliographyComplementary = 14;
+  repeated string keywords                  = 15;
+           string contentHash               = 16;
+}
+
+message MsgCreateCourseContentResponse {}
 

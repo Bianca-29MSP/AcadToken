@@ -11,6 +11,7 @@ import "academictoken/curriculum/institution.proto";
 import "academictoken/curriculum/course_token.proto";
 import "academictoken/curriculum/course_equivalence.proto";
 import "academictoken/curriculum/academic_tree.proto";
+import "academictoken/curriculum/course_content.proto";
 
 option go_package = "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types";
 
@@ -74,6 +75,16 @@ service Query {
   }
   rpc CourseEquivalenceAll (QueryAllCourseEquivalenceRequest) returns (QueryAllCourseEquivalenceResponse) {
     option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/course_equivalence";
+  
+  }
+  
+  // Queries a list of CourseContent items.
+  rpc CourseContent    (QueryGetCourseContentRequest) returns (QueryGetCourseContentResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/course_content/{index}";
+  
+  }
+  rpc CourseContentAll (QueryAllCourseContentRequest) returns (QueryAllCourseContentResponse) {
+    option (google.api.http).get = "/Bianca-29MSP/AcademicToken/curriculum/course_content";
   
   }
 }
@@ -170,5 +181,22 @@ message QueryAllCourseEquivalenceRequest {
 message QueryAllCourseEquivalenceResponse {
   repeated CourseEquivalence                      courseEquivalence = 1 [(gogoproto.nullable) = false];
            cosmos.base.query.v1beta1.PageResponse pagination        = 2;
+}
+
+message QueryGetCourseContentRequest {
+  string index = 1;
+}
+
+message QueryGetCourseContentResponse {
+  CourseContent courseContent = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllCourseContentRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllCourseContentResponse {
+  repeated CourseContent                          courseContent = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination    = 2;
 }
 

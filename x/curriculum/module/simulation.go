@@ -39,6 +39,10 @@ const (
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgProposeEquivalence int = 100
 
+	opWeightMsgCreateCourseContent = "op_weight_msg_create_course_content"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgCreateCourseContent int = 100
+
 	// this line is used by starport scaffolding # simapp/module/const
 )
 
@@ -106,6 +110,17 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 		curriculumsimulation.SimulateMsgProposeEquivalence(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
 
+	var weightMsgCreateCourseContent int
+	simState.AppParams.GetOrGenerate(opWeightMsgCreateCourseContent, &weightMsgCreateCourseContent, nil,
+		func(_ *rand.Rand) {
+			weightMsgCreateCourseContent = defaultWeightMsgCreateCourseContent
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgCreateCourseContent,
+		curriculumsimulation.SimulateMsgCreateCourseContent(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
 	// this line is used by starport scaffolding # simapp/module/operation
 
 	return operations
@@ -143,6 +158,14 @@ func (am AppModule) ProposalMsgs(simState module.SimulationState) []simtypes.Wei
 			defaultWeightMsgProposeEquivalence,
 			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
 				curriculumsimulation.SimulateMsgProposeEquivalence(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgCreateCourseContent,
+			defaultWeightMsgCreateCourseContent,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				curriculumsimulation.SimulateMsgCreateCourseContent(am.accountKeeper, am.bankKeeper, am.keeper)
 				return nil
 			},
 		),

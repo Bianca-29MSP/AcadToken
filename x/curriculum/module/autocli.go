@@ -78,6 +78,17 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Short:          "Shows a CourseEquivalence",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
 				},
+				{
+					RpcMethod: "CourseContentAll",
+					Use:       "list-course-content",
+					Short:     "List all CourseContent",
+				},
+				{
+					RpcMethod:      "CourseContent",
+					Use:            "show-course-content [id]",
+					Short:          "Shows a CourseContent",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
@@ -112,6 +123,12 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Use:            "propose-equivalence [source-token-id] [target-institution] [target-course-code]",
 					Short:          "Send a propose-equivalence tx",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "sourceTokenId"}, {ProtoField: "targetInstitution"}, {ProtoField: "targetCourseCode"}},
+				},
+				{
+					RpcMethod:      "CreateCourseContent",
+					Use:            "create-course-content [course-id] [institution] [title] [code] [workload-hours] [credits] [description] [objectives] [topic-units] [methodologies] [evaluation-methods] [bibliography-basic] [bibliography-complementary] [keywords] [content-hash]",
+					Short:          "Send a create-course-content tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "courseId"}, {ProtoField: "institution"}, {ProtoField: "title"}, {ProtoField: "code"}, {ProtoField: "workloadHours"}, {ProtoField: "credits"}, {ProtoField: "description"}, {ProtoField: "objectives"}, {ProtoField: "topicUnits"}, {ProtoField: "methodologies"}, {ProtoField: "evaluationMethods"}, {ProtoField: "bibliographyBasic"}, {ProtoField: "bibliographyComplementary"}, {ProtoField: "keywords"}, {ProtoField: "contentHash"}},
 				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},
