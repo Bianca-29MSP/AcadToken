@@ -1,10 +1,12 @@
 package app
 
 import (
+	"context"
 	"io"
 
 	_ "cosmossdk.io/api/cosmos/tx/config/v1" // import for side-effects
 	clienthelpers "cosmossdk.io/client/v2/helpers"
+	"cosmossdk.io/core/store"
 	"cosmossdk.io/depinject"
 	"cosmossdk.io/log"
 	storetypes "cosmossdk.io/store/types"
@@ -162,6 +164,58 @@ type App struct {
 	sm *module.SimulationManager
 }
 
+// KVStoreAdapter adapta KVStoreKey para KVStoreService
+type KVStoreAdapter struct {
+	storeKey *storetypes.KVStoreKey
+}
+
+func NewKVStoreAdapter(storeKey *storetypes.KVStoreKey) *KVStoreAdapter {
+	return &KVStoreAdapter{
+		storeKey: storeKey,
+	}
+}
+
+// OpenKVStore implementa a interface KVStoreService para o Cosmos SDK v0.50.13
+func (a *KVStoreAdapter) OpenKVStore(ctx context.Context) store.KVStore {
+	sdkCtx := sdk.UnwrapSDKContext(ctx)
+	return NewKVStoreWrapper(sdkCtx.KVStore(a.storeKey))
+}
+
+// KVStoreWrapper adapta o KVStore para ter a assinatura correta dos métodos
+type KVStoreWrapper struct {
+	kvStore storetypes.KVStore
+}
+
+func NewKVStoreWrapper(kvStore storetypes.KVStore) *KVStoreWrapper {
+	return &KVStoreWrapper{kvStore: kvStore}
+}
+
+func (w *KVStoreWrapper) Get(key []byte) ([]byte, error) {
+	return w.kvStore.Get(key), nil
+}
+
+func (w *KVStoreWrapper) Has(key []byte) (bool, error) {
+	return w.kvStore.Has(key), nil
+}
+
+func (w *KVStoreWrapper) Set(key, value []byte) error {
+	w.kvStore.Set(key, value)
+	return nil
+}
+
+func (w *KVStoreWrapper) Delete(key []byte) error {
+	w.kvStore.Delete(key)
+	return nil
+}
+
+func (w *KVStoreWrapper) Iterator(start, end []byte) (store.Iterator, error) {
+	return w.kvStore.Iterator(start, end), nil
+}
+
+func (w *KVStoreWrapper) ReverseIterator(start, end []byte) (store.Iterator, error) {
+	return w.kvStore.ReverseIterator(start, end), nil
+}
+
 // AcademicNFTAdapter adapts the AcademicNFTKeeper to the interface expected by CurriculumKeeper
 type AcademicNFTAdapter struct {
 	keeper academicnftmodulekeeper.Keeper
@@ -290,16 +344,31 @@ func (a *CurriculumAdapter) GetInstitution(ctx sdk.Context, institutionId string
 		return sharedtypes.Institution{}, false
 	}
 	
-	// Convert the type - corrigindo os nomes dos campos para corresponder ao tipo compartilhado
+	// Converter para o tipo compartilhado usando a estrutura correta
 	sharedInstitution := sharedtypes.Institution{
-		Id:          institution.Index,          // Alterado para usar o campo Index conforme a definição
-		Name:        institution.Name,
-		Address:     institution.Address,
-		Website:     institution.IsAuthorized,   // Alterado para refletir a definição de Institution
-		Description: "",                         // Removido pois não existe na definição
+		Id:           institution.Index,
+		Name:         institution.Name,
+		Address:      institution.Address,
+		IsAuthorized: institution.IsAuthorized, // Corrigido para usar o campo boolean correto
 	}
 	
 	return sharedInstitution, true
+}
+
+// IsGraduationEligible adapts the IsGraduationEligible method
+// Implementação temporária até que a função seja implementada no Keeper real
+func (a *CurriculumAdapter) IsGraduationEligible(ctx sdk.Context, student string, institution string, program string) bool {
+	// Como o método não existe no keeper real, implementamos uma versão temporária
+	// Implemente aqui a lógica real quando disponível no keeper
+	return true
+}
+
+// CheckPrerequisites adapts the CheckPrerequisites method
+// Implementação temporária até que a função seja implementada no Keeper real
+func (a *CurriculumAdapter) CheckPrerequisites(ctx sdk.Context, studentAddr string, courseId string) bool {
+	// Como o método não existe no keeper real, implementamos uma versão temporária
+	// Implemente aqui a lógica real quando disponível no keeper
+	return true
 }
 
 func init() {
@@ -366,12 +435,6 @@ func New(
 				// This needs to be removed after IBC supports App Wiring.
 				app.GetIBCKeeper,
 				app.GetCapabilityScopedKeeper,
-
-				// here alternative options can be supplied to the DI container.
-				// those options can be used f.e to override the default behavior of some modules.
-				// for instance supplying a custom address codec for not using bech32 addresses.
-				// read the depinject documentation and depinject module wiring for more information
-				// on available options and how to use them.
 			),
 		)
 	)
@@ -405,12 +468,16 @@ func New(
 		panic(err)
 	}
 
-	// Manually initialize our custom keepers to handle cross-module dependencies
-	
+	// add to default baseapp options
+	// enable optimistic execution
+	baseAppOptions = append(baseAppOptions, baseapp.SetOptimisticExecution())
+
+	app.App = appBuilder.Build(db, traceStore, baseAppOptions...)
+
 	// First, the main AcademicToken keeper
 	app.AcademictokenKeeper = academictokenmodulekeeper.NewKeeper(
 		app.appCodec,
-		app.GetKey(academictokentypes.StoreKey),
+		NewKVStoreAdapter(app.GetKey(academictokentypes.StoreKey)),
 		logger,
 		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 	)
@@ -418,7 +485,7 @@ func New(
 	// Initialize Curriculum keeper with temporary nil AcademicNFTKeeper
 	app.CurriculumKeeper = curriculummodulekeeper.NewKeeper(
 		app.appCodec,
-		app.GetKey(curriculumtypes.StoreKey),
+		NewKVStoreAdapter(app.GetKey(curriculumtypes.StoreKey)),
 		logger,
 		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 		app.BankKeeper,
@@ -431,7 +498,7 @@ func New(
 	// Initialize AcademicNFT keeper with Curriculum adapter
 	app.AcademicnftKeeper = academicnftmodulekeeper.NewKeeper(
 		app.appCodec,
-		app.GetKey(academicnfttypes.StoreKey),
+		NewKVStoreAdapter(app.GetKey(academicnfttypes.StoreKey)),
 		logger,
 		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 		curriculumAdapter,
@@ -442,13 +509,6 @@ func New(
 	
 	// Update CurriculumKeeper with AcademicNFTKeeper reference via the adapter
 	app.CurriculumKeeper.SetAcademicNFTKeeper(academicNFTAdapter)
-
-	// add to default baseapp options
-	// enable optimistic execution
-	baseAppOptions = append(baseAppOptions, baseapp.SetOptimisticExecution())
-
-	// build app
-	app.App = appBuilder.Build(db, traceStore, baseAppOptions...)
 
 	// register streaming services
 	if err := app.RegisterStreamingServices(appOpts, app.kvStoreKeys()); err != nil {
@@ -586,10 +646,4 @@ func (app *App) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig
 type ModuleAccPerm struct {
 	Account     string
 	Permissions []string
-}
-
-// registerIBCModules registers the IBC modules
-func (app *App) registerIBCModules(appOpts servertypes.AppOptions) error {
-	// Remove this function implementation if you have a separate ibc.go file
-	return nil
 }

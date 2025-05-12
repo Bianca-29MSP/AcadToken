@@ -59,3 +59,23 @@ func (k Keeper) Logger() log.Logger {
 func (k *Keeper) SetAcademicNFTKeeper(academicnftKeeper types.AcademicNFTKeeper) {
     k.academicnftKeeper = academicnftKeeper
 }
+
+// Adicione estes métodos à estrutura Keeper no arquivo keeper.go do módulo curriculum:
+
+// IsGraduationEligible verifica se um estudante é elegível para graduação
+func (k Keeper) IsGraduationEligible(ctx sdk.Context, student string, institution string, program string) bool {
+    // Implemente a lógica real aqui
+    // Por exemplo, verifique se o estudante completou todos os requisitos para o programa
+    
+    // Código provisório para permitir compilação
+    return true
+}
+
+// CheckPrerequisites verifica se um estudante atende aos pré-requisitos para um curso
+func (k Keeper) CheckPrerequisites(ctx sdk.Context, studentAddr string, courseId string) bool {
+    // Implemente a lógica real aqui
+    // Por exemplo, verifique se o estudante já completou os cursos que são pré-requisitos
+    
+    // Código provisório para permitir compilação
+    return true
+}

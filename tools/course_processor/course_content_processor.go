@@ -63,23 +63,24 @@ func (p *CourseContentProcessor) ProcessContent(rawContent, institution, courseC
 	// Convertemos as arrays para JSON strings para armazenamento
 	topicUnitsJSON, _ := json.Marshal(topics)
 
-	// Cria o objeto CourseContent
+	// Cria o objeto CourseContent com o campo Index
 	content := types.CourseContent{
-		CourseId:                  courseCode,
-		Institution:               institution,
-		Title:                     metadata.Title,
-		Code:                      courseCode,
-		WorkloadHours:             metadata.WorkloadHours,
-		Credits:                   metadata.Credits,
-		Description:               metadata.Description,
-		Objectives:                []string(metadata.Objectives),
-		TopicUnits:                []string{string(topicUnitsJSON)},
-		Methodologies:             []string(metadata.Methodologies),
-		EvaluationMethods:         []string(metadata.EvaluationMethods),
-		BibliographyBasic:         basicBibliography,
+		Index:                    fmt.Sprintf("%s-%s", institution, courseCode), // Gera um índice baseado na instituição e código
+		CourseId:                 courseCode,
+		Institution:              institution,
+		Title:                    metadata.Title,
+		Code:                     courseCode,
+		WorkloadHours:            metadata.WorkloadHours,
+		Credits:                  metadata.Credits,
+		Description:              metadata.Description,
+		Objectives:               []string(metadata.Objectives),
+		TopicUnits:               []string{string(topicUnitsJSON)},
+		Methodologies:            []string(metadata.Methodologies),
+		EvaluationMethods:        []string(metadata.EvaluationMethods),
+		BibliographyBasic:        basicBibliography,
 		BibliographyComplementary: compBibliography,
-		Keywords:                  keywords,
-		ContentHash:               contentHash,
+		Keywords:                 keywords,
+		ContentHash:              contentHash,
 	}
 
 	// Por enquanto, vamos salvar os dados como JSON para facilitar a verificação
@@ -424,12 +425,7 @@ func extractTextFromPDF(filePath string) (string, error) {
 	return string(output), nil
 }
 
-// Método para tokenizar usando o caminho exato do binário
-// Substitua a função tokenizeViaCLI existente por esta:
-
-// Método para tokenizar usando JSON file como alternativa à passagem via CLI
-// Substitua a função tokenizeViaCLI existente por esta:
-
+// tokenizeViaCLI envia a transação para a blockchain via CLI
 func tokenizeViaCLI(content types.CourseContent, from, chainID, node string) error {
     // Caminho exato do binário AcademicTokend no seu sistema
     academicTokendPath := "/Users/biancamsp/go/bin/AcademicTokend"
@@ -442,14 +438,13 @@ func tokenizeViaCLI(content types.CourseContent, from, chainID, node string) err
     fmt.Printf("Usando binário AcademicTokend em: %s\n", academicTokendPath)
     
     // Criar um arquivo temporário para armazenar os dados completos da ementa como JSON
-    // Isso mantém TODOS os dados originais, sem simplificação ou perda de informação
     ementaFile, err := ioutil.TempFile("", "ementa-*.json")
     if err != nil {
         return fmt.Errorf("erro ao criar arquivo temporário para ementa: %w", err)
     }
     defer os.Remove(ementaFile.Name())
     
-    // Serializar toda a estrutura para JSON (mantendo todos os dados)
+    // Serializar toda a estrutura para JSON
     ementaJSON, err := json.MarshalIndent(content, "", "  ")
     if err != nil {
         return fmt.Errorf("erro ao serializar ementa para JSON: %w", err)
@@ -465,11 +460,17 @@ func tokenizeViaCLI(content types.CourseContent, from, chainID, node string) err
     
     fmt.Printf("Dados completos da ementa salvos em: %s\n", ementaFile.Name())
     
-    // Para a CLI, vamos passar apenas campos básicos essenciais e referências ao arquivo
-    // Na transação, passamos o hash da ementa que permite verificar a autenticidade
-    // O módulo AcademicNFT pode posteriormente ler o arquivo completo se necessário
+    // Simplificar a chamada da CLI para evitar problemas de parsing
+    // Juntar os arrays em strings separadas por vírgulas para facilitar
+    objectives := strings.Join(content.Objectives, ",")
+    topicUnits := strings.Join(content.TopicUnits, ",")
+    methodologies := strings.Join(content.Methodologies, ",")
+    evaluationMethods := strings.Join(content.EvaluationMethods, ",")
+    bibliographyBasic := strings.Join(content.BibliographyBasic, ",")
+    bibliographyComplementary := strings.Join(content.BibliographyComplementary, ",")
+    keywords := strings.Join(content.Keywords, ",")
     
-    // Criar um script shell que avisa sobre o arquivo de dados e executa o comando
+    // Criar um script shell que usa o formato correto para o comando
     scriptContent := fmt.Sprintf(`#!/bin/bash
 echo "==================================================================="
 echo "AVISO: Dados completos da ementa estão no arquivo: %s"
@@ -477,21 +478,22 @@ echo "Este arquivo contém todos os metadados, objetivos, tópicos, etc."
 echo "Use-o para verificação completa da ementa após a tokenização."
 echo "==================================================================="
 
-%s tx academicnft mint-course-nft \
+%s tx curriculum create-course-content \
+  %s \
   %s \
   %s \
   "%s" \
   %s \
   %d \
   %d \
-  "Veja arquivo: %s" \
-  "Veja arquivo: %s" \
-  "Veja arquivo: %s" \
-  "Veja arquivo: %s" \
-  "Veja arquivo: %s" \
-  "Veja arquivo: %s" \
-  "Veja arquivo: %s" \
-  "Veja arquivo: %s" \
+  "%s" \
+  "%s" \
+  "%s" \
+  "%s" \
+  "%s" \
+  "%s" \
+  "%s" \
+  "%s" \
   %s \
   --from %s \
   --chain-id %s \
@@ -509,28 +511,34 @@ echo "==================================================================="
 `,
         ementaFile.Name(),
         academicTokendPath,
+        content.Index,
         content.CourseId,
         content.Institution,
         content.Title,
         content.Code,
         content.WorkloadHours,
         content.Credits,
-        ementaFile.Name(),  // Em vez dos dados completos, passamos referência ao arquivo
-        ementaFile.Name(),
-        ementaFile.Name(),
-        ementaFile.Name(),
-        ementaFile.Name(),
-        ementaFile.Name(),
-        ementaFile.Name(),
-        ementaFile.Name(),
-        content.ContentHash, // O hash garante a integridade e autenticidade
+        content.Description,
+        objectives,        // Substitui a referência ao arquivo por dados reais
+        topicUnits,        // Substitui a referência ao arquivo por dados reais
+        methodologies,     // Substitui a referência ao arquivo por dados reais
+        evaluationMethods, // Substitui a referência ao arquivo por dados reais
+        bibliographyBasic, // Substitui a referência ao arquivo por dados reais
+        bibliographyComplementary, // Substitui a referência ao arquivo por dados reais
+        keywords,          // Substitui a referência ao arquivo por dados reais
+        content.ContentHash,
         from,
         chainID,
         node,
         ementaFile.Name())
     
+    // Exibir o conteúdo do script para depuração
+    fmt.Println("==== SCRIPT GERADO ====")
+    fmt.Println(scriptContent)
+    fmt.Println("=======================")
+    
     // Criar arquivo temporário para o script
-    scriptFile, err := ioutil.TempFile("", "mint-nft-*.sh")
+    scriptFile, err := ioutil.TempFile("", "create-course-*.sh")
     if err != nil {
         return fmt.Errorf("erro ao criar arquivo temporário para script: %w", err)
     }
@@ -551,8 +559,7 @@ echo "==================================================================="
     
     fmt.Printf("Script de execução criado em: %s\n", scriptFile.Name())
     
-    // Criar uma versão permanente do arquivo JSON para manter os dados
-    // Este arquivo não será removido automaticamente e pode ser usado para referência
+    // Criar uma versão permanente do arquivo JSON para referência
     permanentFile := fmt.Sprintf("%s_%s_completo.json", content.Institution, content.CourseId)
     if err := ioutil.WriteFile(permanentFile, ementaJSON, 0644); err != nil {
         fmt.Printf("Aviso: Não foi possível criar arquivo permanente: %v\n", err)
@@ -567,6 +574,7 @@ echo "==================================================================="
     
     return cmd.Run()
 }
+
 // initClientContext inicializa o contexto do cliente Cosmos de forma simplificada
 func initClientContext() (client.Context, error) {
     // Criar um contexto básico vazio
@@ -713,31 +721,32 @@ func main() {
         topicUnitsJSON, _ := json.Marshal(topics)
         
         content := types.CourseContent{
-            CourseId:                  courseCode,
-            Institution:               institution,
-            Title:                     metadata.Title,
-            Code:                      courseCode,
-            WorkloadHours:             metadata.WorkloadHours,
-            Credits:                   metadata.Credits,
-            Description:               metadata.Description,
-            Objectives:                []string(metadata.Objectives),
-            TopicUnits:                []string{string(topicUnitsJSON)},
-            Methodologies:             []string(metadata.Methodologies),
-            EvaluationMethods:         []string(metadata.EvaluationMethods),
-            BibliographyBasic:         basicBibliography,
+            Index:                    fmt.Sprintf("%s-%s", institution, courseCode), // Gera um índice baseado na instituição e código
+            CourseId:                 courseCode,
+            Institution:              institution,
+            Title:                    metadata.Title,
+            Code:                     courseCode,
+            WorkloadHours:            metadata.WorkloadHours,
+            Credits:                  metadata.Credits,
+            Description:              metadata.Description,
+            Objectives:               []string(metadata.Objectives),
+            TopicUnits:               []string{string(topicUnitsJSON)},
+            Methodologies:            []string(metadata.Methodologies),
+            EvaluationMethods:        []string(metadata.EvaluationMethods),
+            BibliographyBasic:        basicBibliography,
             BibliographyComplementary: compBibliography,
-            Keywords:                  keywords,
-            ContentHash:               contentHash,
+            Keywords:                 keywords,
+            ContentHash:              contentHash,
         }
         
         err = tokenizeViaCLI(content, fromFlag, chainIDFlag, nodeFlag)
-        if err != nil {
-            fmt.Printf("Erro ao executar comando via CLI: %v\n", err)
-            fmt.Println("Verifique se o AcademicTokend está no PATH e se os parâmetros estão corretos.")
-        } else {
-            fmt.Println("Transação enviada com sucesso via CLI!")
-        }
-    } else {
-        fmt.Println("\nNenhum endereço fornecido com --from. Execute novamente com --from para enviar a transação.")
-    }
+       if err != nil {
+           fmt.Printf("Erro ao executar comando via CLI: %v\n", err)
+           fmt.Println("Verifique se o AcademicTokend está no PATH e se os parâmetros estão corretos.")
+       } else {
+           fmt.Println("Transação enviada com sucesso via CLI!")
+       }
+   } else {
+       fmt.Println("\nNenhum endereço fornecido com --from. Execute novamente com --from para enviar a transação.")
+   }
 }
