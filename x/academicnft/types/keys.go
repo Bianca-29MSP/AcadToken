@@ -1,45 +1,58 @@
 package types
 
-// Prefixos para as chaves de armazenamento
+// Storage key prefixes
 const (
-    // ModuleName define o nome do módulo
+    // ModuleName defines the module name
     ModuleName = "academicnft"
-    // StoreKey define a chave de armazenamento principal
+    // StoreKey defines the primary store key
     StoreKey = ModuleName
-    // RouterKey define a mensagem de router
+    // RouterKey defines the message router key
     RouterKey = ModuleName
-    // QuerierRoute define a rota do querier
+    // QuerierRoute defines the querier route
     QuerierRoute = ModuleName
-    // ParamsKey é a chave para os parâmetros do módulo
+    // ParamsKey is the key for module parameters
     ParamsKey = "Params"
-
-    // NFTsByOwnerPrefix é o prefixo para o índice de NFTs por proprietário
+    // NFTsByOwnerPrefix is the prefix for NFTs by owner index
     NFTsByOwnerPrefix = "nfts-by-owner-"
 )
 
-// Prefixos para eventos
+// Event prefixes
 const (
-    // EventTypeMintCourseNFT é o evento emitido quando um Course NFT é criado
+    // EventTypeMintCourseNFT is emitted when a Course NFT is created
     EventTypeMintCourseNFT = "mint_course_nft"
-    // EventTypeTransferCourseNFT é o evento emitido quando um Course NFT é transferido
+    // EventTypeTransferCourseNFT is emitted when a Course NFT is transferred
     EventTypeTransferCourseNFT = "transfer_course_nft"
-    // EventTypeApproveEquivalence é o evento emitido quando uma equivalência é aprovada
+    // EventTypeApproveEquivalence is emitted when an equivalence is approved
     EventTypeApproveEquivalence = "approve_equivalence"
 )
 
-// Atributos de evento
+// Event attributes
 const (
-    AttributeKeyNFTID        = "nft_id"
-    AttributeKeyNFTID1       = "nft_id_1"
-    AttributeKeyNFTID2       = "nft_id_2"
-    AttributeKeyCourseID     = "course_id"
-    AttributeKeyInstitution  = "institution"
-    AttributeKeyContentHash  = "content_hash"
-    AttributeKeyRecipient    = "recipient"
-    AttributeKeyScore        = "score"
+    AttributeKeyNFTID = "nft_id"
+    AttributeKeyNFTID1 = "nft_id_1"
+    AttributeKeyNFTID2 = "nft_id_2"
+    AttributeKeyCourseID = "course_id"
+    AttributeKeyInstitution = "institution"
+    AttributeKeyContentHash = "content_hash"
+    AttributeKeyFrom = "from"
+    AttributeKeyTo = "to"
+    AttributeKeyRecipient = "recipient"
+    AttributeKeyScore = "score"
     AttributeKeyJustification = "justification"
+    AttributeKeyEquivalentCourseID = "equivalent_course_id"
 )
 
+// KeyPrefix returns the key prefix for a specific type
 func KeyPrefix(p string) []byte {
     return []byte(p)
+}
+
+// NFTByOwnerKey returns the key for a specific NFT owned by an address
+func NFTByOwnerKey(owner string, nftId string) []byte {
+    return append(NFTByOwnerPrefix(owner), []byte("/"+nftId)...)
+}
+
+// NFTByOwnerPrefix returns the prefix for all NFTs of an owner
+func NFTByOwnerPrefix(owner string) []byte {
+    return append(KeyPrefix(NFTsByOwnerPrefix), []byte(owner)...)
 }

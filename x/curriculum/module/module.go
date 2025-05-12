@@ -190,26 +190,29 @@ type ModuleOutputs struct {
 	CurriculumKeeper keeper.Keeper
 	Module           appmodule.AppModule
 }
-
+// In the ProvideModule function
 func ProvideModule(in ModuleInputs) ModuleOutputs {
-	// default to governance authority if not provided
-	authority := authtypes.NewModuleAddress(govtypes.ModuleName)
-	if in.Config.Authority != "" {
-		authority = authtypes.NewModuleAddressOrBech32Address(in.Config.Authority)
-	}
-	k := keeper.NewKeeper(
-		in.Cdc,
-		in.StoreService,
-		in.Logger,
-		authority.String(),
-		in.BankKeeper,
-	)
-	m := NewAppModule(
-		in.Cdc,
-		k,
-		in.AccountKeeper,
-		in.BankKeeper,
-	)
+    // default to governance authority if not provided
+    authority := authtypes.NewModuleAddress(govtypes.ModuleName)
+    if in.Config.Authority != "" {
+        authority = authtypes.NewModuleAddressOrBech32Address(in.Config.Authority)
+    }
+    
+    k := keeper.NewKeeper(
+        in.Cdc,
+        in.StoreService,
+        in.Logger,
+        authority.String(),
+        in.BankKeeper,
+        nil, // Pass nil for AcademicNFTKeeper
+    )
+    
+    m := NewAppModule(
+        in.Cdc,
+        k,
+        in.AccountKeeper,
+        in.BankKeeper,
+    )
 
-	return ModuleOutputs{CurriculumKeeper: k, Module: m}
+    return ModuleOutputs{CurriculumKeeper: k, Module: m}
 }

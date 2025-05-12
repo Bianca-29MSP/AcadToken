@@ -77,8 +77,13 @@ import (
 
 	academictokenmodulekeeper "github.com/Bianca-29MSP/AcademicToken/x/academictoken/keeper"
 	curriculummodulekeeper "github.com/Bianca-29MSP/AcademicToken/x/curriculum/keeper"
-
 	academicnftmodulekeeper "github.com/Bianca-29MSP/AcademicToken/x/academicnft/keeper"
+	
+	// Import module types for intermodule communication
+	academicnfttypes "github.com/Bianca-29MSP/AcademicToken/x/academicnft/types"
+	curriculumtypes "github.com/Bianca-29MSP/AcademicToken/x/curriculum/types"
+	sharedtypes "github.com/Bianca-29MSP/AcademicToken/x/shared/types"
+	academictokentypes "github.com/Bianca-29MSP/AcademicToken/x/academictoken/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 
 	"github.com/Bianca-29MSP/AcademicToken/docs"
@@ -157,6 +162,146 @@ type App struct {
 	sm *module.SimulationManager
 }
 
+// AcademicNFTAdapter adapts the AcademicNFTKeeper to the interface expected by CurriculumKeeper
+type AcademicNFTAdapter struct {
+	keeper academicnftmodulekeeper.Keeper
+}
+
+// NewAcademicNFTAdapter creates a new adapter for the AcademicNFTKeeper
+func NewAcademicNFTAdapter(k academicnftmodulekeeper.Keeper) *AcademicNFTAdapter {
+	return &AcademicNFTAdapter{keeper: k}
+}
+
+// GetCourseNft adapts the GetCourseNft method to the interface expected by CurriculumKeeper
+func (a *AcademicNFTAdapter) GetCourseNft(ctx sdk.Context, nftId string) (sharedtypes.CourseNft, bool) {
+	nft, found := a.keeper.GetCourseNft(ctx, nftId)
+	if !found {
+		return sharedtypes.CourseNft{}, false
+	}
+	
+	// Convert the type
+	sharedNft := sharedtypes.CourseNft{
+		NftId:                   nft.NftId,
+		Creator:                 nft.Creator,
+		Owner:                   nft.Owner,
+		CourseId:                nft.CourseId,
+		Institution:             nft.Institution,
+		Title:                   nft.Title,
+		Code:                    nft.Code,
+		WorkloadHours:           nft.WorkloadHours,
+		Credits:                 nft.Credits,
+		Description:             nft.Description,
+		Objectives:              nft.Objectives,
+		TopicUnits:              nft.TopicUnits,
+		Methodologies:           nft.Methodologies,
+		EvaluationMethods:       nft.EvaluationMethods,
+		BibliographyBasic:       nft.BibliographyBasic,
+		BibliographyComplementary: nft.BibliographyComplementary,
+		Keywords:                nft.Keywords,
+		ContentHash:             nft.ContentHash,
+		CreatedAt:               nft.CreatedAt,
+		ApprovedEquivalences:    nft.ApprovedEquivalences,
+	}
+	
+	return sharedNft, true
+}
+
+// HasCourseNFT adapts the HasCourseNFT method to the interface expected by CurriculumKeeper
+func (a *AcademicNFTAdapter) HasCourseNFT(ctx sdk.Context, owner string, courseId string) bool {
+	return a.keeper.HasCourseNFT(ctx, owner, courseId)
+}
+
+// GetNFTsByOwner adapts the GetNFTsByOwner method to the interface expected by CurriculumKeeper
+func (a *AcademicNFTAdapter) GetNFTsByOwner(ctx sdk.Context, owner string) []sharedtypes.CourseNft {
+	nfts := a.keeper.GetNFTsByOwner(ctx, owner)
+	sharedNfts := make([]sharedtypes.CourseNft, len(nfts))
+	
+	for i, nft := range nfts {
+		sharedNfts[i] = sharedtypes.CourseNft{
+			NftId:                   nft.NftId,
+			Creator:                 nft.Creator,
+			Owner:                   nft.Owner,
+			CourseId:                nft.CourseId,
+			Institution:             nft.Institution,
+			Title:                   nft.Title,
+			Code:                    nft.Code,
+			WorkloadHours:           nft.WorkloadHours,
+			Credits:                 nft.Credits,
+			Description:             nft.Description,
+			Objectives:              nft.Objectives,
+			TopicUnits:              nft.TopicUnits,
+			Methodologies:           nft.Methodologies,
+			EvaluationMethods:       nft.EvaluationMethods,
+			BibliographyBasic:       nft.BibliographyBasic,
+			BibliographyComplementary: nft.BibliographyComplementary,
+			Keywords:                nft.Keywords,
+			ContentHash:             nft.ContentHash,
+			CreatedAt:               nft.CreatedAt,
+			ApprovedEquivalences:    nft.ApprovedEquivalences,
+		}
+	}
+	
+	return sharedNfts
+}
+
+// CurriculumAdapter adapts the CurriculumKeeper to the interface expected by AcademicNFTKeeper
+type CurriculumAdapter struct {
+	keeper curriculummodulekeeper.Keeper
+}
+
+// NewCurriculumAdapter creates a new adapter for the CurriculumKeeper
+func NewCurriculumAdapter(k curriculummodulekeeper.Keeper) *CurriculumAdapter {
+	return &CurriculumAdapter{keeper: k}
+}
+
+// GetCourseContent adapts the GetCourseContent method to the interface expected by AcademicNFTKeeper
+func (a *CurriculumAdapter) GetCourseContent(ctx sdk.Context, courseId string) (sharedtypes.CourseContent, bool) {
+	content, found := a.keeper.GetCourseContent(ctx, courseId)
+	if !found {
+		return sharedtypes.CourseContent{}, false
+	}
+	
+	// Convert the type
+	sharedContent := sharedtypes.CourseContent{
+		CourseId:                  content.CourseId,
+		Institution:               content.Institution,
+		Title:                     content.Title,
+		Code:                      content.Code,
+		WorkloadHours:             content.WorkloadHours,
+		Credits:                   content.Credits,
+		Description:               content.Description,
+		Objectives:                content.Objectives,
+		TopicUnits:                content.TopicUnits,
+		Methodologies:             content.Methodologies,
+		EvaluationMethods:         content.EvaluationMethods,
+		BibliographyBasic:         content.BibliographyBasic,
+		BibliographyComplementary: content.BibliographyComplementary,
+		Keywords:                  content.Keywords,
+		ContentHash:               content.ContentHash,
+	}
+	
+	return sharedContent, true
+}
+
+// GetInstitution adapts the GetInstitution method to the interface expected by AcademicNFTKeeper
+func (a *CurriculumAdapter) GetInstitution(ctx sdk.Context, institutionId string) (sharedtypes.Institution, bool) {
+	institution, found := a.keeper.GetInstitution(ctx, institutionId)
+	if !found {
+		return sharedtypes.Institution{}, false
+	}
+	
+	// Convert the type - corrigindo os nomes dos campos para corresponder ao tipo compartilhado
+	sharedInstitution := sharedtypes.Institution{
+		Id:          institution.Index,          // Alterado para usar o campo Index conforme a definição
+		Name:        institution.Name,
+		Address:     institution.Address,
+		Website:     institution.IsAuthorized,   // Alterado para refletir a definição de Institution
+		Description: "",                         // Removido pois não existe na definição
+	}
+	
+	return sharedInstitution, true
+}
+
 func init() {
 	var err error
 	clienthelpers.EnvPrefix = Name
@@ -231,6 +376,7 @@ func New(
 		)
 	)
 
+	// First, inject all standard keepers except our custom keepers
 	if err := depinject.Inject(appConfig,
 		&appBuilder,
 		&app.appCodec,
@@ -254,13 +400,48 @@ func New(
 		&app.NFTKeeper,
 		&app.GroupKeeper,
 		&app.CircuitBreakerKeeper,
-		&app.AcademictokenKeeper,
-		&app.CurriculumKeeper,
-		&app.AcademicnftKeeper,
-		// this line is used by starport scaffolding # stargate/app/keeperDefinition
+		// Custom keepers are manually initialized below
 	); err != nil {
 		panic(err)
 	}
+
+	// Manually initialize our custom keepers to handle cross-module dependencies
+	
+	// First, the main AcademicToken keeper
+	app.AcademictokenKeeper = academictokenmodulekeeper.NewKeeper(
+		app.appCodec,
+		app.GetKey(academictokentypes.StoreKey),
+		logger,
+		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
+	)
+	
+	// Initialize Curriculum keeper with temporary nil AcademicNFTKeeper
+	app.CurriculumKeeper = curriculummodulekeeper.NewKeeper(
+		app.appCodec,
+		app.GetKey(curriculumtypes.StoreKey),
+		logger,
+		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
+		app.BankKeeper,
+		nil, // AcademicNFTKeeper will be set after initialization
+	)
+	
+	// Create an adapter for the CurriculumKeeper
+	curriculumAdapter := NewCurriculumAdapter(app.CurriculumKeeper)
+	
+	// Initialize AcademicNFT keeper with Curriculum adapter
+	app.AcademicnftKeeper = academicnftmodulekeeper.NewKeeper(
+		app.appCodec,
+		app.GetKey(academicnfttypes.StoreKey),
+		logger,
+		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
+		curriculumAdapter,
+	)
+	
+	// Create an adapter to resolve the type incompatibility
+	academicNFTAdapter := NewAcademicNFTAdapter(app.AcademicnftKeeper)
+	
+	// Update CurriculumKeeper with AcademicNFTKeeper reference via the adapter
+	app.CurriculumKeeper.SetAcademicNFTKeeper(academicNFTAdapter)
 
 	// add to default baseapp options
 	// enable optimistic execution
@@ -268,11 +449,6 @@ func New(
 
 	// build app
 	app.App = appBuilder.Build(db, traceStore, baseAppOptions...)
-
-	// register legacy modules
-	if err := app.registerIBCModules(appOpts); err != nil {
-		return nil, err
-	}
 
 	// register streaming services
 	if err := app.RegisterStreamingServices(appOpts, app.kvStoreKeys()); err != nil {
@@ -404,28 +580,16 @@ func (app *App) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig
 	docs.RegisterOpenAPIService(Name, apiSvr.Router)
 }
 
-// GetMaccPerms returns a copy of the module account permissions
-//
-// NOTE: This is solely to be used for testing purposes.
-func GetMaccPerms() map[string][]string {
-	dup := make(map[string][]string)
-	for _, perms := range moduleAccPerms {
-		dup[perms.Account] = perms.Permissions
-	}
-	return dup
+// These are minimal types to match the existing app_config.go content
+
+// ModuleAccPerm represents a module account permission
+type ModuleAccPerm struct {
+	Account     string
+	Permissions []string
 }
 
-// BlockedAddresses returns all the app's blocked account addresses.
-func BlockedAddresses() map[string]bool {
-	result := make(map[string]bool)
-	if len(blockAccAddrs) > 0 {
-		for _, addr := range blockAccAddrs {
-			result[addr] = true
-		}
-	} else {
-		for addr := range GetMaccPerms() {
-			result[addr] = true
-		}
-	}
-	return result
+// registerIBCModules registers the IBC modules
+func (app *App) registerIBCModules(appOpts servertypes.AppOptions) error {
+	// Remove this function implementation if you have a separate ibc.go file
+	return nil
 }

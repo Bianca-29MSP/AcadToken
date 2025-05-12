@@ -7,46 +7,27 @@ import (
     sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
-// SetNFTByOwnerIndex armazena um índice para rápida recuperação de NFTs por proprietário
+// SetNFTByOwnerIndex stores an index for quick retrieval of NFTs by owner
 func (k Keeper) SetNFTByOwnerIndex(ctx sdk.Context, courseNft types.CourseNft) {
     store := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
-    ownerStore := prefix.NewStore(store, []byte(types.NFTsByOwnerPrefix))
-    
-    // A chave será: owner/nftId
+    ownerStore := prefix.NewStore(store, KeyPrefix(types.NFTsByOwnerPrefix))
+    // Key will be: owner/nftId
     key := []byte(courseNft.Owner + "/" + courseNft.NftId)
-    
-    // O valor será o ID do NFT
+    // Value will be the NFT ID
     ownerStore.Set(key, []byte(courseNft.NftId))
 }
 
-// DeleteNFTByOwnerIndex remove um NFT do índice de proprietário
+// DeleteNFTByOwnerIndex removes an NFT from the owner index
 func (k Keeper) DeleteNFTByOwnerIndex(ctx sdk.Context, owner string, nftId string) {
     store := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
-    ownerStore := prefix.NewStore(store, []byte(types.NFTsByOwnerPrefix))
-    
-    // A chave será: owner/nftId
+    ownerStore := prefix.NewStore(store, KeyPrefix(types.NFTsByOwnerPrefix))
+    // Key will be: owner/nftId
     key := []byte(owner + "/" + nftId)
-    
-    // Remove a entrada
+    // Remove the entry
     ownerStore.Delete(key)
 }
 
-// GetNFTsByOwner retorna todos os IDs de NFTs pertencentes a um proprietário
-func (k Keeper) GetNFTsByOwner(ctx sdk.Context, owner string) []string {
-    store := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
-    ownerStore := prefix.NewStore(store, []byte(types.NFTsByOwnerPrefix))
-    
-    // Prefixo para o proprietário específico
-    ownerPrefix := []byte(owner + "/")
-    nftByOwnerStore := prefix.NewStore(ownerStore, ownerPrefix)
-    
-    var nftIds []string
-    iterator := nftByOwnerStore.Iterator(nil, nil)
-    defer iterator.Close()
-    
-    for ; iterator.Valid(); iterator.Next() {
-        nftIds = append(nftIds, string(iterator.Value()))
-    }
-    
-    return nftIds
+// KeyPrefix helper function to get a key prefix
+func KeyPrefix(p string) []byte {
+    return []byte(p)
 }

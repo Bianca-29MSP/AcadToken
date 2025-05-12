@@ -1,23 +1,16 @@
 package types
 
-import "encoding/binary"
+// CourseNftKeyPrefix is the prefix for storing CourseNft
+var CourseNftKeyPrefix = []byte{0x00}
 
-var _ binary.ByteOrder
-
-const (
-	// CourseNftKeyPrefix is the prefix to retrieve all CourseNft
-	CourseNftKeyPrefix = "CourseNft/value/"
-)
-
-// CourseNftKey returns the store key to retrieve a CourseNft from the index fields
+// CourseNftKey returns the store key for a CourseNft
 func CourseNftKey(
-	index string,
+    nftId string,
 ) []byte {
-	var key []byte
-
-	indexBytes := []byte(index)
-	key = append(key, indexBytes...)
-	key = append(key, []byte("/")...)
-
-	return key
+    var key []byte
+    
+    key = append(key, CourseNftKeyPrefix...)
+    key = append(key, []byte(nftId)...)
+    
+    return key
 }
